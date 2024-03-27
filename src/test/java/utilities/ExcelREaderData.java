@@ -16,6 +16,7 @@ public class ExcelREaderData {
 	
 	@Test
 	public HashMap<String,String> loginCred() throws IOException {
+		
 		String path="/Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/TestData/Team_08_API Architects_LMSTestData.xlsx";
 		File excel=new File(path);
 		FileInputStream fis=new FileInputStream(excel);
