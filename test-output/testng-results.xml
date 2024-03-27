@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-27T11:03:28 EDT" name="Default suite" finished-at="2024-03-27T11:03:29 EDT" duration-ms="539">
+  <suite started-at="2024-03-27T17:42:57 EDT" name="Default suite" finished-at="2024-03-27T17:42:58 EDT" duration-ms="790">
     <groups>
     </groups>
-    <test started-at="2024-03-27T11:03:28 EDT" name="Default test" finished-at="2024-03-27T11:03:29 EDT" duration-ms="539">
-      <class name="Utilities.ExcelREaderData">
-        <test-method signature="loginCred()[pri:0, instance:Utilities.ExcelREaderData@1725dc0f]" started-at="2024-03-27T11:03:28 EDT" name="loginCred" finished-at="2024-03-27T11:03:29 EDT" duration-ms="521" status="PASS">
+    <test started-at="2024-03-27T17:42:57 EDT" name="Default test" finished-at="2024-03-27T17:42:58 EDT" duration-ms="790">
+      <class name="utilities.ExcelREaderData">
+        <test-method signature="loginCred()[pri:0, instance:utilities.ExcelREaderData@1cbbffcd]" started-at="2024-03-27T17:42:57 EDT" name="loginCred" finished-at="2024-03-27T17:42:58 EDT" duration-ms="773" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginCred -->
-      </class> <!-- Utilities.ExcelREaderData -->
+      </class> <!-- utilities.ExcelREaderData -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
