@@ -5,4 +5,4 @@ Feature: User Module
     Given User creates request for the LMS API endpoint with Authorization
     When User  sends HTTPS Request with GET All Roles endpoint
     Then User receives status code 200 with response body for viewing an User by Role
-#Given User Login to LMS Application and creates BearerToken
+
