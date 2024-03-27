@@ -2,26 +2,18 @@ package StepDefinition;
 
 import static io.restassured.RestAssured.given;
 
-import Utilities.CommonValidation;
-import Utilities.ReusableMethods;
-import Utilities.ReusableVariables;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import utilities.CommonValidation;
+import utilities.ReusableMethods;
+import utilities.ReusableVariables;
 
 public class UserModuleStepDefinition  {
 	ReusableMethods reuseMethods=new ReusableMethods();
 	ReusableVariables reuseVariables=new ReusableVariables();
 	CommonValidation cv=new CommonValidation();
-
-	@Given("User Login to LMS Application and creates BearerToken")
-	public void user_login_to_lms_applicationandcreatesBearerToken() {
-		System.out.println("Bearer Token created : " +reuseMethods.returnToken());
-		reuseVariables.authValue = "Bearer "+reuseMethods.returnToken();
-		
-		
-	}
 
 	@Given("User creates request for the LMS API endpoint with Authorization")
 	public void user_creates_request_for_the_lms_api_endpoint_with_authorization() {
