@@ -1,4 +1,4 @@
-package payLoad;
+package Payload;
 
 public class UserPayload {
 

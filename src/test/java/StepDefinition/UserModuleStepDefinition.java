@@ -1,7 +1,6 @@
-package stepDefinition;
+package StepDefinition;
 
 import static io.restassured.RestAssured.given;
-
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,18 +10,19 @@ import utilities.CommonValidation;
 import utilities.ReusableMethods;
 import utilities.ReusableVariables;
 
-public class userModuleStepDefinition {
+public class UserModuleStepDefinition  {
 	ReusableMethods reuseMethods=new ReusableMethods();
 	ReusableVariables reuseVariables=new ReusableVariables();
 	CommonValidation cv=new CommonValidation();
 
-
 	@Given("User creates request for the LMS API endpoint with Authorization")
 	public void user_creates_request_for_the_lms_api_endpoint_with_authorization() {
-		System.out.println("Inside GetRoles");
-		Response res=given().header("Authorization", reuseVariables.authValue).when().get(reuseVariables.baseURL+"/users/roles");
-		System.out.println(res.asPrettyString());
-		System.out.println(res.statusCode());
+//		System.out.println("Inside GetRoles");
+//		reuseVariables.authValue = "Bearer "+reuseMethods.returnToken();
+//		System.out.println(reuseVariables.authValue);
+//		Response res=given().header("Authorization", reuseVariables.authValue).when().get(reuseVariables.baseURL+"/users/roles");
+//		System.out.println(res.asPrettyString());
+//		System.out.println(res.statusCode());
 	}
 
 	@When("User  sends HTTPS Request with GET All Roles endpoint")
