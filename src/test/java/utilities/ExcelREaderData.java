@@ -24,10 +24,14 @@ public class ExcelREaderData {
 		XSSFSheet sht=work.getSheet("Login");
 		Cell c1 = sht.getRow(1).getCell(0);
 		Cell c2=sht.getRow(1).getCell(1);
+		Cell c3=sht.getRow(1).getCell(2);
+		Cell c4=sht.getRow(1).getCell(3);
 		
 		HashMap<String,String> hm=new HashMap();
 		hm.put("username", c1.getStringCellValue());
 		hm.put("password", c2.getStringCellValue());
+		hm.put("invalidusername", c3.getStringCellValue());
+		hm.put("invalidpassword", c4.getStringCellValue());
 		return hm;
 		
 		
