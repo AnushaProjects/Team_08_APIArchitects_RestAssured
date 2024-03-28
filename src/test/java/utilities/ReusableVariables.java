@@ -6,6 +6,6 @@ public class ReusableVariables {
 	
 	
 	public String baseURL="https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms";
-	String bearerToken; //bearer token will store in this variable.
+	//public String bearerToken; //bearer token will store in this variable.
 	public String authValue; // for Authorisation
 }

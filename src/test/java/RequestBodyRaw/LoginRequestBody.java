@@ -16,9 +16,15 @@ public class LoginRequestBody {
 //			+ "  \"userLoginEmailId\": \"numpyninja@gmail.com\"\n"
 //			+ "}";
 	
-	public String createLoginRequest(HashMap<String,String> hm ) {
+	public String createLoginRequest(HashMap<String,String> hm,String condition ) {
+		if(condition.equalsIgnoreCase("valid")) {
 		lp.setUserLoginEmailId(hm.get("username"));
 		lp.setPassword(hm.get("password"));
+		}
+		else {
+				lp.setUserLoginEmailId(hm.get("invalidusername"));
+				lp.setPassword(hm.get("invalidpassword"));
+				}
 		JSONObject loginBody=new JSONObject(lp);
 		return loginBody.toString();
 	    }
