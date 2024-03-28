@@ -38,7 +38,7 @@ public class userLoginStepDefinition extends ReusableVariables{
 	
 	@When("Admin Admin calls Post Https method  with {string}")
 	public void admin_admin_calls_post_https_method_with(String endpoint) {
-		System.out.println("Inside Response");
+		//System.out.println("Inside Response");
 	    if(endpoint.equalsIgnoreCase("valid endpoint")) {
 	    	loginResponse= given().header("Content-Type","application/json").body(reqBody).when().post(baseURL+"/login");
 	    }
@@ -54,7 +54,7 @@ public class userLoginStepDefinition extends ReusableVariables{
 		System.out.println(loginResponse.statusCode());
 	    Assert.assertEquals(loginResponse.statusCode(), successcode);
 		JsonPath gettoken = loginResponse.jsonPath();
-        String bearerToken = gettoken.get("token");
+        bearerToken = gettoken.get("token");
         System.out.println("BearerToken - "+bearerToken);
        
 	    
