@@ -52,7 +52,7 @@ public class userLoginStepDefinition extends ReusableVariables{
 	@Then("Admin Admin receives {int} created with auto generated token")
 	public void admin_admin_receives_created_with_auto_generated_token(Integer successcode) {
 		System.out.println(loginResponse.statusCode());
-	   // Assert.assertEquals(loginResponse.statusCode(), successcode);
+	    Assert.assertEquals(loginResponse.statusCode(), successcode);
 		JsonPath gettoken = loginResponse.jsonPath();
         String bearerToken = gettoken.get("token");
         System.out.println("BearerToken - "+bearerToken);
@@ -63,13 +63,13 @@ public class userLoginStepDefinition extends ReusableVariables{
 	@Then("Admin Admin receives Admin receives {int} unauthorized")
 	public void admin_admin_receives_admin_receives_unauthorized(Integer errorcode) {
 		System.out.println(loginResponse.statusCode());
-       // Assert.assertEquals(loginResponse.statusCode(), errorcode);
+        Assert.assertEquals(loginResponse.statusCode(), errorcode);
 	}
 	
 	@Then("Admin Admin receives Admin receives {int} BadRequest")
 	public void admin_admin_receives_admin_receives_bad_request(Integer badrequest) {
 		System.out.println(loginResponse.statusCode());
-       // Assert.assertEquals(loginResponse.statusCode(),badrequest );
+        Assert.assertEquals(loginResponse.statusCode(),badrequest );
 	}
 
 }
