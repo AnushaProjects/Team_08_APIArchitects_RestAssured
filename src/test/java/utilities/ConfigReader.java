@@ -13,7 +13,7 @@ public class ConfigReader {
 		prop = new Properties();
 
 		try {
-			 FileInputStream ip = new FileInputStream("/Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/config.properties");
+			 FileInputStream ip = new FileInputStream("/Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/config.properties");
 
 			try {
 				prop.load(ip);
@@ -41,7 +41,7 @@ try {
 
     props.setProperty("bearer", bearertoken);
 
- props.store(new FileOutputStream("/Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/config.properties"), null);
+ props.store(new FileOutputStream("/Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/config.properties"), null);
 
 
 
