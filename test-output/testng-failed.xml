@@ -5,9 +5,10 @@
     <classes>
       <class name="TestRunner.TestRunner">
         <methods>
+          <include name="clearAllData"/>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="2"/>
           <include name="tearDownClass"/>
+          <include name="runScenario"/>
         </methods>
       </class> <!-- TestRunner.TestRunner -->
     </classes>
