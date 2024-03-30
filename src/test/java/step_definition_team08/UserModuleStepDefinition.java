@@ -2,12 +2,16 @@ package step_definition_team08;
 
 
 import utilities_team08.LoggerLoad;
+
+import static org.testng.Assert.assertEquals;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.json.JSONObject;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
@@ -15,6 +19,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import payload_team08.UserPayload;
+import payload_team08.UserReqBdyUserLoginPayload;
 import request_body_raw_team08.UserRequestBody;
 import utilities_team08.CommonValidation;
 import utilities_team08.ConfigReader;
@@ -30,7 +36,10 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	ConfigReader configreader=new ConfigReader();
 	Properties prop =configreader.readingdata();
 	CommonValidation cv=new CommonValidation();
-	String userreqBodyAll;
+	UserPayload userpayload;
+	UserReqBdyUserLoginPayload userLogin;
+	
+	
 	Response userResponse;
 	Response resBody;
 	String userIds;
@@ -43,7 +52,7 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	String get_admin_by_batchId;
 	String get_admin_by_programId;
 	String get_admin_by_roleId;
-	
+	JSONObject userBody;
 	
 	
 	//Creating UserId with Roles
@@ -51,14 +60,18 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	@Given("Admin creates POST request with all mandatory fields")
 	public void admin_creates_post_request_with_all_mandatory_fields() throws InvalidFormatException, IOException {
 		List<Map<String, String>> hm=read.getData(path,"UserModuleMandatory");
-		userreqBodyAll = userReqbody.createUserRequest(hm);
+		userpayload = userReqbody.createUserRequest(hm);
+		userBody=new JSONObject(userpayload);
+		LoggerLoad.info("Converted UserRequestBody for Creating USErId role to JSON Format " +userBody);
+		
+		
 	}
 
 	@When("Admin sends HTTPS Request with endpoint")
 	public void admin_sends_https_request_with_endpoint() {
-		System.out.println(userreqBodyAll);
+		System.out.println(userpayload);
 		System.out.println(prop.getProperty("bearer"));
-		userResponse= auth_req_post.body(userreqBodyAll).when().post(baseURL+"/users/roleStatus");
+		userResponse= auth_req_post.body(userBody.toString()).when().post(baseURL+"/users/roleStatus");
 		userResponse.prettyPrint();
 	}
 	
@@ -69,12 +82,28 @@ public class UserModuleStepDefinition extends ReusableVariables  {
         cv.headervalidations(userResponse);
         cv.schemavalidation(userResponse,"/User_json/post_user_json" );
         
+        //Data Validation
+        
+        System.out.println("Getting User Comments:"+userpayload.getUserComments());
+        assertEquals(userpayload.getUserComments(),userResponse.jsonPath().get("userComments"));
+        assertEquals(userpayload.getUserFirstName(),userResponse.jsonPath().get("userFirstName"));
+        assertEquals(userpayload.getUserLastName(),userResponse.jsonPath().get("userLastName"));
+        assertEquals(userpayload.getUserTimeZone(),userResponse.jsonPath().get("userTimeZone"));
+        assertEquals(userpayload.getUserLinkedinUrl(),userResponse.jsonPath().get("userLinkedinUrl"));
+        assertEquals(userpayload.getUserVisaStatus(),userResponse.jsonPath().get("userVisaStatus"));
+        assertEquals(userpayload.getUserPhoneNumber(),userResponse.jsonPath().get("userPhoneNumber").toString());
+        userLogin=userpayload.getUserLogin();
+        assertEquals(userLogin.getUserLoginEmail(),userResponse.jsonPath().get("userLoginEmail"));
+        assertEquals(userpayload.getUserVisaStatus(),userResponse.jsonPath().get("userVisaStatus"));
+        assertEquals(userpayload.getUserEduUg(),userResponse.jsonPath().get("userEduUg"));
+        assertEquals(userpayload.getUserEduPg(),userResponse.jsonPath().get("userEduPg"));
+        
+        
         LoggerLoad.info("UserId Created - "+userResponse.statusCode());
 		JsonPath userId = userResponse.jsonPath();
 		userIds = userId.get("userId");
 		System.out.println("UserId created with MandatoryField - " +userIds);
-		configreader.writingdata("user_id_with_madatory_field",userIds);
-		
+		configreader.writingdata("user_id_with_madatory_field",userIds);	
 		
 	}
 	
@@ -82,7 +111,9 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	@Given("Admin creates POST request with all mandatory fields and additional fields")
 	public void admin_creates_post_request_with_all_mandatory_fields_and_additional_fields() throws InvalidFormatException, IOException {
 		List<Map<String, String>> hm=read.getData(path,"UserModule");
-		userreqBodyAll = userReqbody.createUserRequest(hm);
+		userpayload = userReqbody.createUserRequest(hm);
+		userBody=new JSONObject(userpayload);
+		LoggerLoad.info("Converted UserRequestBody for Creating USErId role to JSON Format " +userBody);
 	}
 	
 	@Then("Admin receives {int} Created Status with response body and Save userId for {string}.")

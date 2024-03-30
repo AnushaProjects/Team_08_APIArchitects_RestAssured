@@ -17,7 +17,7 @@ public class ReusableMethods extends ReusableVariables {
 	
  public String autoEmail() {
 	long random_email = System.currentTimeMillis();
-	String email="abc"+random_email;
+	String email="abc"+random_email+"@gmail.com";
 	return email;	
 }
  

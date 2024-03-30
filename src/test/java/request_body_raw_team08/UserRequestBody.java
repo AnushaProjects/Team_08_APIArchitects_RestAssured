@@ -21,7 +21,7 @@ public class UserRequestBody {
 	
 		
 
-			public String createUserRequest(List<Map<String, String>> hm) {
+			public UserPayload createUserRequest(List<Map<String, String>> hm) {
 				
 				List<String> roleIds = new ArrayList<String>(); 
 				roleIds.add(hm.get(0).get("RoleIds")); 
@@ -56,10 +56,11 @@ public class UserRequestBody {
 					up.setUserTimeZone(hm.get(0).get("UserTimeZone"));
 					up.setUserVisaStatus(hm.get(0).get("UserVisaStatus"));
 					
-				
-					JSONObject userBody=new JSONObject(up);
-					LoggerLoad.info("Converted UserRequestBody for Creating USErId role to JSON Format " +userBody);
-					return userBody.toString();
+//				
+//					JSONObject userBody=new JSONObject(up);
+//					LoggerLoad.info("Converted UserRequestBody for Creating USErId role to JSON Format " +userBody);
+//					return userBody.toString();
+					return up;
 			    }
 			
 }
