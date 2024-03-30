@@ -7,7 +7,7 @@ Then Admin Admin receives 200 created with auto generated token
 Scenario: Creating a program
 Given Admin creates POST program Request  with valid data in request body 
 When Admin sends HTTPS Request with program endpoint 
- Then Admin receives 201 Created Status with response body.                                                          
+ Then Admin receives 201 Created Status with response body in program.                                                          
 
 
 Scenario: Check if admin able to create a Batch with valid endpoint and request body without authorization.
@@ -22,7 +22,7 @@ Scenario: Check if admin able to create a Batch with valid endpoint and request 
  
  Scenario: Check if admin able to create a Batch with valid endpoint and request body (existing value in Batch Name)
  Given Admin creates POST batch Request  with existing value in request body 
- When Admin sends HTTPS batch Request with endpoint
+ When Admin sends HTTPS batch Request with endpoint with existing value in batchname
  Then Admin receives 400 Bad Request Status with message and boolean success details
  
  Scenario: Check if admin able to create a Batch missing mandatory fields in request body
@@ -38,7 +38,7 @@ Scenario: Check if admin able to create a Batch with valid endpoint and request 
  Scenario: Check if admin able to create a batch with missing additional fields
  Given Admin creates POST batch Request with missing additional fields
  When Admin sends HTTPS batch Request with endpoint 
- Then Admin receives 201 Created Status with response body.                                                          
+ Then Admin receives 201 Created Status with response body for missing additional fields.                                                          
  
  Scenario: Check if admin able to create a batch with invalid data in request body
  Given Admin creates POST batch Request  with invalid data in request body

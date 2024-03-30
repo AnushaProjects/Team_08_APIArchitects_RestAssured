@@ -42,6 +42,7 @@ public class BatchStepDefinition extends ReusableVariables{
     Properties prop =configreader.readingdata();
     private static String programId;
     private static String batchId;
+    static String batchName;
 	/*
 	 * public String getProgramId() { return programId; }
 	 * 
@@ -70,7 +71,11 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
    programId = programIdFromResp.toString();
    System.out.println("Printing the program id after retrieving: "+programId);
 	}
-	
+	@Then("Admin receives {int} Created Status with response body in program.")
+	public void admin_receives_created_status_with_response_body_in_program(Integer statuscode) {
+	    bv.statusValidations(ProgramResponse, statuscode);
+	}
+
 	@Given("Admin creates POST batch Request  with valid data in request body")
 	public void admin_creates_post_request_with_valid_data_in_request_body() throws InvalidFormatException, IOException {
 		List<Map<String, String>> hm=read.getData(path,"Batch");
@@ -100,14 +105,18 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 				.body(batchrequestBody).when().post(baseURL+"/batches");
 		Integer batchIdFromResp = BatchResponse.path("batchId");
 		   batchId = batchIdFromResp.toString();
+		   batchName=BatchResponse.path("batchName");
 		   System.out.println("Printing the batch id after retrieving: "+batchId);
 	BatchResponse.prettyPrint();
 	}
 	
 	
 	@Then("Admin receives {int} Created Status with response body.")
-	public void admin_receives_created_status_with_response_body(Integer statuscode ) {
+	public void admin_receives_created_status_with_response_body(Integer statuscode ) throws InvalidFormatException, IOException {
     	bv.statusValidations(BatchResponse,statuscode );
+    	bv.datavalidation(BatchResponse);
+    	bv.schemavalidation(BatchResponse);
+    	bv.headervalidations(BatchResponse);
     	}
  
 	
@@ -116,11 +125,20 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 	public void admin_creates_post_request_with_existing_value_in_request_body() throws InvalidFormatException, IOException {
 		List<Map<String, String>> hm=read.getData(path,"Batch");
 		
-		batchrequestBody = batchreqbody.createBatchRequestwithexistingdata(hm,programId);
+		batchrequestBody = batchreqbody.createBatchRequestwithexistingdata(hm,programId,batchName);
 	}
+	@When("Admin sends HTTPS batch Request with endpoint with existing value in batchname")
+	public void admin_sends_https_batch_request_with_endpoint_with_existing_value_in_batchname() {
+		BatchResponse= given().header("Content-Type","application/json").
+				header("Authorization","Bearer " + prop.getProperty("bearer"))
+				.body(batchrequestBody).when().post(baseURL+"/batches");
+		
+		BatchResponse.prettyPrint();
+		}
 		@Then("Admin receives {int} Bad Request Status with message and boolean success details")
-	public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer int1) {
-	    	}
+	public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer statuscode) {
+	    bv.messageValidations(BatchResponse, false);
+	    bv.statusValidations(BatchResponse, statuscode);}
 
 	@Given("Admin creates POST batch Request  with invalid data in request body")
 	public void admin_creates_post_request_with_invalid_data_in_request_body() throws InvalidFormatException, IOException {
@@ -154,7 +172,11 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 		 List<Map<String, String>> hm=read.getData(path,"Batch");
 			batchrequestBody = batchreqbody.createBatchRequestwithmissingadditionalfields(hm,programId);
 	}
-	
+	@Then("Admin receives {int} Created Status with response body for missing additional fields.")
+	public void admin_receives_created_status_with_response_body_for_missing_additional_fields(Integer int1) throws InvalidFormatException, IOException {
+	    bv.datavalidationformissingadditionalfields(BatchResponse);
+	}
+
 	@When("Admin sends HTTPS batch Request with endpoint and invalid data")
 	public void admin_sends_https_batch_request_with_endpoint_and_invalid_data() {
 		BatchResponse= given().header("Content-Type","application/json").

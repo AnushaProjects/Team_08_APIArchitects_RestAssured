@@ -52,23 +52,41 @@ public class BatchValidation extends ReusableVariables {
 		
 	public void datavalidation(Response response) throws IOException, InvalidFormatException {
 		List<Map<String, String>> hm=read.getData(path,"Batch");
-			response.then().assertThat().body("batchDescription", Matchers.equalTo((hm.get(0).get("BatchDescription"))));
-			response.then().assertThat().body("batchStatus", Matchers.equalTo((hm.get(0).get("BatchStatus"))));
-			response.then().assertThat().body("batchNoOfClasses", Matchers.equalTo((hm.get(0).get("BatchNoOfClasses"))));
+			//response.then().assertThat().body("batchDescription", Matchers.equalTo((hm.get(0).get("BatchDescription"))));
+		System.out.println(batchpayload.getBatchDescription());
+		Assert.assertEquals(response.path("batchDescription"), (hm.get(0).get("BatchDescription")));
+		Assert.assertEquals(response.path("batchStatus"), (hm.get(0).get("BatchStatus")));
+		Assert.assertEquals(response.path("batchNoOfClasses"), Integer.parseInt((hm.get(0).get("BatchNoOfClasses"))));
+			//response.then().assertThat().body("batchStatus", Matchers.equalTo((hm.get(0).get("BatchStatus"))));
+			//response.then().assertThat().body("batchNoOfClasses", Matchers.equalTo((hm.get(0).get("BatchNoOfClasses"))));
 
 
 	                         
 		}
+	public void datavalidationformissingadditionalfields(Response response) throws InvalidFormatException, IOException {
+		List<Map<String, String>> hm=read.getData(path,"Batch");
+
+		Assert.assertEquals(response.path("batchDescription"), (hm.get(0).get("BatchDescriptionmissingadditionalfield")));
+		Assert.assertEquals(response.path("batchStatus"), (hm.get(0).get("BatchStatusmissingadditonalfield")));
+		Assert.assertEquals(response.path("batchNoOfClasses"), Integer.parseInt((hm.get(0).get("BatchNoOfClassesmissingadditonalfield"))));	
+	
+	}
 
 	public void statusValidations(Response response,int statuscode) {
+		System.out.println(response.getStatusCode());
+		int codeofstatus=response.getStatusCode();
+		Assert.assertEquals(codeofstatus,statuscode);
 		
-		Assert.assertEquals(response.getStatusCode(),statuscode);
-		Assert.assertNotNull(response);
 		
 	}
-	public void messageValidations(Response response,String  message,boolean successvalue) {
-		response.then().assertThat().body("success", Matchers.equalTo(successvalue));
-   
+	public void messageValidations(Response response,boolean successvalue) {
+		//response.then().assertThat().body("success", Matchers.equalTo(successvalue));
+		System.out.println(response.jsonPath().get("success"));
+		Assert.assertSame(response.jsonPath().get("success"),successvalue);
+       String responsemessage=(response.path("message"));
+       responsemessage.isEmpty();
+     Assert.assertFalse(responsemessage.isEmpty());
+
 	}
 
 }
