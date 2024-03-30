@@ -1,13 +1,21 @@
 package testRunner;
 
+
+
+import io.cucumber.testng.CucumberOptions;
+
+
+
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features ={"src/test/resources/features/"}, 
-glue = {"StepDefinition"}, 
+				glue = {"StepDefinition"}, 
+				monochrome = true)
+				//tags = (""))
 
-monochrome = true, 
-plugin = {"pretty","html:target/dsalgoproject.html"})
-
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests{
 
 }
+
