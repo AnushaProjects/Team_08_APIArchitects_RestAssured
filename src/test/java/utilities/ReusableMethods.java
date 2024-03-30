@@ -25,4 +25,10 @@ public String returnToken() {
        
 		
 	}
+public int getRandomNumber() {
+	int min=51;
+	int max=1000;
+return (int) ((Math.random() * (max - min)) + min);
+}
+
 }

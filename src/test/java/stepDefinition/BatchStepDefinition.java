@@ -9,28 +9,45 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.testng.ITestContext;
 
+import RequestBodyRaw.BatchRequestBody;
 import RequestBodyRaw.LoginRequestBody;
 import RequestBodyRaw.ProgramRequestBody;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import payLoad.ProgramPayload;
 import utilities.ConfigReader;
 import utilities.ExcelReader1;
 import utilities.ReusableMethods;
 import utilities.ReusableVariables;
+import validations.BatchValidation;
 
 
 public class BatchStepDefinition extends ReusableVariables{
 	ReusableMethods reuseMethods=new ReusableMethods();
 	ReusableVariables reuseVariables=new ReusableVariables();
 	ProgramRequestBody programreqBody=new ProgramRequestBody ();
+	BatchRequestBody batchreqbody=new BatchRequestBody();
 	ExcelReader1 read = new ExcelReader1();
+	ProgramPayload progpay=new ProgramPayload();
+	BatchValidation bv=new BatchValidation();
 	String programrequestBody;
+	String batchrequestBody;
 	Response ProgramResponse;
+	Response BatchResponse;
 	ConfigReader configreader=new ConfigReader();
     Properties prop =configreader.readingdata();
+    private static String programId;
+    private static String batchId;
+	/*
+	 * public String getProgramId() { return programId; }
+	 * 
+	 * public void setProgramId(String programId) { this.programId = programId; }
+	 */
+
 
 	
 	@Given("Admin creates POST program Request  with valid data in request body")
@@ -47,65 +64,106 @@ public class BatchStepDefinition extends ReusableVariables{
 ProgramResponse= given().header("Content-Type","application/json").header("Authorization","Bearer " + prop.getProperty("bearer"))
 .body(programrequestBody).when().post(baseURL+"/saveprogram");
 
-ProgramResponse.prettyPrint();
+   ProgramResponse.prettyPrint();
+   System.out.println("Printing the program id from response: "+ProgramResponse.path("programId"));
+   Integer programIdFromResp = ProgramResponse.path("programId");
+   programId = programIdFromResp.toString();
+   System.out.println("Printing the program id after retrieving: "+programId);
 	}
 	
-	@Given("Admin creates POST Request  with valid data in request body")
-	public void admin_creates_post_request_with_valid_data_in_request_body() {
-	   
+	@Given("Admin creates POST batch Request  with valid data in request body")
+	public void admin_creates_post_request_with_valid_data_in_request_body() throws InvalidFormatException, IOException {
+		List<Map<String, String>> hm=read.getData(path,"Batch");
+		System.out.println("Program id in batch request: "+programId);
+		batchrequestBody = batchreqbody.createBatchRequest(hm,programId);
 	}
 
-	@When("Admin sends HTTPS Request with endpoint")
-	public void admin_sends_https_request_with_endpoint() {
-	    	}
+	@When("Admin sends HTTPS batch Request with endpoint without authorization")
+	public void admin_sends_https_request_with_endpoint_without_authorization() {
+		
+		BatchResponse= given().header("Content-Type","application/json")
+				.body(batchrequestBody).when().post(baseURL+"/batches");
+		
+		BatchResponse.prettyPrint();
+		}
 
 	@Then("Admin receives {int} Unauthorized")
-	public void admin_receives_unauthorized(Integer int1) {
-	    	}
-
-	@Then("Admin receives {int} Created Status with response body.")
-	public void admin_receives_created_status_with_response_body(Integer int1) {
-	    
+	public void admin_receives_unauthorized(Integer statuscode) {
+	    	bv.statusValidations(BatchResponse,statuscode );}
+	
+	
+	@When("Admin sends HTTPS batch Request with endpoint")
+	public void admin_sends_https_request_with_endpoint() {
+		
+		BatchResponse= given().header("Content-Type","application/json").
+				header("Authorization","Bearer " + prop.getProperty("bearer"))
+				.body(batchrequestBody).when().post(baseURL+"/batches");
+		Integer batchIdFromResp = BatchResponse.path("batchId");
+		   batchId = batchIdFromResp.toString();
+		   System.out.println("Printing the batch id after retrieving: "+batchId);
+	BatchResponse.prettyPrint();
 	}
+	
+	
+	@Then("Admin receives {int} Created Status with response body.")
+	public void admin_receives_created_status_with_response_body(Integer statuscode ) {
+    	bv.statusValidations(BatchResponse,statuscode );
+    	}
+ 
+	
 
-	@Given("Admin creates POST Request  with existing value in request body")
-	public void admin_creates_post_request_with_existing_value_in_request_body() {
-	    	}
-
-	@Then("Admin receives {int} Bad Request Status with message and boolean success details")
+	@Given("Admin creates POST batch Request  with existing value in request body")
+	public void admin_creates_post_request_with_existing_value_in_request_body() throws InvalidFormatException, IOException {
+		List<Map<String, String>> hm=read.getData(path,"Batch");
+		
+		batchrequestBody = batchreqbody.createBatchRequestwithexistingdata(hm,programId);
+	}
+		@Then("Admin receives {int} Bad Request Status with message and boolean success details")
 	public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer int1) {
 	    	}
 
-	@Given("Admin creates POST Request  with invalid data in request body")
-	public void admin_creates_post_request_with_invalid_data_in_request_body() {
-	   	}
-
-	@Given("Admin creates POST Request")
-	public void admin_creates_post_request() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Given("Admin creates POST batch Request  with invalid data in request body")
+	public void admin_creates_post_request_with_invalid_data_in_request_body() throws InvalidFormatException, IOException {
+       List<Map<String, String>> hm=read.getData(path,"Batch");
+	batchrequestBody = batchreqbody.createBatchRequestwithmissingmandatoryfields(hm,programId);
 	}
-	@When("Admin sends HTTPS Request with invalid endpoint")
+	@When("Admin sends HTTPS batch Request with endpoint with missing mandatory fields")
+	public void admin_sends_https_batch_request_with_endpoint_with_missing_mandatory_fields() {
+		BatchResponse= given().header("Content-Type","application/json").
+				header("Authorization","Bearer " + prop.getProperty("bearer"))
+				.body(batchrequestBody).when().post(baseURL+"/batches");
+		BatchResponse.prettyPrint();
+	}
+
+	
+	@When("Admin sends HTTPS batch Request with invalid endpoint")
 	public void admin_sends_https_request_with_invalid_endpoint() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		BatchResponse= given().header("Content-Type","application/json").
+				header("Authorization","Bearer " + prop.getProperty("bearer"))
+				.body(batchrequestBody).when().post(baseURL+"/batche");
 	}
 
 	@Then("Admin receives {int} not found  Status")
-	public void admin_receives_not_found_status(Integer int1) {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
-	}
-	@Given("Admin creates POST Request with missing additional fields")
-	public void admin_creates_post_request_with_missing_additional_fields() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	public void admin_receives_not_found_status(Integer statuscode) {
+    	bv.statusValidations(BatchResponse,statuscode );
+    	}
+ 
+	
+	@Given("Admin creates POST batch Request with missing additional fields")
+	public void admin_creates_post_request_with_missing_additional_fields() throws InvalidFormatException, IOException {
+		 List<Map<String, String>> hm=read.getData(path,"Batch");
+			batchrequestBody = batchreqbody.createBatchRequestwithmissingadditionalfields(hm,programId);
 	}
 	
-
-	@Given("Admin creates POST Request with inactive program id")
-	public void admin_creates_post_request_with_inactive_program_id() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@When("Admin sends HTTPS batch Request with endpoint and invalid data")
+	public void admin_sends_https_batch_request_with_endpoint_and_invalid_data() {
+		BatchResponse= given().header("Content-Type","application/json").
+				header("Authorization","Bearer " + prop.getProperty("bearer"))
+				.body(batchrequestBody).when().post(baseURL+"/batches");}
+	@Given("Admin creates POST batch Request with inactive program id")
+	public void admin_creates_post_request_with_inactive_program_id() throws InvalidFormatException, IOException {
+		List<Map<String, String>> hm=read.getData(path,"Batch");
+		batchrequestBody = batchreqbody.createBatchRequestwithinactiveprogramid(hm,programId);  
 	}
+	
 }
