@@ -1,15 +1,17 @@
-package utilities;
+package utilities_team08;
 
 import static io.restassured.RestAssured.*;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import RequestBodyRaw.LoginRequestBody;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import request_body_raw_team08.LoginRequestBody;
 
 public class ReusableMethods extends ReusableVariables {
 	
@@ -30,6 +32,4 @@ public class ReusableMethods extends ReusableVariables {
 	    userPhoneNumber=num1+""+num2+""+num3;
 		return userPhoneNumber;
  }
-
-
 }

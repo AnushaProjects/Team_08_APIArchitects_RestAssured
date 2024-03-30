@@ -1,10 +1,10 @@
-package TestRunner;
+package test_runner_team08;
 
 
 
 import io.cucumber.testng.CucumberOptions;
-import utilities.ConfigReader;
-import utilities.ReusableVariables;
+import utilities_team08.ConfigReader;
+import utilities_team08.ReusableVariables;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -18,14 +18,14 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 
 @CucumberOptions(features ={"src/test/resources/features/UserModule1.feature"}, 
-				glue = {"StepDefinition"}, 
+				glue = {"step_definition_team08"}, 
 				monochrome = true)
 				//tags = (""))
 
 public class TestRunner extends AbstractTestNGCucumberTests{
 	@BeforeTest
 	public void clearAllData() throws IOException {
-		ReusableVariables reuseVariables=new ReusableVariables();
+		
 		Properties prop;
 		prop = new Properties();
 		 FileOutputStream out = new FileOutputStream(ConfigReader.configpath);

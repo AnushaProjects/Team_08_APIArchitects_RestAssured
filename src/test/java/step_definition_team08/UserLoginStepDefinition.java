@@ -1,4 +1,4 @@
-package StepDefinition;
+package step_definition_team08;
 
 
 import static io.restassured.RestAssured.given;
@@ -11,19 +11,19 @@ import java.util.Properties;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 
-import RequestBodyRaw.LoginRequestBody;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import utilities.CommonValidation;
-import utilities.ConfigReader;
-import utilities.ExcelREaderData;
-import utilities.ReusableMethods;
-import utilities.ReusableVariables;
+import request_body_raw_team08.LoginRequestBody;
+import utilities_team08.ConfigReader;
+import utilities_team08.ExcelREaderData;
+import utilities_team08.LoggerLoad;
+import utilities_team08.ReusableMethods;
+import utilities_team08.ReusableVariables;
 
-public class userLoginStepDefinition extends ReusableVariables{
+public class UserLoginStepDefinition extends ReusableVariables{
 
 	ReusableMethods reuseMethods=new ReusableMethods();
 	ReusableVariables reuseVariables=new ReusableVariables();
@@ -48,38 +48,42 @@ public class userLoginStepDefinition extends ReusableVariables{
 	public void admin_admin_calls_post_https_method_with(String endpoint) {
 		//System.out.println("Inside Response");
 	    if(endpoint.equalsIgnoreCase("valid endpoint")) {
+	    	LoggerLoad.info("Passing Valid End Point - "+baseURL+"/login");
 	    	loginResponse= given().header("Content-Type","application/json").body(reqBody).when().post(baseURL+"/login");
 	    }
 	    
 	    if(endpoint.equalsIgnoreCase("Invalid endpoint")){
-	    	loginResponse= given().header("Content-Type","application/json").body(reqBody).when().post(baseURL+"/log");
+	    	LoggerLoad.info("Passing InValid End Point - "+baseURL+"/log");
+	    	loginResponse= noauth_req_post.body(reqBody).when().post(invalid_endpoint);
 	    }
 	}
 	
 
 	@Then("Admin Admin receives {int} created with auto generated token")
 	public void admin_admin_receives_created_with_auto_generated_token(Integer successcode) {
-		System.out.println(loginResponse.statusCode());
+		LoggerLoad.info("Capturing Login Status code - "+loginResponse.statusCode());
 	    Assert.assertEquals(loginResponse.statusCode(), successcode);
+	    LoggerLoad.info("Succesfully logged in LMS Application ");
 		JsonPath gettoken = loginResponse.jsonPath();
 		bearerToken = gettoken.get("token");
+		LoggerLoad.info("Retrieving the bearer token from ResponseBody - " +bearerToken);
 		configreader.writingdata("bearer",bearerToken);
-	    System.out.println(prop.getProperty("bearer"));
-        System.out.println("BearerToken - "+bearerToken);
-       
-	    
+		LoggerLoad.info("Writing the bearer token to config properties - ");
+		LoggerLoad.info("BearerToken - "+bearerToken);      
 	}
 
 	@Then("Admin Admin receives Admin receives {int} unauthorized")
 	public void admin_admin_receives_admin_receives_unauthorized(Integer errorcode) {
 		System.out.println(loginResponse.statusCode());
         Assert.assertEquals(loginResponse.statusCode(), errorcode);
+        LoggerLoad.info("UnAuthorized - "+loginResponse.statusCode());
 	}
 	
 	@Then("Admin Admin receives Admin receives {int} BadRequest")
 	public void admin_admin_receives_admin_receives_bad_request(Integer badrequest) {
 		System.out.println(loginResponse.statusCode());
         Assert.assertEquals(loginResponse.statusCode(),badrequest );
+        LoggerLoad.info("BADRequest - "+loginResponse.statusCode());
 	}
 
 }

@@ -1,4 +1,4 @@
-package RequestBodyRaw;
+package request_body_raw_team08;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,10 +6,11 @@ import java.util.Map;
 
 import org.json.JSONObject;
 
-import Payload.UserReqBdyUserLoginPayload;
-import Payload.UserPayload;
-import Payload.UserReqBdyUserRoleMapsPayload;
-import utilities.ReusableMethods;
+import payload_team08.UserPayload;
+import payload_team08.UserReqBdyUserLoginPayload;
+import payload_team08.UserReqBdyUserRoleMapsPayload;
+import utilities_team08.LoggerLoad;
+import utilities_team08.ReusableMethods;
 
 public class UserRequestBody {
 
@@ -24,9 +25,9 @@ public class UserRequestBody {
 				
 				List<String> roleIds = new ArrayList<String>(); 
 				roleIds.add(hm.get(0).get("RoleIds")); 
-		        
 				System.out.println(hm.get(0).get("UserComments"));
-				//System.out.println(hm.get(0).get("Password"));
+				LoggerLoad.info("Setting All the Required Fields to the Payload:");
+				
 					up.setUserComments(hm.get(0).get("UserComments"));
 					up.setUserEduPg(hm.get(0).get("UserEduPg"));
 					up.setUserEduUg(hm.get(0).get("UserEduUg"));
@@ -57,6 +58,7 @@ public class UserRequestBody {
 					
 				
 					JSONObject userBody=new JSONObject(up);
+					LoggerLoad.info("Converted UserRequestBody for Creating USErId role to JSON Format " +userBody);
 					return userBody.toString();
 			    }
 			

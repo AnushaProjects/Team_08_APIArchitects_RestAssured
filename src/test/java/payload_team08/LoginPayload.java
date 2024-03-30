@@ -1,4 +1,4 @@
-package Payload;
+package payload_team08;
 
 public class LoginPayload {
 

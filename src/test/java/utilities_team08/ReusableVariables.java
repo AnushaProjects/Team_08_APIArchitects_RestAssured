@@ -1,4 +1,4 @@
-package utilities;
+package utilities_team08;
 
 import static io.restassured.RestAssured.given;
 
@@ -15,8 +15,14 @@ public class ReusableVariables {
 	public String baseURL="https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms";
 	
 	public String path="/Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/TestData/Team_08_API Architects_LMSTestData.xlsx";
-	public RequestSpecification reqspec=given()
+	
+	public RequestSpecification auth_req_post=given()
 			.header("Content-Type","application/json")
 			.header("Authorization","Bearer " + prop.getProperty("bearer"));
 	
+	public RequestSpecification noauth_req_post=given()
+			.header("Content-Type","application/json");
+	
+	public String invalid_endpoint="https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms/log";
+	public String invalid_Id="Uabc";
 }
