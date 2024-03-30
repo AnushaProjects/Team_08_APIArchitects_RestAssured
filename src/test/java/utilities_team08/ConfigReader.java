@@ -10,7 +10,8 @@ import java.util.Properties;
 
 public class ConfigReader{
 	Properties prop;
-	public static String configpath="/Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/config.properties";
+	public static String configpath="src/test/resources/config.properties";
+		
 	public Properties readingdata() {
 		prop = new Properties();
 
@@ -46,8 +47,7 @@ try {
 
     props.setProperty(configKey, configValue);
    
-
- props.store(new FileOutputStream(configpath), null);
+    props.store(new FileOutputStream(configpath), null);
 
 
 
