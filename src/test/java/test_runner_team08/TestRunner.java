@@ -10,6 +10,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
+import utilities_team08.LoggerLoad;
 
 
 import org.testng.annotations.BeforeTest;
@@ -31,13 +32,12 @@ public class TestRunner extends AbstractTestNGCucumberTests{
 		 FileOutputStream out = new FileOutputStream(ConfigReader.configpath);
 		FileInputStream ip = new FileInputStream(ConfigReader.configpath);
 		prop.load(ip);
-		System.out.println("before clearing: "+prop);
-		System.out.println("Clearing out the data");
+		LoggerLoad.info("Before clearing the property file : "+prop);
 		prop.clear();
-		System.out.println("AfterClearing:"+  prop);
+		LoggerLoad.info("After clearing the property file : "+  prop);
 		prop.load(ip);
-		System.out.println("AfterClearing:"+  prop);
 		prop.store(out, null);
+		LoggerLoad.info("Saving the cleaned Property file : "+  prop);
 		
 		
 	}

@@ -16,8 +16,9 @@ import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import request_body_raw_team08.UserRequestBody;
+import utilities_team08.CommonValidation;
 import utilities_team08.ConfigReader;
-import utilities_team08.ExcelREaderData;
+import utilities_team08.ExcelReaderData;
 import utilities_team08.ReusableMethods;
 import utilities_team08.ReusableVariables;
 
@@ -25,9 +26,10 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	ReusableMethods reuseMethods=new ReusableMethods();
 	ReusableVariables reuseVariables=new ReusableVariables();
 	UserRequestBody userReqbody=new UserRequestBody();
-	ExcelREaderData read = new ExcelREaderData();
+	ExcelReaderData read = new ExcelReaderData();
 	ConfigReader configreader=new ConfigReader();
 	Properties prop =configreader.readingdata();
+	CommonValidation cv=new CommonValidation();
 	String userreqBodyAll;
 	Response userResponse;
 	Response resBody;
@@ -62,13 +64,18 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	
 	@Then("Admin receives {int} Created Status with response body.")
 	public void admin_receives_created_status_with_response_body(Integer created) {
-		System.out.println(userResponse.statusCode());
-        Assert.assertEquals(userResponse.statusCode(), created);
+		
+        cv.statusValidations(userResponse,created);
+        cv.headervalidations(userResponse);
+        cv.schemavalidation(userResponse,"/User_json/post_user_json" );
+        
         LoggerLoad.info("UserId Created - "+userResponse.statusCode());
 		JsonPath userId = userResponse.jsonPath();
 		userIds = userId.get("userId");
 		System.out.println("UserId created with MandatoryField - " +userIds);
 		configreader.writingdata("user_id_with_madatory_field",userIds);
+		
+		
 	}
 	
 	

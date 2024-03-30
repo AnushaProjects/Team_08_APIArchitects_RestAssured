@@ -8,7 +8,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class ReusableVariables {
 	
-	ExcelREaderData read = new ExcelREaderData();
+	ExcelReaderData read = new ExcelReaderData();
 	ConfigReader configreader=new ConfigReader();
 	Properties prop =configreader.readingdata();
 	
