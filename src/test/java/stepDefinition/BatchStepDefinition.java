@@ -225,5 +225,15 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 	    bv.schemavalidationforupdate(BatchResponse);
 	    bv.statusValidations(BatchResponse,statuscode );
 	}
+	@Given("Admin creates PUT batch Request with invalid BatchId and valid Data")
+	public void admin_creates_put_batch_request_with_invalid_batch_id_and_valid_data() {
+	    
+	}
+
+	@Then("Admin receives {int} Not Found Status with message and boolean success details")
+	public void admin_receives_not_found_status_with_message_and_boolean_success_details(Integer int1) {
+	   
+	}
+
 	
 }

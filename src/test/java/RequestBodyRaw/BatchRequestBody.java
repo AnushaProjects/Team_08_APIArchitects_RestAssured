@@ -92,13 +92,33 @@ public class BatchRequestBody extends ReusableMethods{
 	}
 	public BatchPayload UpdateBatchputRequest(List<Map<String, String>> hm, String programId,String batchId,String programName ) {
 		  String BatchName="SDET"+getRandomNumber();
-		System.out.println(hm.get(0).get("BatchDescription"));
-		System.out.println(hm.get(0).get("BatchNoOfClasses"));
-		System.out.println(hm.get(0).get("BatchStatus"));
-		System.out.println(BatchName);
-		System.out.println(programName);
-		System.out.println(batchId);
-		System.out.println(programId);
+//		System.out.println(hm.get(0).get("BatchDescription"));
+//		System.out.println(hm.get(0).get("BatchNoOfClasses"));
+//		System.out.println(hm.get(0).get("BatchStatus"));
+//		System.out.println(BatchName);
+//		System.out.println(programName);
+//		System.out.println(batchId);
+//		System.out.println(programId);
+
+
+		bp.setBatchDescription(hm.get(0).get("BatchDescription"));
+		bp.setBatchId(batchId);
+		bp.setBatchName(BatchName);
+		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
+		bp.setBatchStatus(hm.get(0).get("updateBatchStatus"));
+		bp.setProgramId(programId);
+		bp.setProgramName(programName);
+		return bp;
+	}
+	public BatchPayload UpdateBatchputRequest(List<Map<String, String>> hm, String programId,String batchId,String programName ) {
+		  String BatchName="SDET"+getRandomNumber();
+//		System.out.println(hm.get(0).get("BatchDescription"));
+//		System.out.println(hm.get(0).get("BatchNoOfClasses"));
+//		System.out.println(hm.get(0).get("BatchStatus"));
+//		System.out.println(BatchName);
+//		System.out.println(programName);
+//		System.out.println(batchId);
+//		System.out.println(programId);
 
 
 		bp.setBatchDescription(hm.get(0).get("BatchDescription"));

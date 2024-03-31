@@ -50,7 +50,7 @@ Scenario: Check if admin able to create a Batch with valid endpoint and request 
  When Admin sends HTTPS batch Request with endpoint and invalid data
  Then Admin receives 400 Bad Request Status with message and boolean success details
  
-  #
+  
  Scenario: Check if admin able to update a Batch with valid batchID and mandatory fields in request body
  Given Admin creates PUT batch Request with valid BatchId and Data
  When Admin sends HTTPS batch Request with update endpoint
