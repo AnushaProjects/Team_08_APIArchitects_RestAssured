@@ -46,30 +46,34 @@ public class BatchValidation extends ReusableVariables {
 		public void schemavalidation(Response response) {
 			response.then().assertThat()
 		      .body(JsonSchemaValidator.
-			 matchesJsonSchema(new File(".\\src\\test\\java\\Schema validations\\BatchSchema.json")));
+			 matchesJsonSchema(new File(".\\src\\test\\java\\schemaValidations\\BatchPostSchema.json")));
+			}
+		public void schemavalidationforupdate(Response response) {
+			response.then().assertThat()
+		      .body(JsonSchemaValidator.
+			 matchesJsonSchema(new File(".\\src\\test\\java\\schemaValidations\\BatchPutSchema.json")));
 			}
 		
 		
-	public void datavalidation(Response response) throws IOException, InvalidFormatException {
-		List<Map<String, String>> hm=read.getData(path,"Batch");
-			//response.then().assertThat().body("batchDescription", Matchers.equalTo((hm.get(0).get("BatchDescription"))));
-		System.out.println(batchpayload.getBatchDescription());
-		Assert.assertEquals(response.path("batchDescription"), (hm.get(0).get("BatchDescription")));
-		Assert.assertEquals(response.path("batchStatus"), (hm.get(0).get("BatchStatus")));
-		Assert.assertEquals(response.path("batchNoOfClasses"), Integer.parseInt((hm.get(0).get("BatchNoOfClasses"))));
-			//response.then().assertThat().body("batchStatus", Matchers.equalTo((hm.get(0).get("BatchStatus"))));
-			//response.then().assertThat().body("batchNoOfClasses", Matchers.equalTo((hm.get(0).get("BatchNoOfClasses"))));
+	public void datavalidation(Response response, BatchPayload batchrequestBody) throws IOException, InvalidFormatException {
+		
+	Assert.assertEquals(batchrequestBody.getBatchDescription(),response.jsonPath().get("batchDescription"));
+	Assert.assertEquals(batchrequestBody.getBatchName(),response.jsonPath().get("batchName"));
+	Assert.assertEquals(batchrequestBody.getBatchNoOfClasses(),String.valueOf(response.jsonPath().get("batchNoOfClasses")));
+	Assert.assertEquals(batchrequestBody.getProgramId(),String.valueOf(response.jsonPath().get("programId")));
+	Assert.assertEquals(batchrequestBody.getBatchStatus(),response.jsonPath().get("batchStatus"));
 
+}
+	public void datavalidation_for_update(Response response, BatchPayload batchrequestBody) throws IOException, InvalidFormatException {
+		
+		Assert.assertEquals(batchrequestBody.getBatchDescription(),response.jsonPath().get("batchDescription"));
+		Assert.assertEquals(batchrequestBody.getBatchName(),response.jsonPath().get("batchName"));
+		Assert.assertEquals(batchrequestBody.getBatchNoOfClasses(),String.valueOf(response.jsonPath().get("batchNoOfClasses")));
+		Assert.assertEquals(batchrequestBody.getProgramId(),String.valueOf(response.jsonPath().get("programId")));
+		Assert.assertEquals(batchrequestBody.getBatchStatus(),response.jsonPath().get("batchStatus"));
+		Assert.assertEquals(batchrequestBody.getBatchId(),String.valueOf(response.jsonPath().get("batchId")));
+		Assert.assertEquals(batchrequestBody.getProgramName(),response.jsonPath().get("programName"));
 
-	                         
-		}
-	public void datavalidationformissingadditionalfields(Response response) throws InvalidFormatException, IOException {
-		List<Map<String, String>> hm=read.getData(path,"Batch");
-
-		Assert.assertEquals(response.path("batchDescription"), (hm.get(0).get("BatchDescriptionmissingadditionalfield")));
-		Assert.assertEquals(response.path("batchStatus"), (hm.get(0).get("BatchStatusmissingadditonalfield")));
-		Assert.assertEquals(response.path("batchNoOfClasses"), Integer.parseInt((hm.get(0).get("BatchNoOfClassesmissingadditonalfield"))));	
-	
 	}
 
 	public void statusValidations(Response response,int statuscode) {

@@ -50,29 +50,25 @@ Scenario: Check if admin able to create a Batch with valid endpoint and request 
  When Admin sends HTTPS batch Request with endpoint and invalid data
  Then Admin receives 400 Bad Request Status with message and boolean success details
  
- #Scenario: Check if admin able to update a Batch with valid batchID and mandatory fields in request body without authorization
- #Given Admin creates PUT batch Request with valid BatchId and Data
- #When Admin sends HTTPS batch Request with endpoint
- #Then Admin receives 401 unauthorized
- #
- #Scenario: Check if admin able to update a Batch with valid batchID and mandatory fields in request body
- #Given Admin creates PUT batch Request with valid BatchId and Data
- #When Admin sends HTTPS batch Request with endpoint
- #Then Admin receives 200 OK Status with updated value in response body.                                         
- #
- #Scenario: Check if admin able to update a Batch with invalid batchID and mandatory fields in request body
- #Given Admin creates PUT batch Request with invalid BatchId and valid Data
- #When Admin sends HTTPS batch Request with endpoint
- #Then Admin receives 404 Not Found Status with message and boolean success details
- #
+  #
+ Scenario: Check if admin able to update a Batch with valid batchID and mandatory fields in request body
+ Given Admin creates PUT batch Request with valid BatchId and Data
+ When Admin sends HTTPS batch Request with update endpoint
+ Then Admin receives 200 OK Status with updated value in response body.                                         
+ 
+ Scenario: Check if admin able to update a Batch with invalid batchID and mandatory fields in request body
+ Given Admin creates PUT batch Request with invalid BatchId and valid Data
+ When Admin sends HTTPS batch Request with update endpoint
+ Then Admin receives 404 Not Found Status with message and boolean success details
+ 
  #Scenario: Check if admin able to update a Batch with valid batchID and missing mandatory fields request body
  #Given Admin creates PUT batch Request with valid batch Id and missing mandatory fields
  #When Admin sends HTTPS batch Request with endpoint
  #Then Admin receives 400 Bad Request Status with message and boolean success details
  #
  #Scenario: Check if admin able to update a batch with invalid data
- #Given Admin creates PUT batch Request with invalida data
- #When Admin creates PUT batch Request with invalida data
+ #Given Admin creates PUT batch Request with invalid data
+ #When Admin creates PUT batch Request with invalid data
  #Then Admin receives 400 Bad Request Status with message and boolean success details
  #
  #Scenario: Check if admin able to update a Batch with invalid enpoint

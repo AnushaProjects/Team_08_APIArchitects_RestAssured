@@ -9,6 +9,8 @@ import java.util.Map;
 import java.util.Properties;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.json.JSONObject;
+import org.junit.Assert;
 import org.testng.ITestContext;
 
 import RequestBodyRaw.BatchRequestBody;
@@ -18,6 +20,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
+import payLoad.BatchPayload;
 import payLoad.ProgramPayload;
 import utilities.ConfigReader;
 import utilities.ExcelReader1;
@@ -30,12 +33,14 @@ public class BatchStepDefinition extends ReusableVariables{
 	ReusableMethods reuseMethods=new ReusableMethods();
 	ReusableVariables reuseVariables=new ReusableVariables();
 	ProgramRequestBody programreqBody=new ProgramRequestBody ();
+	//BatchPayload batchpay;
 	BatchRequestBody batchreqbody=new BatchRequestBody();
 	ExcelReader1 read = new ExcelReader1();
 	ProgramPayload progpay=new ProgramPayload();
 	BatchValidation bv=new BatchValidation();
-	String programrequestBody;
-	String batchrequestBody;
+	ProgramPayload programrequestBody;
+	BatchPayload batchrequestBody;
+	BatchPayload batchUpdateRequestBody;
 	Response ProgramResponse;
 	Response BatchResponse;
 	ConfigReader configreader=new ConfigReader();
@@ -43,6 +48,8 @@ public class BatchStepDefinition extends ReusableVariables{
     private static String programId;
     private static String batchId;
     static String batchName;
+    private static String programName;
+    JSONObject batchBody;
 	/*
 	 * public String getProgramId() { return programId; }
 	 * 
@@ -67,9 +74,15 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 
    ProgramResponse.prettyPrint();
    System.out.println("Printing the program id from response: "+ProgramResponse.path("programId"));
+   System.out.println(programrequestBody.getProgramName());
+
    Integer programIdFromResp = ProgramResponse.path("programId");
    programId = programIdFromResp.toString();
+   
+   programName=ProgramResponse.path("programName");
    System.out.println("Printing the program id after retrieving: "+programId);
+   System.out.println("Printing the program name after retrieving: "+programName);
+
 	}
 	@Then("Admin receives {int} Created Status with response body in program.")
 	public void admin_receives_created_status_with_response_body_in_program(Integer statuscode) {
@@ -80,7 +93,7 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 	public void admin_creates_post_request_with_valid_data_in_request_body() throws InvalidFormatException, IOException {
 		List<Map<String, String>> hm=read.getData(path,"Batch");
 		System.out.println("Program id in batch request: "+programId);
-		batchrequestBody = batchreqbody.createBatchRequest(hm,programId);
+		 batchrequestBody =batchreqbody.createBatchRequest(hm,programId);
 	}
 
 	@When("Admin sends HTTPS batch Request with endpoint without authorization")
@@ -107,6 +120,7 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 		   batchId = batchIdFromResp.toString();
 		   batchName=BatchResponse.path("batchName");
 		   System.out.println("Printing the batch id after retrieving: "+batchId);
+		   
 	BatchResponse.prettyPrint();
 	}
 	
@@ -114,9 +128,10 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 	@Then("Admin receives {int} Created Status with response body.")
 	public void admin_receives_created_status_with_response_body(Integer statuscode ) throws InvalidFormatException, IOException {
     	bv.statusValidations(BatchResponse,statuscode );
-    	bv.datavalidation(BatchResponse);
+    	bv.datavalidation(BatchResponse,batchrequestBody);
     	bv.schemavalidation(BatchResponse);
     	bv.headervalidations(BatchResponse);
+    	
     	}
  
 	
@@ -173,8 +188,8 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 			batchrequestBody = batchreqbody.createBatchRequestwithmissingadditionalfields(hm,programId);
 	}
 	@Then("Admin receives {int} Created Status with response body for missing additional fields.")
-	public void admin_receives_created_status_with_response_body_for_missing_additional_fields(Integer int1) throws InvalidFormatException, IOException {
-	    bv.datavalidationformissingadditionalfields(BatchResponse);
+	public void admin_receives_created_status_with_response_body_for_missing_additional_fields(Integer statuscode) throws InvalidFormatException, IOException {
+	    bv.datavalidation(BatchResponse, batchrequestBody);
 	}
 
 	@When("Admin sends HTTPS batch Request with endpoint and invalid data")
@@ -186,6 +201,29 @@ ProgramResponse= given().header("Content-Type","application/json").header("Autho
 	public void admin_creates_post_request_with_inactive_program_id() throws InvalidFormatException, IOException {
 		List<Map<String, String>> hm=read.getData(path,"Batch");
 		batchrequestBody = batchreqbody.createBatchRequestwithinactiveprogramid(hm,programId);  
+	}
+	
+	@Given("Admin creates PUT batch Request with valid BatchId and Data")
+	public void admin_creates_put_batch_request_with_valid_batch_id_and_data() throws InvalidFormatException, IOException {
+		List<Map<String, String>> hm=read.getData(path,"Batch");
+		System.out.println("Program Name before calling update: "+programName);
+		batchUpdateRequestBody = batchreqbody.UpdateBatchputRequest(hm,programId,batchId,programName);   
+	}
+	@When("Admin sends HTTPS batch Request with update endpoint")
+	public void admin_sends_https_batch_request_with_update_endpoint() {
+		System.out.println("Batch requrest before response: "+batchUpdateRequestBody);
+		BatchResponse= given().header("Content-Type","application/json").
+				header("Authorization","Bearer " + prop.getProperty("bearer"))
+				.body(batchUpdateRequestBody).pathParam("batchId",batchId).when().put(baseURL+"/batches/{batchId}");
+		BatchResponse.prettyPrint();
+	}
+
+	@Then("Admin receives {int} OK Status with updated value in response body.")
+	public void admin_receives_ok_status_with_updated_value_in_response_body(Integer statuscode) throws InvalidFormatException, IOException {
+	    bv.datavalidation_for_update(BatchResponse, batchUpdateRequestBody);
+	    bv.headervalidations(BatchResponse);
+	    bv.schemavalidationforupdate(BatchResponse);
+	    bv.statusValidations(BatchResponse,statuscode );
 	}
 	
 }

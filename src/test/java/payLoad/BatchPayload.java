@@ -6,6 +6,16 @@ private String batchName;
 private String batchNoOfClasses;
 private String batchStatus;
 private String programId;
+private String programName;
+private String batchId;
+public String getProgramName() {
+	return programName;
+}
+
+public void setProgramName(String programName) {
+	this.programName = programName;
+}
+
 public String getBatchDescription() {
 	return batchDescription;
 }
@@ -44,6 +54,14 @@ public String getProgramId() {
 
 public void setProgramId(String programId) {
 	this.programId = programId;
+}
+
+public String getBatchId() {
+	return batchId;
+}
+
+public void setBatchId(String batchId) {
+	this.batchId = batchId;
 }
 
 }

@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "batchDescription": {
+      "type": "string"
+    },
+    "batchId": {
+      "type": "integer"
+    },
+    "batchName": {
+      "type": "string"
+    },
+    "batchNoOfClasses": {
+      "type": "integer"
+    },
+    "batchStatus": {
+      "type": "string"
+    },
+    "programId": {
+      "type": "integer"
+    },
+    "programName": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "batchDescription",
+    "batchId",
+    "batchName",
+    "batchNoOfClasses",
+    "batchStatus",
+    "programId",
+    "programName"
+  ]
+}
