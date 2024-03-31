@@ -27,6 +27,7 @@ public class ReusableVariables {
 	
 	public String invalid_endpoint="https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms/log";
 	public String invalid_Id="Uabc";
+	public String invalid_integer_Id="2";
 	
 
 }

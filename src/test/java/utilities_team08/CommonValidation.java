@@ -58,14 +58,15 @@ public class CommonValidation {
 		
 
 	//Statuscode validation
-	public void statusValidations(Response response,int statuscode) {
+	public void statusValidations(Response response,int statuscode,String message) {
 		
 		
 //		
 //		try {
 	        LoggerLoad.info("StatusCode: " + response.statusCode());
 	        int codeofstatus = response.getStatusCode();
-	        Assert.assertEquals(statuscode,codeofstatus);
+	      
+	        Assert.assertEquals(message, statuscode, codeofstatus);
 	        LoggerLoad.info("Validation message: " + response.getBody().asString());
 
 	        if (response.statusCode() == 200) {
@@ -78,7 +79,7 @@ public class CommonValidation {
 	            LoggerLoad.info("Success - Created");
 	            LoggerLoad.info("Status Validation Passed");
 	        } else if (response.statusCode() == 401) {
-	            LoggerLoad.info("401 - Unauthorized: Give the authorization");
+	            LoggerLoad.info("401 - Unauthorized/InvalidEndpoint");
 	            LoggerLoad.info("Status Validation Passed");
 	        } else {
 	            LoggerLoad.info("Unexpected Status Code: " + response.statusCode());

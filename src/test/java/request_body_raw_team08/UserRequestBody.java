@@ -66,11 +66,26 @@ public class UserRequestBody extends ReusableVariables {
 
 					return up;
 			    }
+			public UserPayload returnUserPayload(String sheet) throws InvalidFormatException, IOException  {
+				
+				List<Map<String, String>> hm=read.getData(path,sheet);
+				return createUserRequest(hm);
+				
+			}
+			public String convertJsonToString(UserPayload up) {
+				JSONObject userBody=new JSONObject(up);
+				return userBody.toString();
+			}
 			
-			public void negativeUserScenario(String negativedata ,String InvalidValue ) throws InvalidFormatException, IOException {
+			
+			public String negativeUserScenario(String negativedata ,String InvalidValue ) throws InvalidFormatException, IOException {
+				returnUserPayload("UserModuleMandatory");
+//				List<Map<String, String>> hm=read.getData(path,"UserModuleMandatory");
+//				up = createUserRequest(hm);
 				
 					userLogin=up.getUserLogin();
 					LoggerLoad.info("Checking the UserId creation with input value = " );
+					System.out.println("inside negative");
 					switch(negativedata) {
 					case "Firstname":
 						up.setUserFirstName(InvalidValue);
@@ -89,8 +104,8 @@ public class UserRequestBody extends ReusableVariables {
 						LoggerLoad.info("VisaStatus = " +InvalidValue );
 						break;
 					case "PhoneNumber":
-						up.setUserPhoneNumber(InvalidValue);
-						LoggerLoad.info("PhoneNumber = " +InvalidValue );
+						up.setUserPhoneNumber("12345675");
+						LoggerLoad.info("PhoneNumber =  12345678" );
 						break;
 					case "LoginEmail":
 						userLogin=up.getUserLogin();
@@ -105,15 +120,12 @@ public class UserRequestBody extends ReusableVariables {
 						up.setUserEduPg(InvalidValue);
 						LoggerLoad.info("EduPg " +InvalidValue );
 						break;
-//					case "ExistingEmailId":
-//						userLogin.setUserLoginEmail(prop.getProperty("existemail"));
-//						LoggerLoad.info("ExistingEmailId " +prop.getProperty("existemail") );
-//						break;
-//					case "ExistingPhoneNumber":
-//						up.setUserPhoneNumber(prop.getProperty("existphone"));
-//						LoggerLoad.info("ExistingPhoneNumber " +prop.getProperty("existphone") );
-//						break;
+						
 					}
+					return convertJsonToString(up);
+//					JSONObject userBody=new JSONObject(up);
+//					return userBody;
+					
 			 }
 			
 }
