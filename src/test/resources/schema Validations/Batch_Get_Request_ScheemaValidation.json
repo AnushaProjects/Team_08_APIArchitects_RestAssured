@@ -1,0 +1,92 @@
+{
+	"definitions": {},
+	"$schema": "http://json-schema.org/draft-07/schema#", 
+	"$id": "https://example.com/object1711851278.json", 
+	"title": "Root", 
+	"type": "array",
+	"default": [],
+	"items":{
+		"$id": "#root/items", 
+		"title": "Items", 
+		"type": "object",
+		"required": [
+			"batchDescription",
+			"batchId",
+			"batchName",
+			"batchNoOfClasses",
+			"batchStatus",
+			"programId",
+			"programName"
+		],
+		"properties": {
+			"batchDescription": {
+				"$id": "#root/items/batchDescription", 
+				"title": "Batchdescription", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"string"
+				],
+				"pattern": "^.*$"
+			},
+			"batchId": {
+				"$id": "#root/items/batchId", 
+				"title": "Batchid", 
+				"type": "integer",
+				"examples": [
+					0
+				],
+				"default": 0
+			},
+			"batchName": {
+				"$id": "#root/items/batchName", 
+				"title": "Batchname", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"string"
+				],
+				"pattern": "^.*$"
+			},
+			"batchNoOfClasses": {
+				"$id": "#root/items/batchNoOfClasses", 
+				"title": "Batchnoofclasses", 
+				"type": "integer",
+				"examples": [
+					0
+				],
+				"default": 0
+			},
+			"batchStatus": {
+				"$id": "#root/items/batchStatus", 
+				"title": "Batchstatus", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"string"
+				],
+				"pattern": "^.*$"
+			},
+			"programId": {
+				"$id": "#root/items/programId", 
+				"title": "Programid", 
+				"type": "integer",
+				"examples": [
+					0
+				],
+				"default": 0
+			},
+			"programName": {
+				"$id": "#root/items/programName", 
+				"title": "Programname", 
+				"type": "string",
+				"default": "",
+				"examples": [
+					"string"
+				],
+				"pattern": "^.*$"
+			}
+		}
+	}
+
+}
