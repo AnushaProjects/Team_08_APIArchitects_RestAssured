@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="15" passed="15" failed="0" skipped="0">
+<testng-results ignored="0" total="32" passed="28" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-30T11:29:24 EDT" name="Default suite" finished-at="2024-03-30T11:29:30 EDT" duration-ms="6664">
+  <suite started-at="2024-03-31T03:31:50 EDT" name="Default suite" finished-at="2024-03-31T03:32:01 EDT" duration-ms="10913">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2024-03-30T11:29:24 EDT" name="Default test" finished-at="2024-03-30T11:29:30 EDT" duration-ms="6664">
+    <test started-at="2024-03-31T03:31:50 EDT" name="Default test" finished-at="2024-03-31T03:32:01 EDT" duration-ms="10913">
       <class name="test_runner_team08.TestRunner">
-        <test-method is-config="true" signature="clearAllData()[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:24 EDT" name="clearAllData" finished-at="2024-03-30T11:29:24 EDT" duration-ms="396" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- clearAllData -->
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:24 EDT" name="setUpClass" finished-at="2024-03-30T11:29:24 EDT" duration-ms="67" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:50 EDT" name="setUpClass" finished-at="2024-03-31T03:31:50 EDT" duration-ms="332" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@22a63740]]>
+                <![CDATA[org.testng.TestRunner@1cc81ea1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:24 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:26 EDT" duration-ms="1411" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:50 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:51 EDT" duration-ms="1296" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -41,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:26 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:26 EDT" duration-ms="642" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:51 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:52 EDT" duration-ms="762" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -57,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:26 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:27 EDT" duration-ms="589" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:52 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:53 EDT" duration-ms="420" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -73,7 +69,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:27 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:27 EDT" duration-ms="515" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:53 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:53 EDT" duration-ms="501" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -89,7 +85,347 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:27 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:28 EDT" duration-ms="588" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:53 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:53 EDT" duration-ms="143" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and invalid values in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:53 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:53 EDT" duration-ms="183" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and invalid values in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:53 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:54 EDT" duration-ms="145" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and invalid values in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:54 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:54 EDT" duration-ms="153" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and invalid values in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:54 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:54 EDT" duration-ms="138" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and invalid values in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:54 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:54 EDT" duration-ms="167" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and invalid values in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:54 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:55 EDT" duration-ms="482" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and invalid values in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected:<400> but was:<201>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected:<400> but was:<201>
+at org.junit.Assert.fail(Assert.java:93)
+at org.junit.Assert.failNotEquals(Assert.java:647)
+at org.junit.Assert.assertEquals(Assert.java:128)
+at org.junit.Assert.assertEquals(Assert.java:472)
+at org.junit.Assert.assertEquals(Assert.java:456)
+at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:192)
+at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/features/UserModule1.feature:32)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:55 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:55 EDT" duration-ms="389" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and invalid values in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected:<400> but was:<201>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected:<400> but was:<201>
+at org.junit.Assert.fail(Assert.java:93)
+at org.junit.Assert.failNotEquals(Assert.java:647)
+at org.junit.Assert.assertEquals(Assert.java:128)
+at org.junit.Assert.assertEquals(Assert.java:472)
+at org.junit.Assert.assertEquals(Assert.java:456)
+at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:192)
+at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/features/UserModule1.feature:32)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:55 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:55 EDT" duration-ms="148" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and missing fields in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:55 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:55 EDT" duration-ms="293" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and missing fields in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:55 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:56 EDT" duration-ms="140" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and missing fields in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:56 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:56 EDT" duration-ms="134" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and missing fields in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:56 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:56 EDT" duration-ms="132" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and missing fields in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:56 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:56 EDT" duration-ms="143" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and missing fields in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:56 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:56 EDT" duration-ms="385" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and missing fields in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected:<400> but was:<201>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected:<400> but was:<201>
+at org.junit.Assert.fail(Assert.java:93)
+at org.junit.Assert.failNotEquals(Assert.java:647)
+at org.junit.Assert.assertEquals(Assert.java:128)
+at org.junit.Assert.assertEquals(Assert.java:472)
+at org.junit.Assert.assertEquals(Assert.java:456)
+at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:192)
+at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/features/UserModule1.feature:49)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:56 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:57 EDT" duration-ms="472" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin is able to create a Admin with valid endpoint and missing fields in request body"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected:<400> but was:<201>]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected:<400> but was:<201>
+at org.junit.Assert.fail(Assert.java:93)
+at org.junit.Assert.failNotEquals(Assert.java:647)
+at org.junit.Assert.assertEquals(Assert.java:128)
+at org.junit.Assert.assertEquals(Assert.java:472)
+at org.junit.Assert.assertEquals(Assert.java:456)
+at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:192)
+at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/features/UserModule1.feature:49)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:57 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:57 EDT" duration-ms="132" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Check if admin able to create a new Admin with request body without authorization"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Module"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:57 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:58 EDT" duration-ms="875" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -105,7 +441,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:28 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:29 EDT" duration-ms="721" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:58 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:59 EDT" duration-ms="1047" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -121,7 +457,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:29 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:29 EDT" duration-ms="131" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:59 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:59 EDT" duration-ms="123" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -137,7 +473,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:29 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:29 EDT" duration-ms="225" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:59 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:59 EDT" duration-ms="231" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -153,7 +489,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:29 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:29 EDT" duration-ms="118" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:59 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:59 EDT" duration-ms="119" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -169,7 +505,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:29 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:29 EDT" duration-ms="127" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:59 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:31:59 EDT" duration-ms="122" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -185,7 +521,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:29 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:30 EDT" duration-ms="120" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:31:59 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:32:00 EDT" duration-ms="122" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -201,7 +537,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:30 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:30 EDT" duration-ms="121" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:32:00 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:32:00 EDT" duration-ms="120" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -217,7 +553,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:30 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:30 EDT" duration-ms="137" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:32:00 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:32:00 EDT" duration-ms="119" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -233,7 +569,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:30 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:30 EDT" duration-ms="124" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:32:00 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:32:00 EDT" duration-ms="124" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -249,7 +585,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:30 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-30T11:29:30 EDT" duration-ms="602" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:32:00 EDT" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-03-31T03:32:01 EDT" duration-ms="774" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -265,7 +601,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:test_runner_team08.TestRunner@16d04d3d]" started-at="2024-03-30T11:29:30 EDT" name="tearDownClass" finished-at="2024-03-30T11:29:30 EDT" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:test_runner_team08.TestRunner@4ec4f3a0]" started-at="2024-03-31T03:32:01 EDT" name="tearDownClass" finished-at="2024-03-31T03:32:01 EDT" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

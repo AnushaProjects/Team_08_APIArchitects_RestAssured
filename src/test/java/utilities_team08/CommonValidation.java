@@ -27,50 +27,85 @@ public class CommonValidation {
 	//Validating header
 	public void headervalidations(Response response) {
 		
-		LoggerLoad.info("Validing the header");
-		Assert.assertEquals(response.getHeader("Content-Type"), "application/json");
-		Assert.assertEquals(response.getHeader("Server"), "Cowboy");
-		Assert.assertEquals(response.getHeader("transfer-encoding"), "chunked");
-		
-	}
+//		  try {
+		        LoggerLoad.info("Validating the header");
+		        Assert.assertEquals(response.getHeader("Content-Type"), "application/json");
+		        Assert.assertEquals(response.getHeader("Server"), "Cowboy");
+		        Assert.assertEquals(response.getHeader("transfer-encoding"), "chunked");
+		        LoggerLoad.info("Header Validation Passed");
+//		    } catch (AssertionError e) {
+//		        LoggerLoad.info("Header Validation Failed: " + e.getMessage());
+//		        LoggerLoad.info("Actual Content-Type Header: " + response.getHeader("Content-Type"));
+//		        LoggerLoad.info("Actual Server Header: " + response.getHeader("Server"));
+//		        LoggerLoad.info("Actual Transfer-Encoding Header: " + response.getHeader("transfer-encoding"));
+//		    }
+		}
 	
 	//Validating Schema
 	public void schemavalidation(Response response,String filepath) {
-		LoggerLoad.info("Schema VAlidation started");
-		response.then().assertThat()
-	      .body(JsonSchemaValidator.
-		 matchesJsonSchema(new File(schema_path +filepath)));
-		LoggerLoad.info("Schema Validation ended");
-		}
+
+//		try {
+	        LoggerLoad.info("Schema Validation started");
+			response.then().assertThat()
+	          .body(JsonSchemaValidator
+	          .matchesJsonSchema(new File(schema_path + filepath)));
+	        LoggerLoad.info("Schema Validation Passed");
+//	    } catch (AssertionError e) {
+//	        LoggerLoad.info("Schema Validation Failed: " + e.getMessage());
+//	        LoggerLoad.info("Response Body: " + response.getBody().asString());
+//	    }
+	}
 		
 
 	//Statuscode validation
 	public void statusValidations(Response response,int statuscode) {
-		LoggerLoad.info("StatusCode"+response.statusCode());
-		int codeofstatus=response.getStatusCode();
-		Assert.assertEquals(codeofstatus,statuscode);
-		if(response.statusCode()==200) {
-			LoggerLoad.info("Success - OK ");
-		}
-		else if(response.statusCode()==400) {
-			LoggerLoad.info("BAD Request : check the request ");
-		}
-		else if(response.statusCode()==201) {
-			LoggerLoad.info("Success - Created");
-		}
-		else if(response.statusCode()==401) {
-			LoggerLoad.info("401-Unauthorized : Give the authorization");
-		}
+		
+		
+//		
+//		try {
+	        LoggerLoad.info("StatusCode: " + response.statusCode());
+	        int codeofstatus = response.getStatusCode();
+	        Assert.assertEquals(statuscode,codeofstatus);
+	        LoggerLoad.info("Validation message: " + response.getBody().asString());
+
+	        if (response.statusCode() == 200) {
+	            LoggerLoad.info("Success - OK");
+	            LoggerLoad.info("Status Validation Passed");
+	        } else if (response.statusCode() == 400) {
+	            LoggerLoad.info("BAD Request: check the request");
+	            LoggerLoad.info("Status Validation Passed");
+	        } else if (response.statusCode() == 201) {
+	            LoggerLoad.info("Success - Created");
+	            LoggerLoad.info("Status Validation Passed");
+	        } else if (response.statusCode() == 401) {
+	            LoggerLoad.info("401 - Unauthorized: Give the authorization");
+	            LoggerLoad.info("Status Validation Passed");
+	        } else {
+	            LoggerLoad.info("Unexpected Status Code: " + response.statusCode());
+	            LoggerLoad.info("Status Validation Failed");
+	        }
+//	    } catch (AssertionError e) {
+//	        LoggerLoad.info("Assertion failed: "+e.getMessage());
+//	        LoggerLoad.info("Status Validation Failed");
+//	    }
 	}
 	
+	//messageValidation
+	public void messageValidations(Response response,boolean successvalue) {
+
+//		try {
+	        Assert.assertSame(response.jsonPath().get("success"), successvalue);
+	        String responsemessage = response.path("message");
+	        LoggerLoad.info("Response Message :" +responsemessage +" , "+successvalue);
+	        Assert.assertFalse(responsemessage.isEmpty());
+	        LoggerLoad.info("Response Validation Passed");
+//	        
+//	    } catch (AssertionError e) {
+//	        String responsemessage = response.path("message");
+//	        Assert.assertTrue(responsemessage.isEmpty());
+//	        LoggerLoad.info("Response Message :" +responsemessage +" , "+successvalue);
+//	        LoggerLoad.info("Validation failed");
+//	    }
 	
-//public void messageValidations(Response response,boolean successvalue) {
-//	//response.then().assertThat().body("success", Matchers.equalTo(successvalue));
-//	//System.out.println(response.jsonPath().get("success"));
-//	Assert.assertSame(response.jsonPath().get("success"),successvalue);
-//   String responsemessage=(response.path("message"));
-//   responsemessage.isEmpty();
-// Assert.assertFalse(responsemessage.isEmpty());
-//
-//}
+	}
 }

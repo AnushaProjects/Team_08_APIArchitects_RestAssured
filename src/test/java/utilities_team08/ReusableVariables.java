@@ -4,6 +4,7 @@ import static io.restassured.RestAssured.given;
 
 import java.util.Properties;
 
+import io.restassured.path.json.JsonPath;
 import io.restassured.specification.RequestSpecification;
 
 public class ReusableVariables {
@@ -26,4 +27,6 @@ public class ReusableVariables {
 	
 	public String invalid_endpoint="https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms/log";
 	public String invalid_Id="Uabc";
+	
+
 }

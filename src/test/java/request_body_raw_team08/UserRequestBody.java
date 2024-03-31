@@ -1,25 +1,33 @@
 package request_body_raw_team08;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.json.JSONObject;
 
+import io.restassured.path.json.JsonPath;
 import payload_team08.UserPayload;
 import payload_team08.UserReqBdyUserLoginPayload;
 import payload_team08.UserReqBdyUserRoleMapsPayload;
+import utilities_team08.ConfigReader;
+import utilities_team08.ExcelReaderData;
 import utilities_team08.LoggerLoad;
 import utilities_team08.ReusableMethods;
+import utilities_team08.ReusableVariables;
 
-public class UserRequestBody {
+public class UserRequestBody extends ReusableVariables {
 
 	UserPayload up=new UserPayload();
 	UserReqBdyUserRoleMapsPayload roleMaps = new UserReqBdyUserRoleMapsPayload();
 	UserReqBdyUserLoginPayload userLogin = new UserReqBdyUserLoginPayload();
 	ReusableMethods reuse=new ReusableMethods();
-	
-		
+	ExcelReaderData read = new ExcelReaderData();
+	ConfigReader configreader=new ConfigReader();
+	Properties prop =configreader.readingdata();
 
 			public UserPayload createUserRequest(List<Map<String, String>> hm) {
 				
@@ -55,12 +63,57 @@ public class UserRequestBody {
 					
 					up.setUserTimeZone(hm.get(0).get("UserTimeZone"));
 					up.setUserVisaStatus(hm.get(0).get("UserVisaStatus"));
-					
-//				
-//					JSONObject userBody=new JSONObject(up);
-//					LoggerLoad.info("Converted UserRequestBody for Creating USErId role to JSON Format " +userBody);
-//					return userBody.toString();
+
 					return up;
 			    }
+			
+			public void negativeUserScenario(String negativedata ,String InvalidValue ) throws InvalidFormatException, IOException {
+				
+					userLogin=up.getUserLogin();
+					LoggerLoad.info("Checking the UserId creation with input value = " );
+					switch(negativedata) {
+					case "Firstname":
+						up.setUserFirstName(InvalidValue);
+						LoggerLoad.info("Firstname = " +InvalidValue );
+						break;
+					case "TimeZone":
+						up.setUserTimeZone(InvalidValue);
+						LoggerLoad.info("TimeZone = " +InvalidValue );
+						break;
+					case "LinkedIn":
+						up.setUserLinkedinUrl(InvalidValue);
+						LoggerLoad.info("LinkedIn = " +InvalidValue );
+						break;
+					case "VisaStatus":
+						up.setUserVisaStatus(InvalidValue);
+						LoggerLoad.info("VisaStatus = " +InvalidValue );
+						break;
+					case "PhoneNumber":
+						up.setUserPhoneNumber(InvalidValue);
+						LoggerLoad.info("PhoneNumber = " +InvalidValue );
+						break;
+					case "LoginEmail":
+						userLogin=up.getUserLogin();
+						userLogin.setUserLoginEmail(InvalidValue);
+						LoggerLoad.info("LoginEmail = " +InvalidValue );
+						break;
+					case "EduUg":
+						up.setUserEduUg(InvalidValue);
+						LoggerLoad.info("EduUg " +InvalidValue );
+						break;
+					case "EduPg":
+						up.setUserEduPg(InvalidValue);
+						LoggerLoad.info("EduPg " +InvalidValue );
+						break;
+//					case "ExistingEmailId":
+//						userLogin.setUserLoginEmail(prop.getProperty("existemail"));
+//						LoggerLoad.info("ExistingEmailId " +prop.getProperty("existemail") );
+//						break;
+//					case "ExistingPhoneNumber":
+//						up.setUserPhoneNumber(prop.getProperty("existphone"));
+//						LoggerLoad.info("ExistingPhoneNumber " +prop.getProperty("existphone") );
+//						break;
+					}
+			 }
 			
 }

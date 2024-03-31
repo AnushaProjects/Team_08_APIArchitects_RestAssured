@@ -21,6 +21,7 @@ public class ConfigReader{
 			try {
 				prop.load(ip);
 				
+				
 			} catch (IOException e) {
 
 				e.printStackTrace();
@@ -48,6 +49,8 @@ try {
     props.setProperty(configKey, configValue);
    
     props.store(new FileOutputStream(configpath), null);
+    
+    System.out.println("testing********"+props);
 
 
 

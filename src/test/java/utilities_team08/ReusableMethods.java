@@ -11,10 +11,15 @@ import org.testng.annotations.Test;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import payload_team08.UserPayload;
+import payload_team08.UserReqBdyUserLoginPayload;
 import request_body_raw_team08.LoginRequestBody;
 
 public class ReusableMethods extends ReusableVariables {
 	
+	UserPayload userpayload;
+	UserReqBdyUserLoginPayload userLogin;
+	Response userResponse;
  public String autoEmail() {
 	long random_email = System.currentTimeMillis();
 	String email="abc"+random_email+"@gmail.com";
@@ -32,4 +37,6 @@ public class ReusableMethods extends ReusableVariables {
 	    userPhoneNumber=num1+""+num2+""+num3;
 		return userPhoneNumber;
  }
+ 
+ 
 }

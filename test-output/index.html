@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 4 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,36 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">15 methods,   15 passed</span>
+                    <span class="method-stats">32 methods, 4 failed,   28 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +132,12 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin able to retrieve all Admin with valid endpoint&quot;, &quot;User Module&quot;)">runScenario("Check if admin able to retrieve all Admin with valid endpoint", "User Module")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -113,12 +147,27 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if Admin able to generate token with valid credential&quot;, &quot;User Module&quot;)">runScenario("Check if Admin able to generate token with valid credential", "User Module")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to get count of active and inactive Admins&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to get count of active and inactive Admins", "User Module")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to get the Admins for valid program Id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to get the Admins for valid program Id", "User Module")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin able to retrieve all Admin with valid endpoint&quot;, &quot;User Module&quot;)">runScenario("Check if admin able to retrieve all Admin with valid endpoint", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin able to create a new Admin with request body without authorization&quot;, &quot;User Module&quot;)">runScenario("Check if admin able to create a new Admin with request body without authorization", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -128,7 +177,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to get count of active and inactive Admins&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to get count of active and inactive Admins", "User Module")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to retreive Admins by valid role ID&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to retreive Admins by valid role ID", "User Module")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -138,7 +197,7 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin able to retrieve all active Admins&quot;, &quot;User Module&quot;)">runScenario("Check if admin able to retrieve all active Admins", "User Module")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to get count of active and inactive Admins&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to get count of active and inactive Admins", "User Module")</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -148,7 +207,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to get the Admins by program batches for valid batch ID&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to get the Admins by program batches for valid batch ID", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if Admin able to generate token with valid credential&quot;, &quot;User Module&quot;)">runScenario("Check if Admin able to generate token with valid credential", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -158,12 +232,17 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to get the Admins by program batches for valid batch ID&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to get the Admins by program batches for valid batch ID", "User Module")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to get count of active and inactive Admins&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to get count of active and inactive Admins", "User Module")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin able to retrieve all active Admins&quot;, &quot;User Module&quot;)">runScenario("Check if admin able to retrieve all active Admins", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -173,7 +252,22 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to retreive Admins by valid role ID&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to retreive Admins by valid role ID", "User Module")</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to get the Admins for valid program Id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to get the Admins for valid program Id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="test_runner_team08.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -188,6 +282,98 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">test_runner_team08.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and invalid values in request body","User Module")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at org.junit.Assert.assertEquals(Assert.java:456)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:192)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/features/UserModule1.feature:32)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and missing fields in request body","User Module")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at org.junit.Assert.assertEquals(Assert.java:456)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:192)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/features/UserModule1.feature:49)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and invalid values in request body","User Module")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at org.junit.Assert.assertEquals(Assert.java:456)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:192)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/features/UserModule1.feature:32)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and missing fields in request body","User Module")</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at org.junit.Assert.assertEquals(Assert.java:456)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:192)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Anusha_Team8_APIArchitects_RestAssured/src/test/resources/features/UserModule1.feature:49)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -196,10 +382,20 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if admin able to retrieve all Admin with valid endpoint&quot;, &quot;User Module&quot;)">
-                  </a> <!-- runScenario("Check if admin able to retrieve all Admin with valid endpoint", "User Module") -->
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if admin able to retrieve all Admin with valid endpoint","User Module")</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and missing fields in request body","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and missing fields in request body","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -216,20 +412,50 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if Admin able to generate token with valid credential&quot;, &quot;User Module&quot;)">
-                  </a> <!-- runScenario("Check if Admin able to generate token with valid credential", "User Module") -->
+                  <a name="runScenario(&quot;Check if admin is able to get count of active and inactive Admins&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to get count of active and inactive Admins", "User Module") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if Admin able to generate token with valid credential","User Module")</span>
+                  <span class="parameters">("Check if admin is able to get count of active and inactive Admins","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if admin is able to get the Admins for valid program Id&quot;, &quot;User Module&quot;)">
-                  </a> <!-- runScenario("Check if admin is able to get the Admins for valid program Id", "User Module") -->
+                  <a name="runScenario(&quot;Check if admin able to retrieve all Admin with valid endpoint&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin able to retrieve all Admin with valid endpoint", "User Module") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if admin is able to get the Admins for valid program Id","User Module")</span>
+                  <span class="parameters">("Check if admin able to retrieve all Admin with valid endpoint","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin able to create a new Admin with request body without authorization&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin able to create a new Admin with request body without authorization", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin able to create a new Admin with request body without authorization","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and missing fields in request body","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and missing fields in request body","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -246,10 +472,30 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if admin is able to get count of active and inactive Admins&quot;, &quot;User Module&quot;)">
-                  </a> <!-- runScenario("Check if admin is able to get count of active and inactive Admins", "User Module") -->
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if admin is able to get count of active and inactive Admins","User Module")</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and invalid values in request body","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and invalid values in request body","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to retreive Admins by valid role ID&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to retreive Admins by valid role ID", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to retreive Admins by valid role ID","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -266,10 +512,10 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if admin able to retrieve all active Admins&quot;, &quot;User Module&quot;)">
-                  </a> <!-- runScenario("Check if admin able to retrieve all active Admins", "User Module") -->
+                  <a name="runScenario(&quot;Check if admin is able to get count of active and inactive Admins&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to get count of active and inactive Admins", "User Module") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if admin able to retrieve all active Admins","User Module")</span>
+                  <span class="parameters">("Check if admin is able to get count of active and inactive Admins","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -286,10 +532,40 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)">
-                  </a> <!-- runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...) -->
+                  <a name="runScenario(&quot;Check if admin is able to get the Admins by program batches for valid batch ID&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to get the Admins by program batches for valid batch ID", "User Module") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields","User Module")</span>
+                  <span class="parameters">("Check if admin is able to get the Admins by program batches for valid batch ID","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and invalid values in request body","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if Admin able to generate token with valid credential&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if Admin able to generate token with valid credential", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if Admin able to generate token with valid credential","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and invalid values in request body","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -306,20 +582,30 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if admin is able to get the Admins by program batches for valid batch ID&quot;, &quot;User Module&quot;)">
-                  </a> <!-- runScenario("Check if admin is able to get the Admins by program batches for valid batch ID", "User Module") -->
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if admin is able to get the Admins by program batches for valid batch ID","User Module")</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and missing fields in request body","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if admin is able to get count of active and inactive Admins&quot;, &quot;User Module&quot;)">
-                  </a> <!-- runScenario("Check if admin is able to get count of active and inactive Admins", "User Module") -->
+                  <a name="runScenario(&quot;Check if admin able to retrieve all active Admins&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin able to retrieve all active Admins", "User Module") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if admin is able to get count of active and inactive Admins","User Module")</span>
+                  <span class="parameters">("Check if admin able to retrieve all active Admins","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and invalid values in request body","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -336,10 +622,40 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Check if admin is able to retreive Admins by valid role ID&quot;, &quot;User Module&quot;)">
-                  </a> <!-- runScenario("Check if admin is able to retreive Admins by valid role ID", "User Module") -->
+                  <a name="runScenario(&quot;Check if admin is able to get the Admins for valid program Id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to get the Admins for valid program Id", "User Module") -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Check if admin is able to retreive Admins by valid role ID","User Module")</span>
+                  <span class="parameters">("Check if admin is able to get the Admins for valid program Id","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and invalid values in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and invalid values in request body","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a Admin with valid endpoint and missing fields in request body&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a Admin with valid endpoint and missing fields in request body","User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)">
+                  </a> <!-- runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields","User Module")</span>
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
@@ -349,7 +665,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/m1/_yr8g9417vgcp3b0wn3kc91c0000gn/T/testng-eclipse--303298501/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/m1/_yr8g9417vgcp3b0wn3kc91c0000gn/T/testng-eclipse--855780421/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -406,72 +722,140 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(15);
+data.addRows(32);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'test_runner_team08.TestRunner')
-data.setCell(0, 3, 1411);
+data.setCell(0, 3, 1296);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'test_runner_team08.TestRunner')
-data.setCell(1, 3, 721);
+data.setCell(1, 3, 1047);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'test_runner_team08.TestRunner')
-data.setCell(2, 3, 642);
+data.setCell(2, 3, 875);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'runScenario')
 data.setCell(3, 2, 'test_runner_team08.TestRunner')
-data.setCell(3, 3, 602);
+data.setCell(3, 3, 774);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'runScenario')
 data.setCell(4, 2, 'test_runner_team08.TestRunner')
-data.setCell(4, 3, 589);
+data.setCell(4, 3, 762);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'runScenario')
 data.setCell(5, 2, 'test_runner_team08.TestRunner')
-data.setCell(5, 3, 588);
+data.setCell(5, 3, 501);
 data.setCell(6, 0, 6)
 data.setCell(6, 1, 'runScenario')
 data.setCell(6, 2, 'test_runner_team08.TestRunner')
-data.setCell(6, 3, 515);
+data.setCell(6, 3, 482);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'runScenario')
 data.setCell(7, 2, 'test_runner_team08.TestRunner')
-data.setCell(7, 3, 225);
+data.setCell(7, 3, 472);
 data.setCell(8, 0, 8)
 data.setCell(8, 1, 'runScenario')
 data.setCell(8, 2, 'test_runner_team08.TestRunner')
-data.setCell(8, 3, 137);
+data.setCell(8, 3, 420);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'runScenario')
 data.setCell(9, 2, 'test_runner_team08.TestRunner')
-data.setCell(9, 3, 131);
+data.setCell(9, 3, 389);
 data.setCell(10, 0, 10)
 data.setCell(10, 1, 'runScenario')
 data.setCell(10, 2, 'test_runner_team08.TestRunner')
-data.setCell(10, 3, 127);
+data.setCell(10, 3, 385);
 data.setCell(11, 0, 11)
 data.setCell(11, 1, 'runScenario')
 data.setCell(11, 2, 'test_runner_team08.TestRunner')
-data.setCell(11, 3, 124);
+data.setCell(11, 3, 293);
 data.setCell(12, 0, 12)
 data.setCell(12, 1, 'runScenario')
 data.setCell(12, 2, 'test_runner_team08.TestRunner')
-data.setCell(12, 3, 121);
+data.setCell(12, 3, 231);
 data.setCell(13, 0, 13)
 data.setCell(13, 1, 'runScenario')
 data.setCell(13, 2, 'test_runner_team08.TestRunner')
-data.setCell(13, 3, 120);
+data.setCell(13, 3, 183);
 data.setCell(14, 0, 14)
 data.setCell(14, 1, 'runScenario')
 data.setCell(14, 2, 'test_runner_team08.TestRunner')
-data.setCell(14, 3, 118);
+data.setCell(14, 3, 167);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'runScenario')
+data.setCell(15, 2, 'test_runner_team08.TestRunner')
+data.setCell(15, 3, 153);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'runScenario')
+data.setCell(16, 2, 'test_runner_team08.TestRunner')
+data.setCell(16, 3, 148);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'runScenario')
+data.setCell(17, 2, 'test_runner_team08.TestRunner')
+data.setCell(17, 3, 145);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'runScenario')
+data.setCell(18, 2, 'test_runner_team08.TestRunner')
+data.setCell(18, 3, 143);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'runScenario')
+data.setCell(19, 2, 'test_runner_team08.TestRunner')
+data.setCell(19, 3, 143);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'runScenario')
+data.setCell(20, 2, 'test_runner_team08.TestRunner')
+data.setCell(20, 3, 140);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'runScenario')
+data.setCell(21, 2, 'test_runner_team08.TestRunner')
+data.setCell(21, 3, 138);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'runScenario')
+data.setCell(22, 2, 'test_runner_team08.TestRunner')
+data.setCell(22, 3, 134);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'runScenario')
+data.setCell(23, 2, 'test_runner_team08.TestRunner')
+data.setCell(23, 3, 132);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'runScenario')
+data.setCell(24, 2, 'test_runner_team08.TestRunner')
+data.setCell(24, 3, 132);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'runScenario')
+data.setCell(25, 2, 'test_runner_team08.TestRunner')
+data.setCell(25, 3, 124);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'runScenario')
+data.setCell(26, 2, 'test_runner_team08.TestRunner')
+data.setCell(26, 3, 123);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'runScenario')
+data.setCell(27, 2, 'test_runner_team08.TestRunner')
+data.setCell(27, 3, 122);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'runScenario')
+data.setCell(28, 2, 'test_runner_team08.TestRunner')
+data.setCell(28, 3, 122);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'runScenario')
+data.setCell(29, 2, 'test_runner_team08.TestRunner')
+data.setCell(29, 3, 120);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'runScenario')
+data.setCell(30, 2, 'test_runner_team08.TestRunner')
+data.setCell(30, 3, 119);
+data.setCell(31, 0, 31)
+data.setCell(31, 1, 'runScenario')
+data.setCell(31, 2, 'test_runner_team08.TestRunner')
+data.setCell(31, 3, 119);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 seconds</span>
+              <span class="suite-total-time">Total running time: 10 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -498,77 +882,149 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">test_runner_team08.TestRunner</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">clearAllData</span>
-                <span class="method-start">0 ms</span>
-              </div> <!-- configuration-test before -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@22a63740)</span>
-                <span class="method-start">400 ms</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@1cc81ea1)</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if Admin able to generate token with valid credential", "User Module")</span>
-                <span class="method-start">471 ms</span>
+                <span class="method-start">336 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</span>
-                <span class="method-start">1884 ms</span>
+                <span class="method-start">1633 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</span>
-                <span class="method-start">2527 ms</span>
+                <span class="method-start">2396 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</span>
-                <span class="method-start">3117 ms</span>
+                <span class="method-start">2817 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</span>
+                <span class="method-start">3319 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</span>
+                <span class="method-start">3463 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</span>
+                <span class="method-start">3647 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</span>
+                <span class="method-start">3793 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</span>
+                <span class="method-start">3947 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</span>
+                <span class="method-start">4086 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</span>
+                <span class="method-start">4254 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "...)</span>
+                <span class="method-start">4738 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</span>
+                <span class="method-start">5129 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</span>
+                <span class="method-start">5277 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</span>
+                <span class="method-start">5572 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</span>
+                <span class="method-start">5712 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</span>
+                <span class="method-start">5847 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</span>
+                <span class="method-start">5979 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</span>
+                <span class="method-start">6122 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "...)</span>
+                <span class="method-start">6509 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin able to create a new Admin with request body without authorization", "User Module")</span>
+                <span class="method-start">6983 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to retreive all the available roles with Authorization", "User Module")</span>
-                <span class="method-start">3633 ms</span>
+                <span class="method-start">7115 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin able to retrieve all Admin with valid endpoint", "User Module")</span>
-                <span class="method-start">4222 ms</span>
+                <span class="method-start">7991 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin able to retrieve a Admin with valid Admin ID", "User Module")</span>
-                <span class="method-start">4945 ms</span>
+                <span class="method-start">9040 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin able to retrieve all active Admins", "User Module")</span>
-                <span class="method-start">5076 ms</span>
+                <span class="method-start">9163 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to get count of active and inactive Admins", "User Module")</span>
-                <span class="method-start">5302 ms</span>
+                <span class="method-start">9394 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to get count of active and inactive Admins", "User Module")</span>
-                <span class="method-start">5420 ms</span>
+                <span class="method-start">9514 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to get count of active and inactive Admins", "User Module")</span>
-                <span class="method-start">5548 ms</span>
+                <span class="method-start">9637 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to get count of active and inactive Admins", "User Module")</span>
-                <span class="method-start">5668 ms</span>
+                <span class="method-start">9760 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to get the Admins by program batches for valid batch ID", "User Module")</span>
-                <span class="method-start">5790 ms</span>
+                <span class="method-start">9880 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to get the Admins for valid program Id", "User Module")</span>
-                <span class="method-start">5928 ms</span>
+                <span class="method-start">9999 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Check if admin is able to retreive Admins by valid role ID", "User Module")</span>
-                <span class="method-start">6053 ms</span>
+                <span class="method-start">10124 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">6658 ms</span>
+                <span class="method-start">10901 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
