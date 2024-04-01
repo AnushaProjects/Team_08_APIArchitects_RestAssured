@@ -18,7 +18,8 @@ import org.testng.annotations.BeforeTest;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 
 
-@CucumberOptions(features ={"src/test/resources/features/UserModule1.feature"}, 
+@CucumberOptions(features ={"src/test/resources/features/UserModule1.feature",}, 
+plugin = {"pretty","html:target/Team_08_API_Architects_RestAssured.html","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},//reporting purpose
 				glue = {"step_definition_team08","hooks_team_08"}, 
 				monochrome = true)
 				//tags = (""))
