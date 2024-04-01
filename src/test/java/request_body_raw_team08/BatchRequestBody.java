@@ -1,4 +1,4 @@
-package RequestBodyRaw;
+package request_body_raw_team08;
 
 import java.util.List;
 import java.util.Map;
@@ -6,9 +6,9 @@ import java.util.Map;
 import org.apache.poi.ss.formula.functions.PPMT;
 import org.json.JSONObject;
 
-import payLoad.BatchPayload;
-import payLoad.ProgramPayload;
-import utilities.ReusableMethods;
+import payload_team08.BatchPayload;
+import payload_team08.ProgramPayload;
+import utilities_team08.ReusableMethods;
 
 public class BatchRequestBody extends ReusableMethods{
 	
@@ -100,7 +100,7 @@ public class BatchRequestBody extends ReusableMethods{
 		  String BatchName="SDET"+getRandomNumber();
 		
 		bp.setBatchDescription(hm.get(0).get("BatchDescription"));
-		bp.setBatchId("0000#");
+		bp.setBatchId("123");
 		bp.setBatchName(BatchName);
 		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
 		bp.setBatchStatus(hm.get(0).get("BatchStatus"));
@@ -158,6 +158,7 @@ public class BatchRequestBody extends ReusableMethods{
 		bp.setProgramName(programName);
 		return bp;
 	}
+	
 
 	
 }

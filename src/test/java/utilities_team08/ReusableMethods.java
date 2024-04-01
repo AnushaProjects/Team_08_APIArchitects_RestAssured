@@ -1,12 +1,12 @@
-package utilities;
+package utilities_team08;
 
 import static io.restassured.RestAssured.*;
 
 import org.testng.Assert;
 
-import RequestBodyRaw.LoginRequestBody;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import request_body_raw_team08.LoginRequestBody;
 
 public class ReusableMethods extends ReusableVariables {
 	LoginRequestBody loginReqbody=new LoginRequestBody(); 

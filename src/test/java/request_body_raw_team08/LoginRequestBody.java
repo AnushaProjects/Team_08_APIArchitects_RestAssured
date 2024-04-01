@@ -1,10 +1,10 @@
-package RequestBodyRaw;
+package request_body_raw_team08;
 import java.util.List;
 import java.util.Map;
 
 import org.json.JSONObject;
 
-import payLoad.LoginPayload;
+import payload_team08.LoginPayload;
 
 
 public class LoginRequestBody {

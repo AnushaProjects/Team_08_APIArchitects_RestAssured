@@ -1,12 +1,12 @@
-package RequestBodyRaw;
+package request_body_raw_team08;
 
 import java.util.List;
 import java.util.Map;
 
 import org.json.JSONObject;
 
-import payLoad.ProgramPayload;
-import utilities.ReusableMethods;
+import payload_team08.ProgramPayload;
+import utilities_team08.ReusableMethods;
 
 public class ProgramRequestBody extends ReusableMethods{
 ProgramPayload pp=new ProgramPayload();

@@ -13,9 +13,9 @@ import org.hamcrest.Matchers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import payLoad.BatchPayload;
-import utilities.ExcelReader1;
-import utilities.ReusableVariables;
+import payload_team08.BatchPayload;
+import utilities_team08.ExcelReader1;
+import utilities_team08.ReusableVariables;
 
 public class BatchValidation extends ReusableVariables {
 	//User user=new User();
@@ -56,6 +56,36 @@ public class BatchValidation extends ReusableVariables {
 		Assert.assertEquals(batchrequestBody.getProgramName(),response.jsonPath().get("programName"));
 
 	}
+	public void Get_Request_ScheemaValidation(Response response) {
+		response.then().assertThat()
+	      .body(JsonSchemaValidator.
+		 matchesJsonSchema(new File(".\\src\\test\\java\\schemaValidations\\Batch_Get_Request_ScheemaValidation.json")));
+		}
+	
+	public void GetBatch_BatchNameScheemaValidation(Response response) {
+		response.then().assertThat()
+	      .body(JsonSchemaValidator.
+		 matchesJsonSchema(new File(".\\src\\test\\resources\\schemaValidations\\GetBatch_BatchName.json")));
+		}
+	
+	public void GetBatch_ProgramIDScheemaValidation(Response response) {
+		response.then().assertThat()
+	      .body(JsonSchemaValidator.
+		 matchesJsonSchema(new File(".src\\test\\resources\\schemaValidations\\GetBatch_ProgramID.json")));
+		}
+	
+	public void GetBatch_BatchIDScheemaValidation(Response response) {
+		response.then().assertThat()
+	      .body(JsonSchemaValidator.
+		 matchesJsonSchema(new File(".\\src\\test\\resources\\schemaValidations\\GetBatch_BatchID.json")));
+		}
+
+
+
+
+
+
+
 
 	
 

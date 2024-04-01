@@ -1,4 +1,4 @@
-package stepDefinition;
+package step_definition_team08;
 
 
 import static io.restassured.RestAssured.given;
@@ -12,17 +12,17 @@ import java.util.Properties;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.testng.Assert;
 
-import RequestBodyRaw.LoginRequestBody;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import utilities.CommonValidation;
-import utilities.ConfigReader;
-import utilities.ExcelReader1;
-import utilities.ReusableMethods;
-import utilities.ReusableVariables;
+import request_body_raw_team08.LoginRequestBody;
+import utilities_team08.CommonValidation;
+import utilities_team08.ConfigReader;
+import utilities_team08.ExcelReader1;
+import utilities_team08.ReusableMethods;
+import utilities_team08.ReusableVariables;
 
 public class userLoginStepDefinition extends ReusableVariables{
 

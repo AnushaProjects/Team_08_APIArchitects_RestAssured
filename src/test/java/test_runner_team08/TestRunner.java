@@ -1,4 +1,4 @@
-package testRunner;
+package test_runner_team08;
 
 import io.cucumber.testng.CucumberOptions;
 

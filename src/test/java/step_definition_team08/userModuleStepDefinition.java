@@ -1,4 +1,4 @@
-package stepDefinition;
+package step_definition_team08;
 
 import static io.restassured.RestAssured.given;
 
@@ -7,9 +7,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.response.Response;
-import utilities.CommonValidation;
-import utilities.ReusableMethods;
-import utilities.ReusableVariables;
+import utilities_team08.CommonValidation;
+import utilities_team08.ReusableMethods;
+import utilities_team08.ReusableVariables;
 
 public class userModuleStepDefinition {
 	ReusableMethods reuseMethods=new ReusableMethods();

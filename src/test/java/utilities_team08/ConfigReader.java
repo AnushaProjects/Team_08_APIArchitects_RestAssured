@@ -1,4 +1,4 @@
-package utilities;
+package utilities_team08;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,7 +15,7 @@ public class ConfigReader {
 		prop = new Properties();
 
 		try {
-			 FileInputStream ip = new FileInputStream(".\\src\\test\\java\\utilities\\config.properties");
+			 FileInputStream ip = new FileInputStream(".\\src\\test\\java\\utilities_team08\\config.properties");
 
 			try {
 				prop.load(ip);
@@ -43,7 +43,7 @@ try {
 
     props.setProperty("bearer", bearertoken);
 
- props.store(new FileOutputStream(".\\src\\test\\java\\utilities\\config.properties"), null);
+ props.store(new FileOutputStream(".\\src\\test\\java\\utilities_team08\\config.properties"), null);
 
 
 
