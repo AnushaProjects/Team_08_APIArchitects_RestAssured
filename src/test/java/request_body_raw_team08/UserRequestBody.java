@@ -34,7 +34,7 @@ public class UserRequestBody extends ReusableVariables {
 				List<String> roleIds = new ArrayList<String>(); 
 				roleIds.add(hm.get(0).get("RoleIds")); 
 				System.out.println(hm.get(0).get("UserComments"));
-				LoggerLoad.info("Setting All the Required Fields to the Payload:");
+				LoggerLoad.info("Setting All the Required Fields to the User Payload:");
 				
 					up.setUserComments(hm.get(0).get("UserComments"));
 					up.setUserEduPg(hm.get(0).get("UserEduPg"));
@@ -79,10 +79,7 @@ public class UserRequestBody extends ReusableVariables {
 			
 			
 			public String negativeUserScenario(String negativedata ,String InvalidValue ) throws InvalidFormatException, IOException {
-				returnUserPayload("UserModuleMandatory");
-//				List<Map<String, String>> hm=read.getData(path,"UserModuleMandatory");
-//				up = createUserRequest(hm);
-				
+					returnUserPayload("UserModuleMandatory");
 					userLogin=up.getUserLogin();
 					LoggerLoad.info("Checking the UserId creation with input value = " );
 					System.out.println("inside negative");
@@ -123,8 +120,7 @@ public class UserRequestBody extends ReusableVariables {
 						
 					}
 					return convertJsonToString(up);
-//					JSONObject userBody=new JSONObject(up);
-//					return userBody;
+
 					
 			 }
 			

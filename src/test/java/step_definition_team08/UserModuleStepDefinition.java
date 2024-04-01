@@ -73,8 +73,6 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	@Given("Admin creates POST request with all mandatory fields")
 	public void admin_creates_post_request_with_all_mandatory_fields() throws InvalidFormatException, IOException {
 		System.out.println("Inside");
-		
-//		userBody=userReqbody.returnUserPayload("UserModuleMandatory");
 		userpayload=userReqbody.returnUserPayload("UserModuleMandatory");
 		userBody=userReqbody.convertJsonToString(userpayload);
 		System.out.println(userBody);
@@ -85,8 +83,7 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	public void admin_sends_https_request_with_endpoint() {
 		System.out.println(userpayload);
 		System.out.println(prop.getProperty("bearer"));
-		System.out.println("Inside when");
-		System.out.println("Request Sending: "+userBody);
+		LoggerLoad.info("Request Sending: "+userBody);
 		userResponse= auth_req_post.body(userBody).when().post(baseURL+"/users/roleStatus");
 		userResponse.prettyPrint();
 	}
