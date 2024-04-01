@@ -23,25 +23,6 @@ public class BatchValidation extends ReusableVariables {
 		Response response;
 		ExcelReader1 read = new ExcelReader1();
 		
-//		public void postResponse(Response response) throws IOException, ParseException {
-//			
-//		
-//			String responseBody = response.getBody().asString();
-//			JsonPath jsonPath = new JsonPath(responseBody);
-//			int user_id = jsonPath.getInt("batchId");
-//			
-//			
-//		}
-		
-		public void headervalidations(Response response) {
-			
-			
-			Assert.assertEquals(response.getHeader("Content-Type"), "application/json");
-			Assert.assertEquals(response.getHeader("Server"), "Cowboy");
-			Assert.assertEquals(response.getHeader("transfer-encoding"), "chunked");
-			
-		}
-		
 		
 		public void schemavalidation(Response response) {
 			response.then().assertThat()
@@ -76,21 +57,6 @@ public class BatchValidation extends ReusableVariables {
 
 	}
 
-	public void statusValidations(Response response,int statuscode) {
-		System.out.println(response.getStatusCode());
-		int codeofstatus=response.getStatusCode();
-		Assert.assertEquals(codeofstatus,statuscode);
-		
-		
-	}
-	public void messageValidations(Response response,boolean successvalue) {
-		//response.then().assertThat().body("success", Matchers.equalTo(successvalue));
-		System.out.println(response.jsonPath().get("success"));
-		Assert.assertSame(response.jsonPath().get("success"),successvalue);
-       String responsemessage=(response.path("message"));
-       responsemessage.isEmpty();
-     Assert.assertFalse(responsemessage.isEmpty());
-
-	}
+	
 
 }

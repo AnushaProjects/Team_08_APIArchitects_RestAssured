@@ -31,10 +31,7 @@ public class BatchRequestBody extends ReusableMethods{
 		return bp;
 	}
 	public BatchPayload createBatchRequestwithexistingdata(List<Map<String, String>> hm, String programId,String BatchName ) {
-		 //BatchName="SDET"+getRandomNumber();
-		//System.out.println(hm.get(0).get("BatchDescription"));
-		//System.out.println(hm.get(0).get("BatchNoOfClasses"));
-		//System.out.println(hm.get(0).get("BatchStatus"));
+		 
 		System.out.println(BatchName);
 
 
@@ -67,7 +64,6 @@ public class BatchRequestBody extends ReusableMethods{
 		System.out.println(hm.get(0).get("BatchNoOfClassesmissingadditonalfield"));
 		System.out.println(hm.get(0).get("BatchStatusmissingadditonalfield"));
 
-		//bp.setBatchDescription(hm.get(0).get("BatchDescriptionmissingadditionalfield"));
 		bp.setBatchName(BatchName);
 		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClassesmissingadditonalfield"));
 		bp.setBatchStatus(hm.get(0).get("BatchStatusmissingadditonalfield"));
@@ -77,11 +73,7 @@ public class BatchRequestBody extends ReusableMethods{
 	}
 	public BatchPayload createBatchRequestwithinactiveprogramid(List<Map<String, String>> hm, String programId ) {
 		String BatchName="SDET"+getRandomNumber();
-		//System.out.println(hm.get(0).get("BatchDescription"));
-		//System.out.println(hm.get(0).get("BatchNoOfClasses"));
-		//System.out.println(hm.get(0).get("BatchStatus"));
-
-
+		
 		bp.setBatchDescription(hm.get(0).get("BatchDescription"));
 		bp.setBatchName(BatchName);
 		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
@@ -92,42 +84,80 @@ public class BatchRequestBody extends ReusableMethods{
 	}
 	public BatchPayload UpdateBatchputRequest(List<Map<String, String>> hm, String programId,String batchId,String programName ) {
 		  String BatchName="SDET"+getRandomNumber();
-//		System.out.println(hm.get(0).get("BatchDescription"));
-//		System.out.println(hm.get(0).get("BatchNoOfClasses"));
-//		System.out.println(hm.get(0).get("BatchStatus"));
-//		System.out.println(BatchName);
-//		System.out.println(programName);
-//		System.out.println(batchId);
-//		System.out.println(programId);
+
 
 
 		bp.setBatchDescription(hm.get(0).get("BatchDescription"));
 		bp.setBatchId(batchId);
 		bp.setBatchName(BatchName);
 		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
-		bp.setBatchStatus(hm.get(0).get("updateBatchStatus"));
+		bp.setBatchStatus(hm.get(0).get("BatchStatus"));
 		bp.setProgramId(programId);
 		bp.setProgramName(programName);
 		return bp;
 	}
-	public BatchPayload UpdateBatchputRequest(List<Map<String, String>> hm, String programId,String batchId,String programName ) {
+	public BatchPayload UpdateBatchputRequest_invalidbatch_id(List<Map<String, String>> hm, String programId,String batchId,String programName ) {
 		  String BatchName="SDET"+getRandomNumber();
-//		System.out.println(hm.get(0).get("BatchDescription"));
-//		System.out.println(hm.get(0).get("BatchNoOfClasses"));
-//		System.out.println(hm.get(0).get("BatchStatus"));
-//		System.out.println(BatchName);
-//		System.out.println(programName);
-//		System.out.println(batchId);
-//		System.out.println(programId);
+		
+		bp.setBatchDescription(hm.get(0).get("BatchDescription"));
+		bp.setBatchId("0000#");
+		bp.setBatchName(BatchName);
+		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
+		bp.setBatchStatus(hm.get(0).get("BatchStatus"));
+		bp.setProgramId(programId);
+		bp.setProgramName(programName);
+		return bp;
+	}
+	public BatchPayload UpdateBatchputRequest_withmissingdata_validbatch_id(List<Map<String, String>> hm) {
+		BatchPayload bpUpdateBatchIdPayLoad = new BatchPayload();
+		bpUpdateBatchIdPayLoad.setBatchDescription("");
+		bpUpdateBatchIdPayLoad.setBatchId(hm.get(0).get("updatebatchid"));
+		bpUpdateBatchIdPayLoad.setBatchName("");
+		bpUpdateBatchIdPayLoad.setBatchNoOfClasses("");
+		bpUpdateBatchIdPayLoad.setBatchStatus("");
+		bpUpdateBatchIdPayLoad.setProgramName("");
+		bpUpdateBatchIdPayLoad.setProgramId("");
+		return bpUpdateBatchIdPayLoad;
+	}
+	public BatchPayload UpdateBatchputRequestwith_invalid_data(List<Map<String, String>> hm, String programId,String batchId,String programName ) {
+		  
+        bp.setBatchDescription(hm.get(0).get("BatchDescription"));
+		bp.setBatchId("0000$");
+		bp.setBatchName("0000#");
+		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
+		bp.setBatchStatus(hm.get(0).get("BatchStatus"));
+		bp.setProgramId("0000*");
+		bp.setProgramName("0000*");
+		return bp;
+	}
+	
+	public BatchPayload UpdateBatchputRequest_deleted_programidfield(List<Map<String, String>> hm, String programId,String batchId,String programName ) {
+		  String BatchName="SDET"+getRandomNumber();
+
 
 
 		bp.setBatchDescription(hm.get(0).get("BatchDescription"));
 		bp.setBatchId(batchId);
 		bp.setBatchName(BatchName);
 		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
-		bp.setBatchStatus(hm.get(0).get("updateBatchStatus"));
+		bp.setBatchStatus(hm.get(0).get("BatchStatus"));
+		bp.setProgramName(programName);
+		return bp;
+	}
+	public BatchPayload UpdateBatchputRequest_with_deleted_batchid(List<Map<String, String>> hm, String programId,String batchId,String programName ) {
+		  String BatchName="SDET"+getRandomNumber();
+
+
+
+		bp.setBatchDescription(hm.get(0).get("BatchDescription"));
+		bp.setBatchId(hm.get(0).get("deletedbatchid"));
+		bp.setBatchName(BatchName);
+		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
+		bp.setBatchStatus(hm.get(0).get("BatchStatus"));
 		bp.setProgramId(programId);
 		bp.setProgramName(programName);
 		return bp;
 	}
+
+	
 }
