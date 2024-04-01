@@ -5,8 +5,7 @@ Feature: User Module
     Given Admin creates request with "valid" credentials
     When Admin Admin calls Post Https method  with "valid endpoint"
     Then Admin Admin receives 200 created with auto generated token
-    
-    
+   
    @CreatingUserIdWithMandatoryFields
 	Scenario: Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields
     Given Admin creates POST request with all mandatory fields 
@@ -24,8 +23,7 @@ Feature: User Module
     |Create|  
     |ExistingPhoneumber|
     |ExistingEmailId|
-  
-    
+ 
 	@CreatingUserIdWithAllFields
 	Scenario Outline: Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields
     Given Admin creates POST request with all mandatory fields and additional fields
@@ -113,7 +111,7 @@ Feature: User Module
   Scenario: Check if admin is able to retreive all the available Admin with invalid End point
     Given Admin creates GET Request
     When Admin sends HTTPS Request with invalid endpoint
-    Then Admin receives status 401 with message
+    Then Admin receives status 404 with message
     
     @GetAdminById
   Scenario: Check if admin able to retrieve a Admin with valid Admin ID
@@ -123,13 +121,13 @@ Feature: User Module
     
      @GetAdminByIdInvalidEndpoint
   Scenario: Check if admin able to retrieve a Admin with valid Admin ID and invalid endpoint
-    Given Admin creates GET Request with valid AdminId
+    Given Admin creates GET Request with "valid" AdminId
     When Admin sends HTTPS Request with invalid endpoint
     Then Admin receives status 404 with message
     
     @GetAdminbyIdUnauthorized
   Scenario: Check if admin is able to retreive Admin with valid Admin ID without Authorization
-    Given Admin creates GET Request with valid AdminId
+    Given Admin creates GET Request with "valid" AdminId
     When Admin sends HTTPS Request with GET Unauthorized "GetAdminbyId"
     Then Admin receives status 401 with message
     
@@ -198,7 +196,7 @@ Feature: User Module
            
      @GetAdminsbyProgramBatches 
      Scenario Outline: Check if admin is able to get the Admins by program batches for valid batch ID
-    Given Admin creates GET Request with valid programbatch Id
+    Given Admin creates GET Request with "valid" programbatch Id
     When Admin sends HTTPS Request with valid endpoint for AdminsbyProgramBatches 
     Then Admin receives 200 OK Status with response body "ProgramBatches"   
     
@@ -210,13 +208,13 @@ Feature: User Module
     
      @GetAdminsbyProgramBatchesUnauthorized
   	Scenario: Check if admin is able to get the Admins by program batches for valid batch ID without Authorization
-    Given Admin creates GET Request with valid programbatch Id
+   Given Admin creates GET Request with "valid" programbatch Id
     When Admin sends HTTPS Request with GET Unauthorized "UserbyBatch"
     Then Admin receives status 401 with message
     
-    @GetCountActiveInactiveInvalidEndpoint
+    @GetAdminsbyProgramBatchesEndpoint
   Scenario: Check if admin able to get the Admins by program batches with invalid endpoint
-    Given Admin creates GET Request with valid programbatch Id
+  Given Admin creates GET Request with "valid" programbatch Id
     When Admin sends HTTPS Request with invalid endpoint
     Then Admin receives status 404 with message 
     
@@ -268,5 +266,5 @@ Feature: User Module
   Scenario: Check if admin able to get the Admins by role with invalid endpoint
     Given Admin creates GET Request with "valid" Role Id
     When Admin sends HTTPS Request with invalid endpoint
-    #Then Admin receives status 404 with message 
+    Then Admin receives status 404 with message 
    
