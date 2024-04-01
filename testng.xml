@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Dsalgo Suit" parallel="methods" thread-count="7" >
+  
+
+	 <test name="RestAssuredAPI Testing- LMS Project">
+        
+        <classes>
+            <class name="test_runner_team08.TestRunner"></class>
+        </classes>
+    </test> 
+    
+    
+ <!--<test name="RestAssuredAPI Testing- LMS Project">
+        
+        <classes>
+            <class name="test_runner_team08.TestRunner"></class>
+        </classes>
+    </test>-->
+
+</suite>
+
