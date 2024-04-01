@@ -38,5 +38,17 @@ public class ReusableMethods extends ReusableVariables {
 		return userPhoneNumber;
  }
  
+ public int getRandomNumber() {
+		int min=51;
+		int max=1000;
+	return (int) ((Math.random() * (max - min)) + min);
+	}
+ 
+ public String autoName() {
+	 Random rand = new Random();
+
+	   String name="Team08APIArchitect"+getRandomNumber()+getRandomNumber();
+	   return name;
+ }
  
 }

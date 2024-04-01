@@ -81,10 +81,16 @@ public class CommonValidation {
 	        } else if (response.statusCode() == 401) {
 	            LoggerLoad.info("401 - Unauthorized/InvalidEndpoint");
 	            LoggerLoad.info("Status Validation Passed");
-	        } else {
+	        } else if(response.statusCode() == 405) {
+	            LoggerLoad.info("Method Not Allowed: " + response.statusCode());
+	            LoggerLoad.info("Status Validation Failed");
+	        }
+	        else {
 	            LoggerLoad.info("Unexpected Status Code: " + response.statusCode());
 	            LoggerLoad.info("Status Validation Failed");
 	        }
+	       
+	        
 //	    } catch (AssertionError e) {
 //	        LoggerLoad.info("Assertion failed: "+e.getMessage());
 //	        LoggerLoad.info("Status Validation Failed");

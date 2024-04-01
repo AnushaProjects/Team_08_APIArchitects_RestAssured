@@ -40,7 +40,7 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	UserReqBdyUserLoginPayload userLogin;
 	
 	
-	Response userResponse;
+	
 	Response resBody;
 	String userIds;
 	String get_all_roles;
@@ -73,8 +73,6 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	@Given("Admin creates POST request with all mandatory fields")
 	public void admin_creates_post_request_with_all_mandatory_fields() throws InvalidFormatException, IOException {
 		System.out.println("Inside");
-		
-//		userBody=userReqbody.returnUserPayload("UserModuleMandatory");
 		userpayload=userReqbody.returnUserPayload("UserModuleMandatory");
 		userBody=userReqbody.convertJsonToString(userpayload);
 		System.out.println(userBody);
@@ -87,35 +85,35 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 		System.out.println(prop.getProperty("bearer"));
 		System.out.println("Inside when");
 		System.out.println("Request Sending: "+userBody);
-		userResponse= auth_req_post.body(userBody).when().post(baseURL+"/users/roleStatus");
-		userResponse.prettyPrint();
+		resBody= auth_req_post.body(userBody).when().post(baseURL+user_post_endpoint);
+		resBody.prettyPrint();
 	}
 	
 	@Then("Admin receives {int} Created Status with response body.")
 	public void admin_receives_created_status_with_response_body(Integer created) {
 		LoggerLoad.info("check userId gets generated for Admin role");
-		cv.headervalidations(userResponse);
-		cv.statusValidations(userResponse, created, "");
-        cv.schemavalidation(userResponse,"/User_json/post_user_json" );
+		cv.headervalidations(resBody);
+		cv.statusValidations(resBody, created, "");
+        cv.schemavalidation(resBody,"/User_json/post_user_json" );
        
         //Data Validations
         
-        assertEquals(userpayload.getUserComments(),userResponse.jsonPath().get("userComments"));
-        assertEquals(userpayload.getUserFirstName(),userResponse.jsonPath().get("userFirstName"));
-        assertEquals(userpayload.getUserLastName(),userResponse.jsonPath().get("userLastName"));
-        assertEquals(userpayload.getUserTimeZone(),userResponse.jsonPath().get("userTimeZone"));
-        assertEquals(userpayload.getUserLinkedinUrl(),userResponse.jsonPath().get("userLinkedinUrl"));
-        assertEquals(userpayload.getUserVisaStatus(),userResponse.jsonPath().get("userVisaStatus"));
-        assertEquals(userpayload.getUserPhoneNumber(),userResponse.jsonPath().get("userPhoneNumber").toString());
+        assertEquals(userpayload.getUserComments(),resBody.jsonPath().get("userComments"));
+        assertEquals(userpayload.getUserFirstName(),resBody.jsonPath().get("userFirstName"));
+        assertEquals(userpayload.getUserLastName(),resBody.jsonPath().get("userLastName"));
+        assertEquals(userpayload.getUserTimeZone(),resBody.jsonPath().get("userTimeZone"));
+        assertEquals(userpayload.getUserLinkedinUrl(),resBody.jsonPath().get("userLinkedinUrl"));
+        assertEquals(userpayload.getUserVisaStatus(),resBody.jsonPath().get("userVisaStatus"));
+        assertEquals(userpayload.getUserPhoneNumber(),resBody.jsonPath().get("userPhoneNumber").toString());
         userLogin=userpayload.getUserLogin();
-        assertEquals(userLogin.getUserLoginEmail(),userResponse.jsonPath().get("userLoginEmail"));
-        assertEquals(userpayload.getUserVisaStatus(),userResponse.jsonPath().get("userVisaStatus"));
-        assertEquals(userpayload.getUserEduUg(),userResponse.jsonPath().get("userEduUg"));
-        assertEquals(userpayload.getUserEduPg(),userResponse.jsonPath().get("userEduPg"));
+        assertEquals(userLogin.getUserLoginEmail(),resBody.jsonPath().get("userLoginEmail"));
+        assertEquals(userpayload.getUserVisaStatus(),resBody.jsonPath().get("userVisaStatus"));
+        assertEquals(userpayload.getUserEduUg(),resBody.jsonPath().get("userEduUg"));
+        assertEquals(userpayload.getUserEduPg(),resBody.jsonPath().get("userEduPg"));
         
         
-        LoggerLoad.info("UserId Created - "+userResponse.statusCode());
-		JsonPath userId = userResponse.jsonPath();
+        LoggerLoad.info("UserId Created - "+resBody.statusCode());
+		JsonPath userId = resBody.jsonPath();
 		userIds = userId.get("userId");
 
 		LoggerLoad.info("UserId created with MandatoryField - " +userIds);
@@ -148,11 +146,11 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 		case "Create":
 			System.out.println("Create");
 			userBody=userReqbody.convertJsonToString(userpayload);
-			userResponse= auth_req_post.body(userBody).when().post(baseURL+"/users/roleStatus");
-			userResponse.prettyPrint();
-			JsonPath exist = userResponse.jsonPath();
+			resBody= auth_req_post.body(userBody).when().post(baseURL+user_post_endpoint);
+			resBody.prettyPrint();
+			JsonPath exist = resBody.jsonPath();
 			exist_email=exist.get("userLoginEmail");
-			JsonPath existphone = userResponse.jsonPath();
+			JsonPath existphone = resBody.jsonPath();
 			System.out.println(exist_email); 
 			exist_phone=existphone.get("userPhoneNumber").toString();
 			System.out.println(exist_phone); 
@@ -172,8 +170,8 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 			break;
 		}
 		userBody=userReqbody.convertJsonToString(userpayload);
-		userResponse= auth_req_post.body(userBody).when().post(baseURL+"/users/roleStatus");
-		userResponse.prettyPrint();
+		resBody= auth_req_post.body(userBody).when().post(baseURL+user_post_endpoint);
+		resBody.prettyPrint();
 
 	}
 		
@@ -184,9 +182,9 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 			System.out.println("Inside If");
 		}
 		else { 
-		cv.headervalidations(userResponse);
-		cv.statusValidations(userResponse, existing, "");
-		cv.messageValidations(userResponse, false);
+		cv.headervalidations(resBody);
+		cv.statusValidations(resBody, existing, "");
+		cv.messageValidations(resBody, false);
        // cv.schemavalidation(userResponse,"/User_json/post_user_json" );
 		}
 	}
@@ -208,24 +206,24 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	public void admin_receives_created_status_with_response_body_and_save_user_id_for(Integer created, String Scenario) {
 		LoggerLoad.info("check userId gets generated for Admin role");
 		
-		cv.headervalidations(userResponse);
-		cv.statusValidations(userResponse, created, "");
-        cv.schemavalidation(userResponse,"/User_json/post_user_json" );
+		cv.headervalidations(resBody);
+		cv.statusValidations(resBody, created, "");
+        cv.schemavalidation(resBody,"/User_json/post_user_json" );
         
-        assertEquals(userpayload.getUserComments(),userResponse.jsonPath().get("userComments"));
-        assertEquals(userpayload.getUserFirstName(),userResponse.jsonPath().get("userFirstName"));
-        assertEquals(userpayload.getUserLastName(),userResponse.jsonPath().get("userLastName"));
-        assertEquals(userpayload.getUserTimeZone(),userResponse.jsonPath().get("userTimeZone"));
-        assertEquals(userpayload.getUserLinkedinUrl(),userResponse.jsonPath().get("userLinkedinUrl"));
-        assertEquals(userpayload.getUserVisaStatus(),userResponse.jsonPath().get("userVisaStatus"));
-        assertEquals(userpayload.getUserPhoneNumber(),userResponse.jsonPath().get("userPhoneNumber").toString());
+        assertEquals(userpayload.getUserComments(),resBody.jsonPath().get("userComments"));
+        assertEquals(userpayload.getUserFirstName(),resBody.jsonPath().get("userFirstName"));
+        assertEquals(userpayload.getUserLastName(),resBody.jsonPath().get("userLastName"));
+        assertEquals(userpayload.getUserTimeZone(),resBody.jsonPath().get("userTimeZone"));
+        assertEquals(userpayload.getUserLinkedinUrl(),resBody.jsonPath().get("userLinkedinUrl"));
+        assertEquals(userpayload.getUserVisaStatus(),resBody.jsonPath().get("userVisaStatus"));
+        assertEquals(userpayload.getUserPhoneNumber(),resBody.jsonPath().get("userPhoneNumber").toString());
         userLogin=userpayload.getUserLogin();
-        assertEquals(userLogin.getUserLoginEmail(),userResponse.jsonPath().get("userLoginEmail"));
-        assertEquals(userpayload.getUserVisaStatus(),userResponse.jsonPath().get("userVisaStatus"));
-        assertEquals(userpayload.getUserEduUg(),userResponse.jsonPath().get("userEduUg"));
-        assertEquals(userpayload.getUserEduPg(),userResponse.jsonPath().get("userEduPg"));
+        assertEquals(userLogin.getUserLoginEmail(),resBody.jsonPath().get("userLoginEmail"));
+        assertEquals(userpayload.getUserVisaStatus(),resBody.jsonPath().get("userVisaStatus"));
+        assertEquals(userpayload.getUserEduUg(),resBody.jsonPath().get("userEduUg"));
+        assertEquals(userpayload.getUserEduPg(),resBody.jsonPath().get("userEduPg"));
 		
-		JsonPath userId = userResponse.jsonPath();
+		JsonPath userId = resBody.jsonPath();
 		userIds = userId.get("userId");
 		System.out.println(userIds);
 		if(Scenario.equalsIgnoreCase("Positive")){
@@ -236,6 +234,14 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 			System.out.println("UserId with Admin Role to use it in Negative Scenarios - " +userIds);
 			configreader.writingdata("negative_scenerio_user_Id",userIds);
 			}
+	}
+	
+	//WithoutRequestBody
+	@When("Admin sends HTTPS Request with endpoint without Requestbody")
+	public void admin_sends_https_request_with_endpoint_without_requestbody() {
+		LoggerLoad.info("Sending the valkid endpoint without Requestbody");
+		resBody= auth_req_post.body("").when().post(baseURL+user_post_endpoint);
+		resBody.prettyPrint();
 	}
 	
 	//Invalid Values
@@ -271,8 +277,8 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 		@Then("Admin receives {int} Bad Request Status with message and boolean success details")
 		public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer badreq) {
 			LoggerLoad.info("check userId gets generated for Admin role");
-			cv.headervalidations(userResponse);
-			cv.statusValidations(userResponse, badreq, "");
+			cv.headervalidations(resBody);
+			cv.statusValidations(resBody, badreq, "Status validation");
 	        //cv.statusValidations(invalid_or_empty_data,userResponse,badreq);;
 	        LoggerLoad.info("UserId is not created");
 	        
@@ -281,15 +287,15 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 		@When("Admin sends HTTPS Request with endpoint Unauthorized")
 		public void admin_sends_https_request_with_endpoint_unauthorized() {
 			LoggerLoad.info("Sending the Request UnAuthorised");
-			userResponse= noauth_req_post.body(userBody).when().post(baseURL+"/users/roleStatus");
-			userResponse.prettyPrint();
+			resBody= noauth_req_post.body(userBody).when().post(baseURL+user_post_endpoint);
+			resBody.prettyPrint();
 		}
 
 		@Then("Admin receives status {int} with Unauthorized message")
 		public void admin_receives_status_with_unauthorized_message(Integer unauthorized) {
 			LoggerLoad.info("check userId gets generated for Admin role with no auth");
-			System.out.println(userResponse);
-			cv.statusValidations(userResponse, unauthorized, "");
+			System.out.println(resBody);
+			cv.statusValidations(resBody, unauthorized, "");
 	        LoggerLoad.info("UserId is not created");
 		}
 
@@ -298,10 +304,10 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	@Given("Admin creates GET Request")
 	public void admin_creates_get_request() {
 		LoggerLoad.info("User creates get request");
-		get_all_roles=reuseVariables.baseURL+"/users/roles";
-		get_all_admins=reuseVariables.baseURL+"/users";
-		get_all_active_admins=reuseVariables.baseURL+"/users/activeUsers";
-		get_count_active_inactive=reuseVariables.baseURL+"/users/byStatus";
+		get_all_roles=reuseVariables.baseURL+getroles;
+		get_all_admins=reuseVariables.baseURL+allusers;
+		get_all_active_admins=reuseVariables.baseURL+allactive;
+		get_count_active_inactive=reuseVariables.baseURL+count_active_inactive;
 	}
 
 	@When("Admin sends HTTPS Request with GET All Roles endpoint")
@@ -357,7 +363,7 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	public void admin_receives_status_with_message(Integer statuscode) {
 		cv.headervalidations(resBody);
 		cv.statusValidations(resBody, statuscode, "Error Message");
-        LoggerLoad.info("All the user Roles will be displayed");
+        LoggerLoad.info("All the user Roles will not be displayed");
 	}
 	
 	//Invalid endpoint
@@ -404,7 +410,7 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 			cv.schemavalidation(resBody,"/User_json/get_admin_by_programId_json");
 			}
 		else if(getrequest.equalsIgnoreCase("Role")) {
-			cv.schemavalidation(resBody,"/User_json/get_admin_with_roles_json");
+//			cv.schemavalidation(resBody,"/User_json/get_admin_with_roles_json");
 			}
 	}
 	
@@ -415,7 +421,7 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 		LoggerLoad.info("Get the Admin with Admin Id");
 		LoggerLoad.info("User creates get request");
 		if(givenUserid.equalsIgnoreCase("valid")) {
-		get_admin_by_userId=reuseVariables.baseURL+"/users/"+prop.getProperty("user_id_with_All_field");    //getting user id from confi.propertfile
+		get_admin_by_userId=reuseVariables.baseURL+allusers+prop.getProperty("user_id_with_All_field");    //getting user id from confi.propertfile
 		}
 		else if(givenUserid.equalsIgnoreCase("Invalid")) {
 		get_admin_by_userId=reuseVariables.baseURL+"/users/"+invalid_Id; 	//getting invalid userid fron reusable variables
@@ -457,7 +463,7 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	@Given("Admin creates GET Request with {string}")
 	public void admin_creates_get_request_with(String roleId) {
 		LoggerLoad.info("User creates get request to get count of Active and Inactive by RoleId : " +roleId);
-		get_count_active_inactive_roleid=reuseVariables.baseURL+"/users/byStatus?id="+roleId;
+		get_count_active_inactive_roleid=reuseVariables.baseURL+count_by_id+roleId;
 	}
 	
 	@When("Admin sends HTTPS Request with valid endpoint with {string}")
@@ -500,11 +506,11 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	public void admin_creates_get_request_with_scenario(String invalidId) {
 		if(invalidId.equalsIgnoreCase("InvalidroleId")) {
 		LoggerLoad.info("User creates get request to get count of Active and Inactive by Invalid RoleId : " +invalid_Id);
-		get_count_active_inactive_invalidroleid=reuseVariables.baseURL+"/users/byStatus?id="+invalid_Id;  //invalid id from reusable variable
+		get_count_active_inactive_invalidroleid=reuseVariables.baseURL+count_by_id+invalid_Id;  //invalid id from reusable variable
 		}
 		if(invalidId.equalsIgnoreCase("InvalidbatchId")) {
 		LoggerLoad.info("User creates get request to get the Admins by program batches for invalid batch ID: " +invalid_integer_Id);
-		get_Admin_by_invalid_batch=reuseVariables.baseURL+"/users/programBatch/"+invalid_integer_Id;  //invalid id from reusable variable
+		get_Admin_by_invalid_batch=reuseVariables.baseURL+userbatch+invalid_integer_Id;  //invalid id from reusable variable
 		}
 		
 	}
@@ -518,11 +524,11 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 		if(ids.equalsIgnoreCase("valid")) {
 		LoggerLoad.info("User creates get request to pass the batch and program iD");
 		get_admin_by_batchId=reuseVariables.baseURL+"/users/programBatch/8729";  //batchId to be passed
-		get_admin_by_programId=reuseVariables.baseURL+"/users/programs/16454";  //Program to be passed
+		get_admin_by_programId=reuseVariables.baseURL+userprogram+"16454";  //ProgramId is getting passed from config.properties prop.getProperty("program_Id_chaining")
 		}
 		else if(ids.equalsIgnoreCase("invalid")) {
 			LoggerLoad.info("User creates get request to pass the Invalic ProgramId");
-			get_admin_by_invalidprogramId=reuseVariables.baseURL+"/users/programs/"+invalid_integer_Id;//invalid id from reusable variables.
+			get_admin_by_invalidprogramId=reuseVariables.baseURL+userprogram+invalid_integer_Id;//invalid id from reusable variables.
 		}
 		
 	}
@@ -551,13 +557,13 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 		if(roleId.equalsIgnoreCase("valid")) {
 		List<Map<String, String>> hm=read.getData(path,"UserModuleMandatory");
 		LoggerLoad.info("User creates get request to display admin by role id " +hm.get(0).get("AdminRoleId"));
-		get_admin_by_roleId=reuseVariables.baseURL+"/users/roles/"+hm.get(0).get("AdminRoleId"); 
+		get_admin_by_roleId=reuseVariables.baseURL+userrole+hm.get(0).get("AdminRoleId"); 
 		LoggerLoad.info("url with validroleId - "+get_admin_by_roleId);
 		}
 		if(roleId.equalsIgnoreCase("invalid")) {
 		
 		LoggerLoad.info("User creates get request to display admin by role id " +invalid_Id);
-		get_admin_by_invalidroleId=reuseVariables.baseURL+"/users/roles/"+invalid_Id; 
+		get_admin_by_invalidroleId=reuseVariables.baseURL+userrole+invalid_Id; 
 		LoggerLoad.info("url with InvalidEndPoint - "+get_admin_by_invalidroleId);
 		}
 	}

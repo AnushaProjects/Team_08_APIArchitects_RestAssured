@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class ConfigReader{
 	Properties prop;
-	public static String configpath="src/test/resources/config.properties";
+	public static String configpath="src/test/resources/config1.properties";
 		
 	public Properties readingdata() {
 		prop = new Properties();
@@ -50,7 +50,7 @@ try {
    
     props.store(new FileOutputStream(configpath), null);
     
-    System.out.println("testing********"+props);
+   
 
 
 
