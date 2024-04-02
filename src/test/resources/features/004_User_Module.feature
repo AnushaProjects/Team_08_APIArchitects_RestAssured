@@ -43,39 +43,39 @@ Feature: User Module
     Then Admin receives 400 Bad Request Status with message and boolean success details   
      
    
-    #@CreatingUserIdWithInvalidValues
-#	Scenario Outline: Check if admin is able to create a Admin with valid endpoint and invalid values in request body
-    #Given Admin creates POST request with all mandatory fields and additional "fieldsInvalid" "<InvalidValue>"
-    #When Admin sends HTTPS Request with endpoint
-    #Then Admin receives 400 Bad Request Status with message and boolean success details
-    #
-     #Examples:
-    #|InvalidValue|
-    #|Firstname|  
-    #|TimeZone|
-    #|LinkedIn|
-    #|VisaStatus|
-    #|PhoneNumber|
-    #|LoginEmail|
-    #|EduUg|
-    #|EduPg|
-    #
-    #@CreatingUserIdWithMissingFields
-#	Scenario Outline: Check if admin is able to create a Admin with valid endpoint and missing fields in request body
-    #Given Admin creates POST request with all mandatory fields and additional "fieldsmissing" "<missing>"
-    #When Admin sends HTTPS Request with endpoint
-    #Then Admin receives 400 Bad Request Status with message and boolean success details
-    #
-     #Examples:
-    #|missing|
-    #|Firstname|  
-    #|TimeZone|
-    #|LinkedIn|
-    #|VisaStatus|
-    #|PhoneNumber|
-    #|LoginEmail|
-    #|EduUg|
-    #|EduPg|
+    @CreatingUserIdWithInvalidValues
+	Scenario Outline: Check if admin is able to create a Admin with valid endpoint and invalid values in request body
+    Given Admin creates POST request with all mandatory fields and additional "fieldsInvalid" "<InvalidValue>"
+    When Admin sends HTTPS Request with endpoint
+    Then Admin receives 400 Bad Request Status with message and boolean success details
+    
+     Examples:
+    |InvalidValue|
+    |Firstname|  
+    |TimeZone|
+    |LinkedIn|
+    |VisaStatus|
+    |PhoneNumber|
+    |LoginEmail|
+    |EduUg|
+    |EduPg|
+    
+    @CreatingUserIdWithMissingFields
+	Scenario Outline: Check if admin is able to create a Admin with valid endpoint and missing fields in request body
+    Given Admin creates POST request with all mandatory fields and additional "fieldsmissing" "<missing>"
+    When Admin sends HTTPS Request with endpoint
+    Then Admin receives 400 Bad Request Status with message and boolean success details
+    
+     Examples:
+    |missing|
+    |Firstname|  
+    |TimeZone|
+    |LinkedIn|
+    |VisaStatus|
+    |PhoneNumber|
+    |LoginEmail|
+    |EduUg|
+    |EduPg|
                      
     	@CreatingUserUnauthorized
 	Scenario: Check if admin able to create a new Admin with request body without authorization
