@@ -10,9 +10,11 @@ import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.json.JSONObject;
 
 import io.restassured.path.json.JsonPath;
+import payload_team08.UpdateUserIdPayload;
 import payload_team08.UserPayload;
 import payload_team08.UserReqBdyUserLoginPayload;
 import payload_team08.UserReqBdyUserRoleMapsPayload;
+import payload_team08.UserStatusPayload;
 import utilities_team08.ConfigReader;
 import utilities_team08.ExcelReaderData;
 import utilities_team08.LoggerLoad;
@@ -28,6 +30,8 @@ public class UserRequestBody extends ReusableVariables {
 	ExcelReaderData read = new ExcelReaderData();
 	ConfigReader configreader=new ConfigReader();
 	Properties prop =configreader.readingdata();
+	UserStatusPayload usp=new UserStatusPayload();
+	UpdateUserIdPayload updaterole=new UpdateUserIdPayload();
 
 			public UserPayload createUserRequest(List<Map<String, String>> hm) {
 				
@@ -66,16 +70,88 @@ public class UserRequestBody extends ReusableVariables {
 
 					return up;
 			    }
-			public UserPayload returnUserPayload(String sheet) throws InvalidFormatException, IOException  {
+public UserPayload returnUserPayload(String sheet) throws InvalidFormatException, IOException  {
 				
 				List<Map<String, String>> hm=read.getData(path,sheet);
 				return createUserRequest(hm);
 				
 			}
+public UserPayload updateUserRequest(List<Map<String, String>> hm) {
+				System.out.println("Inside PUT");
+				
+				List<String> roleIds = new ArrayList<String>(); 
+				roleIds.add(hm.get(0).get("RoleIds")); 
+				System.out.println(hm.get(0).get("UserComments"));
+				LoggerLoad.info("Setting All the Required Fields to the Payload:");
+				
+					
+					up.setUserFirstName(hm.get(0).get("UpdateFirstname"));
+					//up.setUserId(hm.get(0).get("UserId"));
+					up.setUserLastName(hm.get(0).get("UpdateLastName"));
+					
+					up.setUserPhoneNumber(reuse.autoPhoneNumber());
+					
+					
+					up.setUserTimeZone(hm.get(0).get("UpdateTimezone"));
+					up.setUserVisaStatus(hm.get(0).get("UpdateVisa"));
+
+					return up;
+			    }
+				public UserPayload returnUserPayloadput(String sheet) throws InvalidFormatException, IOException  {
+					
+					List<Map<String, String>> hm=read.getData(path,sheet);
+					return updateUserRequest(hm);
+					
+				}
+				public UserStatusPayload updateUserRole(List<Map<String, String>> hm) {
+					System.out.println("Inside PUT");
+					
+					LoggerLoad.info("Setting All the Required Fields to the Payload:");
+					
+					usp.setRoleId(hm.get(0).get("AdminRoleId"));
+					usp.setUserRoleStatus(hm.get(0).get("UpdateRoleStatus"));
+					return usp;
+				    }
+				
+				public UserStatusPayload returnUpdateRoleStatus(String sheet) throws InvalidFormatException, IOException  {
+					
+					List<Map<String, String>> hm=read.getData(path,sheet);
+					return updateUserRole(hm);
+					
+				}
+
+			
 			public String convertJsonToString(UserPayload up) {
 				JSONObject userBody=new JSONObject(up);
 				return userBody.toString();
 			}
+			public String convertJsonToString2(UserStatusPayload usp) {
+				JSONObject userBody=new JSONObject(usp);
+				return userBody.toString();
+			}
+			
+			
+			public UpdateUserIdPayload updateUserRoleId(List<Map<String, String>> hm) {
+				System.out.println("Inside PUT");
+				List<String> roleIds = new ArrayList<String>(); 
+				roleIds.add(hm.get(0).get("UpdateRoleIds")); 
+
+				updaterole.setUserRoleList(roleIds);
+				return updaterole;
+			    }
+			
+			public UpdateUserIdPayload returnUpdateRoleId(String sheet) throws InvalidFormatException, IOException  {
+				
+				List<Map<String, String>> hm=read.getData(path,sheet);
+				return updateUserRoleId(hm);
+				
+			}
+
+		
+		public String convertJsonToStringid(UpdateUserIdPayload updaterole) {
+			JSONObject userBody=new JSONObject(updaterole);
+			return userBody.toString();
+		}
 			
 			
 			public String negativeUserScenario(String negativedata ,String InvalidValue ) throws InvalidFormatException, IOException {
@@ -127,5 +203,39 @@ public class UserRequestBody extends ReusableVariables {
 //					return userBody;
 					
 			 }
+			
+			public String putegativeUserScenario(String InvalidValue ) throws InvalidFormatException, IOException {
+				
+				returnUserPayload("UserModuleMandatory");
+
+					//userLogin=up.getUserLogin();
+					LoggerLoad.info("Updating the UserId creation with input value = " );
+					System.out.println("inside negative");
+					switch(InvalidValue) {
+					case "Firstname":
+						up.setUserFirstName(InvalidValue);
+						LoggerLoad.info("Firstname = " +InvalidValue );
+						break;
+					case "TimeZone":
+						up.setUserTimeZone(InvalidValue);
+						LoggerLoad.info("TimeZone = " +InvalidValue );
+						break;
+					
+					case "VisaStatus":
+						up.setUserVisaStatus(InvalidValue);
+						LoggerLoad.info("VisaStatus = " +InvalidValue );
+						break;
+					case "PhoneNumber":
+						up.setUserPhoneNumber(InvalidValue);
+						LoggerLoad.info("PhoneNumber =  "+InvalidValue );
+						break;
+						
+					}
+					return convertJsonToString(up);
+//					JSONObject userBody=new JSONObject(up);
+//					return userBody;
+					
+			 }
+			
 			
 }

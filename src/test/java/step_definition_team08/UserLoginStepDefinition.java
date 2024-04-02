@@ -36,6 +36,7 @@ public class UserLoginStepDefinition extends ReusableVariables{
 	String reqBody;
 	Response loginResponse;
 	String bearerToken;
+	String userlogout;
 	
 	@Given("Admin creates request with {string} credentials")
 	public void admin_creates_request_with_credentials(String condition) throws IOException, InvalidFormatException {
@@ -96,5 +97,46 @@ public class UserLoginStepDefinition extends ReusableVariables{
 	    cv.statusValidations(loginResponse, badrequest, "Checking the error code");
         LoggerLoad.info("BADRequest - "+loginResponse.statusCode());
 	}
+	
+	@Given("Admin creates request with valid endpoint for logout")
+	public void admin_creates_request_with_valid_endpoint_for_logout() {
+	   userlogout=baseURL+logout;
+	}
 
+	@When("Admin calls Get Https method with valid endpoint")
+	public void admin_calls_get_https_method_with_valid_endpoint() {
+		//String delete_program_by_id1=baseURL+"/deletebyprogid/"+invalid_integer_Id;
+		loginResponse=auth_req_post.when().get(userlogout);
+		loginResponse.prettyPrint();
+	}
+
+	@Then("Admin receives {int} ok  and response with {string}")
+	public void admin_receives_ok_and_response_with(Integer statuscode, String statuscode1) {
+	    cv.statusValidations(loginResponse, statuscode, statuscode1);
+	}
+	
+
+	@When("Admin calls Get Https method withinvalid endpoint")
+	public void admin_calls_get_https_method_withinvalid_endpoint() {
+		
+		loginResponse=auth_req_post.when().get(invalid_endpoint);
+		loginResponse.prettyPrint();
+	}
+
+	@Then("Admin receives {int} Not found")
+	public void admin_receives_not_found(Integer status) {
+	    cv.statusValidations(loginResponse, status, "invalid EndPoint");
+	}
+
+	@When("Admin calls Get Https method with valid endpoint no auth")
+	public void admin_calls_get_https_method_with_valid_endpoint_no_auth() {
+		loginResponse=noauth_req_post.when().get(invalid_endpoint);
+		loginResponse.prettyPrint();
+	}
+
+
+	@Then("Admin receives {int}  unauthorized")
+	public void admin_receives_unauthorized(Integer status) {
+	    cv.statusValidations(loginResponse, status, "UnAuthorised");
+	}
 }

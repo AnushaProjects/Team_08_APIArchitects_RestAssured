@@ -14,7 +14,7 @@ import io.restassured.response.Response;
 import payload_team08.UserPayload;
 import payload_team08.UserReqBdyUserLoginPayload;
 import request_body_raw_team08.LoginRequestBody;
-
+import request_body_raw_team08.LoginRequestBody;
 public class ReusableMethods extends ReusableVariables {
 	
 	UserPayload userpayload;
@@ -50,5 +50,22 @@ public class ReusableMethods extends ReusableVariables {
 	   String name="Team08APIArchitect"+getRandomNumber()+getRandomNumber();
 	   return name;
  }
+ 
+ LoginRequestBody loginReqbody=new LoginRequestBody(); 
+	
+//Login to LMS Application and creating bearer Token	
+	
+//public String returnToken() {
+//		
+//		Response res = given().header("Content-Type","application/json").body(loginReqbody.loginBody).when().post(baseURL+"/login");
+//       System.out.println(res.asPrettyString());
+//       JsonPath gettoken = res.jsonPath();
+//       bearerToken = gettoken.get("token");
+//       System.out.println(res.statusCode());
+//       Assert.assertEquals(res.statusCode(), 200);
+//       return bearerToken;
+//      
+//		
+//	} 
  
 }

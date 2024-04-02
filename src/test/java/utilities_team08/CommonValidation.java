@@ -14,6 +14,7 @@ import io.cucumber.core.logging.Logger;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import request_body_raw_team08.BatchRequestBody;
 
 
 
@@ -22,6 +23,7 @@ public class CommonValidation {
 	Response response;
 	ExcelReaderData read = new ExcelReaderData();
 	String schema_path="src/test/resources/Schema";
+	BatchRequestBody batchrequestBody=new BatchRequestBody();
 
 	
 	//Validating header
@@ -113,6 +115,7 @@ public class CommonValidation {
 //	        LoggerLoad.info("Response Message :" +responsemessage +" , "+successvalue);
 //	        LoggerLoad.info("Validation failed");
 //	    }
+	     
 	
 	}
 }

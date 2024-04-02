@@ -27,6 +27,9 @@ public class ReusableVariables {
 	public String userbatch="/users/programBatch/";
 	public String userprogram="/users/programs/";
 	public String userrole="/users/roles/";
+	public String update_user="/users/"+prop.getProperty("user_id_with_All_field");
+	public String update_user_invalid="/users/"+prop.getProperty("negative_scenerio_user_Id");
+	
 	
 	//ProgramEndpoints
 	public String create_program="/saveprogram";
@@ -35,6 +38,26 @@ public class ReusableVariables {
 	public String update_program_by_name="/program/"+prop.getProperty("program_name");
 	public String get_programs="/allPrograms";
 	public String get_programs_byid="/programs/"+prop.getProperty("program_id");
+	public String delete_by_program_name="/deletebyprogname/"+prop.getProperty("program_name");
+	public String delete_by_program_id="/deletebyprogid/"+prop.getProperty("program_id");
+	public String logout="/logoutlms";
+	
+	//BatchEndpoints
+	public String Programpostendpoint="/saveprogram";
+	public String createbatchendpoint="/batches";
+	public String batchinvalidendpoint="/batche";
+	public String updatevalidendpoint="/batches/{batchId}";
+	public String Invalidendpointupdate="/batch/{batchId}";
+	String bearerToken;
+	public static String programId;
+    public static String batchId;
+	public String authValue;
+	public RequestSpecification httpRequest;
+	public String GetAllBatch="/batches";
+	public String GetByBatchID="/batches/batchId/";
+	public String Batch_Invalid_EndPoint="/batches/INVALID/";
+	public String GetBatchName="/batches/batchName/";
+	public String GetProgramID="/batches/program/";
 	
 	//UserProgramBatchMAp endpoints
 	

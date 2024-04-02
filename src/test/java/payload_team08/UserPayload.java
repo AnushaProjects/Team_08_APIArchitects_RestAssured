@@ -17,6 +17,10 @@ private String userPhoneNumber;
 private String userTimeZone;
 private String userVisaStatus;
 private List<UserReqBdyUserRoleMapsPayload> userRoleMaps;
+
+//uma
+
+
 public String getUserComments() {
 	return userComments;
 }
@@ -101,6 +105,7 @@ public List<UserReqBdyUserRoleMapsPayload> getUserRoleMaps() {
 public void setUserRoleMaps(List<UserReqBdyUserRoleMapsPayload> userRoleMaps) {
 	this.userRoleMaps = userRoleMaps;
 }
+
 
 
 

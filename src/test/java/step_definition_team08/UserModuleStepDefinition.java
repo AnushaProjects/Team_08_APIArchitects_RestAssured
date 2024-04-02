@@ -19,8 +19,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import payload_team08.UpdateUserIdPayload;
 import payload_team08.UserPayload;
 import payload_team08.UserReqBdyUserLoginPayload;
+import payload_team08.UserStatusPayload;
 import request_body_raw_team08.UserRequestBody;
 import utilities_team08.CommonValidation;
 import utilities_team08.ConfigReader;
@@ -37,7 +39,9 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	Properties prop =configreader.readingdata();
 	CommonValidation cv=new CommonValidation();
 	UserPayload userpayload;
+	UserStatusPayload usp;
 	UserReqBdyUserLoginPayload userLogin;
+	UpdateUserIdPayload updaterole;
 	
 	
 	
@@ -576,5 +580,115 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 		resBody=auth_req_post.when().get(get_admin_by_roleId);
 		LoggerLoad.info("Response body : " +resBody.asString()); 
 		LoggerLoad.info("Get the Admins by Role Id is displayed");
+	}
+	
+	//Update User Info
+	@Given("Admin creates Update Admin Role ID Request with valid userRoleList in request body user")
+	public void admin_creates_update_admin_role_id_request_with_valid_user_role_list_in_request_body_user() throws InvalidFormatException, IOException {
+		userpayload=userReqbody.returnUserPayloadput("UserModule");
+		List<Map<String, String>> hm=read.getData(path,"UserModule");
+		
+		userBody=userReqbody.convertJsonToString(userpayload);
+		LoggerLoad.info("Converted ProgramRequestBody for Updating ProgramId to JSON Format " +userBody);
+	}
+
+	@When("Admin sends HTTPS Request with Update Admin Role ID endpoint user")
+	public void admin_sends_https_request_with_update_admin_role_id_endpoint_user() {
+		LoggerLoad.info("Request Sending: "+userBody);
+		
+		resBody= auth_req_post.body(userBody).when().put(baseURL+update_user);
+		LoggerLoad.info("The Request :" +baseURL+update_user);
+		resBody.prettyPrint();
+	}
+
+	@Then("Admin receives {int} OK Status with {string} response body user")
+	public void admin_receives_ok_status_with_response_body_user(Integer statuscode, String string) {
+		cv.headervalidations(resBody);
+		cv.statusValidations(resBody, statuscode, "");
+        cv.schemavalidation(resBody,"/User_Json/update_user_json" );
+	}
+	
+	//Update user with Invalid
+	@Given("Check if admin is able to update a Admin with valid endpoint and missing fields in request body {string}")
+	public void check_if_admin_is_able_to_update_a_admin_with_valid_endpoint_and_missing_fields_in_request_body(String InvalidValues) throws InvalidFormatException, IOException {
+LoggerLoad.info("Create userId with Invalid values");
+		
+		userBody = userReqbody.putegativeUserScenario(InvalidValues);
+		
+		LoggerLoad.info("Request Generated for Negative scenarion:");
+		LoggerLoad.info(userBody);
+		
+		LoggerLoad.info("Converted UserRequestBody for Creating USErId role to JSON Format " +userBody);
+	}
+
+	@When("Admin sends HTTPS Request with Update Admin Role ID endpoint")
+	public void admin_sends_https_request_with_update_admin_role_id_endpoint() {
+		LoggerLoad.info("Updating the endpoint with Request body with Invalid values");
+		resBody= auth_req_post.body(userBody).when().put(baseURL+update_user_invalid);
+		System.out.println(baseURL+update_user_invalid);
+		resBody.prettyPrint();
+	}
+	
+	@When("Admin sends HTTPS Request with Update Admin Role ID endpoint user no auth")
+	public void admin_sends_https_request_with_update_admin_role_id_endpoint_user_no_auth() {
+		LoggerLoad.info("Request Sending without Authorisation "+userBody);
+		
+		resBody= noauth_req_post.body(userBody).when().put(baseURL+update_user);
+		LoggerLoad.info("The Request :" +baseURL+update_user);
+		resBody.prettyPrint();	
+	}
+
+	//update Role Status
+	@Given("Admin creates Update Admin Role ID Request for role status")
+	public void admin_creates_update_admin_role_id_request_for_role_status() throws InvalidFormatException, IOException {
+		usp=userReqbody.returnUpdateRoleStatus("UserModule");
+		List<Map<String, String>> hm=read.getData(path,"UserModule");
+		
+		userBody=userReqbody.convertJsonToString2(usp);
+		LoggerLoad.info("Converted ProgramRequestBody for Updating ProgramId to JSON Format " +userBody);
+	}
+
+	@When("Admin sends HTTPS Request with Update Admin Role ID endpoint rolestatus")
+	public void admin_sends_https_request_with_update_admin_role_id_endpoint_rolestatus() {
+		LoggerLoad.info("Request Sending: "+userBody);
+		
+		resBody= auth_req_post.body(userBody).when().put(baseURL+"/users/roleStatus/"+prop.getProperty("user_id_with_All_field"));
+		LoggerLoad.info("The Request :" +baseURL+"/users/roleStatus/"+prop.getProperty("user_id_with_All_field"));
+		resBody.prettyPrint();
+	}
+	@Then("Admin receives {int} OK Status with updated message")
+	public void admin_receives_ok_status_with_updated_message(Integer statuscode) {
+	    cv.statusValidations(resBody, statuscode, "Status");
+	}
+	
+	//UpdateRoleId
+	@Given("Admin creates Update Admin Role ID Request for role Id")
+	public void admin_creates_update_admin_role_id_request_for_role_id() throws InvalidFormatException, IOException {
+		updaterole=userReqbody.returnUpdateRoleId("UserModule");
+		List<Map<String, String>> hm=read.getData(path,"UserModule");
+		
+		userBody=userReqbody.convertJsonToStringid(updaterole);
+		LoggerLoad.info("Converted ProgramRequestBody for Updating ProgramId to JSON Format " +userBody);
+	}
+
+	@When("Admin sends HTTPS Request with Update Admin Role ID endpoint roleId")
+	public void admin_sends_https_request_with_update_admin_role_id_endpoint_role_id() {
+LoggerLoad.info("Request Sending: "+userBody);
+		
+		resBody= auth_req_post.body(userBody).when().put(baseURL+"/users/roleId/"+prop.getProperty("user_id_with_All_field"));
+		LoggerLoad.info("The Request :" +baseURL+"/users/roleId/"+prop.getProperty("user_id_with_All_field"));
+		resBody.prettyPrint();
+	}
+	
+	@Given("Admin creates Update Admin Role ID Request for assign Program batch")
+	public void admin_creates_update_admin_role_id_request_for_assign_program_batch() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("Admin sends HTTPS Request with Update Admin Role ID endpoint assign Program batch")
+	public void admin_sends_https_request_with_update_admin_role_id_endpoint_assign_program_batch() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
 	}
 }

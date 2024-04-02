@@ -37,6 +37,8 @@ public class ProgramStepdefinition extends ReusableVariables{
 	String programname;
 	String get_all_programs;
 	String get_all_programs_bby_Id;
+	String delete_program_by_name;
+	String delete_program_by_id;
 	
 	//Program Module:
 	//Creating Program
@@ -71,14 +73,14 @@ public class ProgramStepdefinition extends ReusableVariables{
 		cv.statusValidations(userResponse, created, "");
         cv.schemavalidation(userResponse,"/Program_Json/post_program_json" );
 		
-		JsonPath programId = userResponse.jsonPath();
+        JsonPath programId = userResponse.jsonPath();
 		programIds =programId.get("programId");
 		
 		JsonPath programname1=userResponse.jsonPath();
 		programname=programname1.get("programName");
-		System.out.println(programIds);
+		System.out.println(programId);
 		if(Scenario.equalsIgnoreCase("Positive")){
-			LoggerLoad.info("Program Id Valid Scenarios - "+programIds +" and "+programname);
+			LoggerLoad.info("Program Id Valid Scenarios - "+programId +" and "+programname);
 			configreader.writingdata("program_id",programIds.toString());
 			configreader.writingdata("program_name",programname);
 		}
@@ -313,7 +315,68 @@ public void admin_sends_https_request_with_a_specific_programid_endpoint(String 
 	}
 }
 
+//Delete
 
+@Given("Admin creates Delete Request for Program")
+public void admin_creates_delete_request_for_program() {
+	LoggerLoad.info("Deleting the Program by Name");
+	delete_program_by_name=baseURL+delete_by_program_name;
+	LoggerLoad.info("The given request" +delete_program_by_name);
+}
 
+@When("Admin sends HTTPS Request for Delete with Valid Program Name and Valid End Point")
+public void admin_sends_https_request_for_delete_with_valid_program_name_and_valid_end_point() {
+	System.out.println(prop.getProperty("program_name"));
+	userResponse=auth_req_post.when().delete(delete_program_by_name);
+	userResponse.prettyPrint();
+}
+
+@Then("Admin receives {int} Ok status with message for Delete")
+public void admin_receives_ok_status_with_message_for_delete(Integer statuscode) {
+
+	cv.statusValidations(userResponse, statuscode, "Deleted");
+	LoggerLoad.info("Deleted : " +userResponse);
+
+}
+@When("Admin sends HTTPS Request for Delete with Valid Program Name and Invalid End Point")
+public void admin_sends_https_request_for_delete_with_valid_program_name_and_invalid_end_point() {
+	System.out.println(prop.getProperty("program_name"));
+	String delete_program_by_name1=baseURL+"/deletebyprogname/"+invalid_Id;
+	userResponse=auth_req_post.when().delete(delete_program_by_name1);
+	userResponse.prettyPrint();
+}
+
+@When("Admin sends HTTPS Request for Delete with Valid Program Name and Valid End Point no auth")
+public void admin_sends_https_request_for_delete_with_valid_program_name_and_valid_end_point_no_auth() {
+	userResponse=noauth_req_post.when().delete(delete_program_by_name);
+	userResponse.prettyPrint();
+}
+
+@Given("Admin creates Delete Request for Program by Id")
+public void admin_creates_delete_request_for_program_by_id() {
+	LoggerLoad.info("Deleting the Program by Name");
+	delete_program_by_id=baseURL+delete_by_program_id;
+	LoggerLoad.info("The given request" +delete_program_by_id);
+}
+@When("Admin sends HTTPS Request for Delete with Valid Program Id and Valid End Point")
+public void admin_sends_https_request_for_delete_with_valid_program_id_and_valid_end_point() {
+	System.out.println(prop.getProperty("program_id"));
+	userResponse=auth_req_post.when().delete(delete_program_by_id);
+	userResponse.prettyPrint();
+}
+
+@When("Admin sends HTTPS Request for Delete with Valid Program Id and Invalid End Point")
+public void admin_sends_https_request_for_delete_with_valid_program_id_and_invalid_end_point() {
+	System.out.println(prop.getProperty("program_id"));
+	String delete_program_by_id1=baseURL+"/deletebyprogid/"+invalid_integer_Id;
+	userResponse=auth_req_post.when().delete(delete_program_by_id1);
+	userResponse.prettyPrint();
+}
+
+@When("Admin sends HTTPS Request for Delete with Valid Program Id and Valid End Point no auth")
+public void admin_sends_https_request_for_delete_with_valid_program_id_and_valid_end_point_no_auth() {
+	userResponse=noauth_req_post.when().delete(delete_program_by_id);
+	userResponse.prettyPrint();
+}
 	
 }
