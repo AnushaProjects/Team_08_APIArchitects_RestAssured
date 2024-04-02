@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite, 23 failed tests</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-Default_suite" class="navigator-link">
+              <span class="suite-name border-failed">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
+                    <span>C:\Users\umara\AppData\Local\Temp\testng-eclipse-1200835230\testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-Default_suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-Default_suite" class="navigator-link ">
+                    <span>1 group</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-Default_suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-Default_suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-Default_suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-Default_suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">31 methods, 23 failed,   8 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role id of a Admin by valid Admin id with no authorization&quot;, &quot;User...)">runScenario("Check if admin is able to update role id of a Admin by valid Admin id with no authorization", "User...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to retreive all the available roles with Authorization&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to retreive all the available roles with Authorization", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to assign Admin to with program/batch by invalid Admin Id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to assign Admin to with program/batch by invalid Admin Id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to update role status of a Admin with valid Admin id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to retrieve all Admins with filters&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to retrieve all Admins with filters", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update the Admin login status by Admin ID&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to update the Admin login status by Admin ID", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role id of a Admin by valid Admin id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to update role id of a Admin by valid Admin id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update a Admin with Admin Role Id with already existing Admin role ID&quot;, &quot;...)">runScenario("Check if admin is able to update a Admin with Admin Role Id with already existing Admin role ID", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update Admin details with Admin id and valid data in all fields&quot;, &quot;User M...)">runScenario("Check if admin is able to update Admin details with Admin id and valid data in all fields", "User M...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role status of a Admin with invalid Admin id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to update role status of a Admin with invalid Admin id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role id of a Admin by valid Admin id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to update role id of a Admin by valid Admin id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role id of a Admin with invalid Admin id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to update role id of a Admin with invalid Admin id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to assign Admin to with program/batch by invalid Admin Id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id and invalid role status...)">runScenario("Check if admin is able to update role status of a Admin with valid Admin id and invalid role status...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Default_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to assign Admin to with program/batch by invalid Admin Id&quot;, &quot;User Module&quot;)">runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if Admin able to generate token with valid endpoint&quot;, &quot;User Login&quot;)">runScenario("Check if Admin able to generate token with valid endpoint", "User Login")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if Admin able to delete a Admin with valid Admin Id&quot;, &quot;User Module&quot;)">runScenario("Check if Admin able to delete a Admin with valid Admin Id", "User Module")</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="testRunner.TestRunner" class="method navigator-link" hash-for-method="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">testRunner.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_endpoint(UserModule2StepDefinition.java:380)
+	at ✽.Admin sends HTTPS Request with invalid &quot;PUT - Update Admin Role ID&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:57)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_endpoint(UserModule2StepDefinition.java:384)
+	at ✽.Admin sends HTTPS Request with invalid &quot;PUT - Update Admin Role Program Batch status&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:105)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role id of a Admin by valid Admin id with no authorization&quot;, &quot;User...)">
+                  </a> <!-- runScenario("Check if admin is able to update role id of a Admin by valid Admin id with no authorization", "User...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role id of a Admin by valid Admin id with no authorization", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_endpoint_unauthorized(UserModule2StepDefinition.java:330)
+	at ✽.Admin sends HTTPS &quot;PUT - Update Admin Role ID&quot; Request with endpoint unauthorized(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:52)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to retreive all the available roles with Authorization&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to retreive all the available roles with Authorization", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to retreive all the available roles with Authorization", "User Module")</span>
+                  <div class="stack-trace">io.restassured.module.jsv.JsonSchemaValidationException: java.io.FileNotFoundException: src\test\resources\Schema\Put_User_RoleId_JSON (The system cannot find the file specified)
+	at io.restassured.module.jsv.JsonSchemaValidator$JsonSchemaValidatorFactory.create(JsonSchemaValidator.java:286)
+	at io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema(JsonSchemaValidator.java:157)
+	at utilities.CommonValidation.schemavalidation(CommonValidation.java:35)
+	at stepDefinition.UserModule2StepDefinition.admin_receives_ok_status_with_response_body(UserModule2StepDefinition.java:132)
+	at ✽.Admin receives 200 OK Status with &quot;PUT - Update Admin Role ID&quot; response body(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:18)
+Caused by: java.io.FileNotFoundException: src\test\resources\Schema\Put_User_RoleId_JSON (The system cannot find the file specified)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:216)
+	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:157)
+	at com.github.fge.jackson.JsonLoader.fromFile(JsonLoader.java:165)
+	at io.restassured.module.jsv.JsonSchemaValidator$3.createSchemaInstance(JsonSchemaValidator.java:155)
+	at io.restassured.module.jsv.JsonSchemaValidator$3.createSchemaInstance(JsonSchemaValidator.java:152)
+	at io.restassured.module.jsv.JsonSchemaValidator$JsonSchemaValidatorFactory.create(JsonSchemaValidator.java:284)
+	at io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchema(JsonSchemaValidator.java:157)
+	at utilities.CommonValidation.schemavalidation(CommonValidation.java:35)
+	at stepDefinition.UserModule2StepDefinition.admin_receives_ok_status_with_response_body(UserModule2StepDefinition.java:132)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:56)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:794)
+	at org.testng.TestRunner.run(TestRunner.java:596)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+	at org.testng.TestNG.runSuites(TestNG.java:1063)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">
+                  </a> <!-- runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role status of a Admin with valid Admin id with no authorization", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_endpoint_unauthorized(UserModule2StepDefinition.java:334)
+	at ✽.Admin sends HTTPS &quot;PUT - Update Admin Role Program Batch status&quot; Request with endpoint unauthorized(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:101)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to assign Admin to with program/batch by invalid Admin Id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_adminid_and_valid_endpoint(UserModule2StepDefinition.java:302)
+	at ✽.Admin sends HTTPS Request with invalid AdminId and valid &quot;PUT - Update Admin login status&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:116)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to assign Admin to with program/batch by invalid Admin Id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_adminid_and_valid_endpoint(UserModule2StepDefinition.java:300)
+	at ✽.Admin sends HTTPS Request with invalid AdminId and valid &quot;PUT - Update Admin Role Program Batch status&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:97)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor67.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_endpoint(UserModule2StepDefinition.java:386)
+	at ✽.Admin sends HTTPS Request with invalid &quot;PUT - Update Admin login status&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:124)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to update role status of a Admin with valid Admin id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role status of a Admin with valid Admin id", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_update_user_role_status_endpoint(UserModule2StepDefinition.java:180)
+	at ✽.Admin sends HTTPS Request with Update User Role Status endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:62)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to retrieve all Admins with filters&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to retrieve all Admins with filters", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to retrieve all Admins with filters", "User Module")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.statusCode()&quot; because &quot;this.resBody&quot; is null
+	at stepDefinition.UserModule2StepDefinition.admin_receives_ok_status_with_response_body(UserModule2StepDefinition.java:121)
+	at ✽.Admin receives 200 OK Status with &quot;PUT - Update Admin Role ID&quot; response body(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:25)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update the Admin login status by Admin ID&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to update the Admin login status by Admin ID", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update the Admin login status by Admin ID", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_update_admin_login_status_endpoint(UserModule2StepDefinition.java:241)
+	at ✽.Admin sends HTTPS Request with Update Admin login status endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:110)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role id of a Admin by valid Admin id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to update role id of a Admin by valid Admin id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role id of a Admin by valid Admin id", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_update_admin_role_id_endpoint(UserModule2StepDefinition.java:225)
+	at ✽.Admin sends HTTPS Request with Update Admin Role ID endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:42)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update a Admin with Admin Role Id with already existing Admin role ID&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to update a Admin with Admin Role Id with already existing Admin role ID", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update a Admin with Admin Role Id with already existing Admin role ID", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_update_admin_role_id_endpoint(UserModule2StepDefinition.java:225)
+	at ✽.Admin sends HTTPS Request with Update Admin Role ID endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:37)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update Admin details with Admin id and valid data in all fields&quot;, &quot;User M...)">
+                  </a> <!-- runScenario("Check if admin is able to update Admin details with Admin id and valid data in all fields", "User M...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update Admin details with Admin id and valid data in all fields", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor67.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_put_endpoint(UserModule2StepDefinition.java:154)
+	at ✽.Admin sends HTTPS request with put endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:129)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">
+                  </a> <!-- runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role status of a Admin with valid Admin id with no authorization", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor67.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_endpoint_unauthorized(UserModule2StepDefinition.java:326)
+	at ✽.Admin sends HTTPS &quot;PUT - User&quot; Request with endpoint unauthorized(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:139)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor67.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_endpoint(UserModule2StepDefinition.java:376)
+	at ✽.Admin sends HTTPS Request with invalid &quot;PUT - User&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:143)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role status of a Admin with invalid Admin id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to update role status of a Admin with invalid Admin id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role status of a Admin with invalid Admin id", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_adminid_and_valid_endpoint(UserModule2StepDefinition.java:298)
+	at ✽.Admin sends HTTPS Request with invalid AdminId and valid &quot;PUT - Update Admin role status by Admin ID&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:72)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role id of a Admin by valid Admin id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to update role id of a Admin by valid Admin id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role id of a Admin by valid Admin id", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_update_admin_role_id_endpoint(UserModule2StepDefinition.java:225)
+	at ✽.Admin sends HTTPS Request with Update Admin Role ID endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:30)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role id of a Admin with invalid Admin id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to update role id of a Admin with invalid Admin id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role id of a Admin with invalid Admin id", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_adminid_and_valid_endpoint(UserModule2StepDefinition.java:296)
+	at ✽.Admin sends HTTPS Request with invalid AdminId and valid &quot;PUT - Update Admin Role ID&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:47)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">
+                  </a> <!-- runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role status of a Admin with valid Admin id with no authorization", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_endpoint_unauthorized(UserModule2StepDefinition.java:332)
+	at ✽.Admin sends HTTPS &quot;PUT - Update Admin role status by Admin ID&quot; Request with endpoint unauthorized(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:81)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to assign Admin to with program/batch by invalid Admin Id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.GeneratedConstructorAccessor67.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_invalid_adminid_and_valid_endpoint(UserModule2StepDefinition.java:290)
+	at ✽.Admin sends HTTPS Request with invalid AdminId and valid &quot;PUT - User&quot; endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:135)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id and invalid role status...)">
+                  </a> <!-- runScenario("Check if admin is able to update role status of a Admin with valid Admin id and invalid role status...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role status of a Admin with valid Admin id and invalid role status", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_update_user_role_status_endpoint(UserModule2StepDefinition.java:180)
+	at ✽.Admin sends HTTPS Request with Update User Role Status endpoint(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:68)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">
+                  </a> <!-- runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role status of a Admin with valid Admin id with no authorization", "User Module")</span>
+                  <div class="stack-trace">java.lang.IllegalArgumentException: object cannot be null
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.body(RequestSpecificationImpl.groovy:765)
+	at stepDefinition.UserModule2StepDefinition.admin_sends_https_request_with_endpoint_unauthorized(UserModule2StepDefinition.java:336)
+	at ✽.Admin sends HTTPS &quot;PUT - Update Admin login status&quot; Request with endpoint unauthorized(file:///C:/Users/umara/eclipse-workspace/Team8_API_Architects_Uma/src/test/resources/features/UserModule2.feature:120)
+
+</div> <!-- stack-trace -->
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
+          <div class="suite-Default_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testRunner.TestRunner</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to assign Admin to with program/batch by invalid Admin Id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)">
+                  </a> <!-- runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields", "User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if Admin able to generate token with valid endpoint&quot;, &quot;User Login&quot;)">
+                  </a> <!-- runScenario("Check if Admin able to generate token with valid endpoint", "User Login") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if Admin able to generate token with valid endpoint", "User Login")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update role status of a Admin with valid Admin id with no authorization&quot;,...)">
+                  </a> <!-- runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update role status of a Admin with valid Admin id with no authorization", "User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)">
+                  </a> <!-- runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields", "User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if Admin able to delete a Admin with valid Admin Id&quot;, &quot;User Module&quot;)">
+                  </a> <!-- runScenario("Check if Admin able to delete a Admin with valid Admin Id", "User Module") -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if Admin able to delete a Admin with valid Admin Id", "User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="runScenario(&quot;Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint&quot;, &quot;...)">
+                  </a> <!-- runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...) -->
+                  <span class="method-name">runScenario</span>
+                  <span class="parameters">("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "User Module")</span>
+                  <em>
+(Runs Cucumber Scenarios)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-passed -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\umara\AppData\Local\Temp\testng-eclipse-1200835230\testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;testRunner.TestRunner&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">cucumber</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">runScenario</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(31);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'runScenario')
+data.setCell(0, 2, 'testRunner.TestRunner')
+data.setCell(0, 3, 3763);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'runScenario')
+data.setCell(1, 2, 'testRunner.TestRunner')
+data.setCell(1, 3, 1578);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'runScenario')
+data.setCell(2, 2, 'testRunner.TestRunner')
+data.setCell(2, 3, 1237);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'runScenario')
+data.setCell(3, 2, 'testRunner.TestRunner')
+data.setCell(3, 3, 668);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'runScenario')
+data.setCell(4, 2, 'testRunner.TestRunner')
+data.setCell(4, 3, 373);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'runScenario')
+data.setCell(5, 2, 'testRunner.TestRunner')
+data.setCell(5, 3, 342);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'runScenario')
+data.setCell(6, 2, 'testRunner.TestRunner')
+data.setCell(6, 3, 270);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'runScenario')
+data.setCell(7, 2, 'testRunner.TestRunner')
+data.setCell(7, 3, 261);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'runScenario')
+data.setCell(8, 2, 'testRunner.TestRunner')
+data.setCell(8, 3, 244);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'runScenario')
+data.setCell(9, 2, 'testRunner.TestRunner')
+data.setCell(9, 3, 243);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'runScenario')
+data.setCell(10, 2, 'testRunner.TestRunner')
+data.setCell(10, 3, 36);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'runScenario')
+data.setCell(11, 2, 'testRunner.TestRunner')
+data.setCell(11, 3, 25);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'runScenario')
+data.setCell(12, 2, 'testRunner.TestRunner')
+data.setCell(12, 3, 15);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'runScenario')
+data.setCell(13, 2, 'testRunner.TestRunner')
+data.setCell(13, 3, 13);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'runScenario')
+data.setCell(14, 2, 'testRunner.TestRunner')
+data.setCell(14, 3, 12);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'runScenario')
+data.setCell(15, 2, 'testRunner.TestRunner')
+data.setCell(15, 3, 11);
+data.setCell(16, 0, 16)
+data.setCell(16, 1, 'runScenario')
+data.setCell(16, 2, 'testRunner.TestRunner')
+data.setCell(16, 3, 11);
+data.setCell(17, 0, 17)
+data.setCell(17, 1, 'runScenario')
+data.setCell(17, 2, 'testRunner.TestRunner')
+data.setCell(17, 3, 10);
+data.setCell(18, 0, 18)
+data.setCell(18, 1, 'runScenario')
+data.setCell(18, 2, 'testRunner.TestRunner')
+data.setCell(18, 3, 10);
+data.setCell(19, 0, 19)
+data.setCell(19, 1, 'runScenario')
+data.setCell(19, 2, 'testRunner.TestRunner')
+data.setCell(19, 3, 9);
+data.setCell(20, 0, 20)
+data.setCell(20, 1, 'runScenario')
+data.setCell(20, 2, 'testRunner.TestRunner')
+data.setCell(20, 3, 9);
+data.setCell(21, 0, 21)
+data.setCell(21, 1, 'runScenario')
+data.setCell(21, 2, 'testRunner.TestRunner')
+data.setCell(21, 3, 9);
+data.setCell(22, 0, 22)
+data.setCell(22, 1, 'runScenario')
+data.setCell(22, 2, 'testRunner.TestRunner')
+data.setCell(22, 3, 9);
+data.setCell(23, 0, 23)
+data.setCell(23, 1, 'runScenario')
+data.setCell(23, 2, 'testRunner.TestRunner')
+data.setCell(23, 3, 8);
+data.setCell(24, 0, 24)
+data.setCell(24, 1, 'runScenario')
+data.setCell(24, 2, 'testRunner.TestRunner')
+data.setCell(24, 3, 7);
+data.setCell(25, 0, 25)
+data.setCell(25, 1, 'runScenario')
+data.setCell(25, 2, 'testRunner.TestRunner')
+data.setCell(25, 3, 7);
+data.setCell(26, 0, 26)
+data.setCell(26, 1, 'runScenario')
+data.setCell(26, 2, 'testRunner.TestRunner')
+data.setCell(26, 3, 6);
+data.setCell(27, 0, 27)
+data.setCell(27, 1, 'runScenario')
+data.setCell(27, 2, 'testRunner.TestRunner')
+data.setCell(27, 3, 5);
+data.setCell(28, 0, 28)
+data.setCell(28, 1, 'runScenario')
+data.setCell(28, 2, 'testRunner.TestRunner')
+data.setCell(28, 3, 5);
+data.setCell(29, 0, 29)
+data.setCell(29, 1, 'runScenario')
+data.setCell(29, 2, 'testRunner.TestRunner')
+data.setCell(29, 3, 5);
+data.setCell(30, 0, 30)
+data.setCell(30, 1, 'runScenario')
+data.setCell(30, 2, 'testRunner.TestRunner')
+data.setCell(30, 3, 5);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">testRunner.TestRunner</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUpClass(org.testng.TestRunner@2553dcc0)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if Admin able to generate token with valid endpoint", "User Login")</span>
+                <span class="method-start">566 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</span>
+                <span class="method-start">4333 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fi...)</span>
+                <span class="method-start">5571 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to retreive all the available roles with Authorization", "User Module")</span>
+                <span class="method-start">6241 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to retrieve all Admins with filters", "User Module")</span>
+                <span class="method-start">6585 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role id of a Admin by valid Admin id", "User Module")</span>
+                <span class="method-start">8166 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update a Admin with Admin Role Id with already existing Admin role ID", "...)</span>
+                <span class="method-start">8204 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role id of a Admin by valid Admin id", "User Module")</span>
+                <span class="method-start">8217 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role id of a Admin with invalid Admin id", "User Module")</span>
+                <span class="method-start">8229 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role id of a Admin by valid Admin id with no authorization", "User...)</span>
+                <span class="method-start">8245 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</span>
+                <span class="method-start">8258 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role status of a Admin with valid Admin id", "User Module")</span>
+                <span class="method-start">8270 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role status of a Admin with valid Admin id and invalid role status...)</span>
+                <span class="method-start">8297 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role status of a Admin with invalid Admin id", "User Module")</span>
+                <span class="method-start">8307 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</span>
+                <span class="method-start">8319 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</span>
+                <span class="method-start">8334 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</span>
+                <span class="method-start">8708 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</span>
+                <span class="method-start">8718 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</span>
+                <span class="method-start">8727 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update the Admin login status by Admin ID", "User Module")</span>
+                <span class="method-start">8736 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</span>
+                <span class="method-start">8746 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</span>
+                <span class="method-start">8752 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</span>
+                <span class="method-start">8760 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update Admin details with Admin id and valid data in all fields", "User M...)</span>
+                <span class="method-start">8766 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</span>
+                <span class="method-start">8773 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</span>
+                <span class="method-start">8779 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</span>
+                <span class="method-start">8785 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if Admin able to delete a Admin with valid Admin Id", "User Module")</span>
+                <span class="method-start">8790 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to assign Admin to with program/batch by invalid Admin Id", "User Module")</span>
+                <span class="method-start">9052 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to update role status of a Admin with valid Admin id with no authorization",...)</span>
+                <span class="method-start">9296 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">runScenario("Check if admin is able to update a Admin role ID with valid Admin role ID with invalid endpoint", "...)</span>
+                <span class="method-start">9542 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownClass</span>
+                <span class="method-start">9814 ms</span>
+              </div> <!-- configuration-class after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
