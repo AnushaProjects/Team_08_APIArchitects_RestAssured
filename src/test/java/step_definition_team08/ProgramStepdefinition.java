@@ -92,6 +92,7 @@ public class ProgramStepdefinition extends ReusableVariables{
 		else if(Scenario.equalsIgnoreCase("Positive2")){
 			LoggerLoad.info("Program Id for Negative Scenarios - " +programIds);
 			configreader.writingdata("program_Id_chaining",programIds.toString());
+			configreader.writingdata("program_name_chaining",programname);
 			}
 	}
 	
