@@ -496,7 +496,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
 //		   rv.batchId = batchIdFromResp.toString();
 //		   batchName=BatchResponse.path("batchName");
 //		   System.out.println("Printing the batch id after retrieving: "+rv.batchId);
-  		String batchIdnum="8765";
+  		//String batchIdnum="8765";
+  		String batchIdnum=rv.batchId ;
   		response=rv.httpRequest
   				.given().pathParam("batchId",batchIdnum)
   				.when().get(rv.baseURL+rv.GetByBatchID+"{batchId}");
@@ -506,7 +507,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
 	public void admin_sends_https_request_with_endpoint_for_program_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for ProgramID");
 
-  		String ProgID="16489";
+  		//String ProgID="16489";
+  		String ProgID=rv.programId;
 				  response=rv.httpRequest.pathParam("programId", ProgID)
 				  .when().get(rv.baseURL+"/batches/program/{programId}");
 	}	
@@ -596,7 +598,8 @@ String batchIdnum="abc";
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for Valid BatchName");	
 
   		
-  		String BatchName="SAMPLE BATCH12";
+  		//String BatchName="SAMPLE BATCH12";
+  		String BatchName=batchName; 
   		response=rv.httpRequest
   				.given().pathParam("batchName",BatchName)
   				.when().get(rv.baseURL+ rv.GetBatchName +"{batchName}");
@@ -636,7 +639,8 @@ String batchIdnum="abc";
 	public void admin_sends_https_request_with_valid_batch_id_and_endpoint_batch_2() {
   		LoggerLoad.info("Admin sends HTTPS Request with valid BatchId and endpoint");	
 
-		String DelID="8768"; //8768 8765
+		//String DelID="8768";
+		String DelID=rv.batchId;//8768 8765
 		  rv.httpRequest=RestAssured.given().
 				  header("Authorization","Bearer "+prop.getProperty("bearer"));
 				  response=rv.httpRequest.pathParam("id", DelID)

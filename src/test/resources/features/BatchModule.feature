@@ -64,17 +64,17 @@ Given Admin creates batch GET Request
 When Admin sends HTTPS Request for GetAll_batch with invalid endpoint batch
 Then Admin receives 404 status with error message Not Found batch.
 
-#@Batch_With_SearchField_ID
-#Scenario: Check if admin able to retrieve all batches with search string
-#Given Admin creates batch GET Request
-#When Admin sends HTTPS Request with endpoint batch
-#Then Admin receives 200 OK Status with response body batch.
-#
-#@Batch_With_Invalid_SearchField_ID
-#Scenario: Check if admin able to retrieve all batches with invalid search string
-#Given Admin creates GET Request
-#When Admin sends HTTPS Request with invalid searchfieldID and valid endpoint batch
-#Then Admin receives 404 status with error message Not Found batch.
+@Batch_With_SearchField_ID
+Scenario: Check if admin able to retrieve all batches with search string
+Given Admin creates batch GET Request
+When Admin sends HTTPS Request with endpoint batch
+Then Admin receives 200 OK Status with response body batch.
+
+@Batch_With_Invalid_SearchField_ID
+Scenario: Check if admin able to retrieve all batches with invalid search string
+Given Admin creates batch GET Request
+When Admin sends HTTPS Request with invalid searchfieldID and valid endpoint batch
+Then Admin receives 404 status with error message Not Found batch.
 
 @Get_Valid_BatchID
 Scenario: Check if admin able to retrieve a batch with valid BATCH ID
@@ -130,11 +130,11 @@ Given Admin creates batch GET Request
 When Admin sends HTTPS Request with endpoint for ProgramID batch
 Then Admin receives 200 OK Status with response body batch.
 
-#@Get_InValid_ProgramID_Valid_EndPoint
-#Scenario: Check if admin able to retrieve a batch with invalid Program Id
-#Given Admin creates batch GET Request
-#When Admin sends HTTPS Request with endpoint for Invalid ProgramID batch
-#Then Admin receives 404 Not Found Status with the message and boolean success details batch
+@Get_InValid_ProgramID_Valid_EndPoint
+Scenario: Check if admin able to retrieve a batch with invalid Program Id
+Given Admin creates batch GET Request
+When Admin sends HTTPS Request with endpoint for Invalid ProgramID batch
+Then Admin receives 404 Not Found Status with the message and boolean success details batch
 
 @Get_Invalid_EndPoint_Valid_ProgramID
 Scenario: Check if admin able to retrieve a batch with invalid endpoint for ProgramID
@@ -188,7 +188,7 @@ Then Admin receives 401 Unauthorized access batch
  Given Admin creates PUT batch Request with invalid BatchId and valid Data
   When Admin sends HTTPS batch Request with update endpoint and update batchid batch
   Then Admin receives 404 Not Found Status with message and boolean success details batch
- 
+  
  @PUT-BATCH-4
  Scenario: Check if admin able to update a Batch with valid batchID and missing mandatory fields request body
  Given Admin creates PUT batch Request with valid batch Id and missing mandatory fields
@@ -215,7 +215,6 @@ Then Admin receives 400 Bad Request Status with message and boolean success deta
   When Admin sends HTTPS batch Request with update endpoint and update batchid batch
  Then Admin receives 200 Ok status with message batch
  
- 
  @Delete_Valid_BatchID
 Scenario: Check if admin able to delete a Batch with valid Batch ID
 Given Admin creates batch DELETE Request
@@ -236,10 +235,6 @@ Scenario: Check if admin able to delete a Batch without authorization
 Given Admin creates batch DELETE Request with unauthorized access
 When Admin sends HTTPS Request with valid BatchId and endpoint for unautherized batch
 Then Admin receives 401 Unauthorized access batch
-
-
-
-
 
 
 

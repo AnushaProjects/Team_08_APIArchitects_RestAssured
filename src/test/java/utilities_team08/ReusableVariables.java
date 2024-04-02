@@ -26,6 +26,8 @@ public class ReusableVariables {
 	public String Batch_Invalid_EndPoint="/batches/INVALID/";
 	public String GetBatchName="/batches/batchName/";
 	public String GetProgramID="/batches/program/";
+	public String DeleteProgNameEndPoint="/deletebyprogname";
 
+	public String DeleteProgIDEndPoint="/deletebyprogid";
 	public String path=".\\src\\test\\resources\\TestData\\Team_08_API Architects_LMSTestData.xlsx";
 }
