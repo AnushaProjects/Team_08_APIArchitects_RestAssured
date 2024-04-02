@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.checkerframework.checker.units.qual.t;
 import org.testng.Assert;
 
 import requestBodyRaw.UserRequestBody;
@@ -21,6 +22,8 @@ import payLoad.UserPutPayload;
 import utilities.CommonValidation;
 import utilities.ConfigReader;
 import utilities.ExcelReader;
+import utilities.LoggerLoad;
+
 import utilities.ReusableMethods;
 import utilities.ReusableVariables;
 
@@ -34,7 +37,6 @@ public class UserModule1StepDefinition extends ReusableVariables {
 	Properties prop =configreader.readingdata();
 	UpdateUserRoleIdPayload UserRoleIdPayload = new UpdateUserRoleIdPayload();
 	CommonValidation cv = new CommonValidation();
-	//UserPayload userreqBodyAll;
 	Response userResponse;
 	public static String userIds;
 	String emailId;
@@ -48,26 +50,25 @@ public class UserModule1StepDefinition extends ReusableVariables {
 	UpdateUserRoleIdPayload userroleidpayload;
 	UpdateUserLoginStatusPayload userloginstatuspayload;
 	String get_admin_by_userId;
-	//String userId = configreader.getUserIdWithAAllField();
-
+	
 	@Given("Admin creates POST request with all mandatory fields and additional fields")
 	public void admin_creates_post_request_with_all_mandatory_fields_and_additional_fields() throws InvalidFormatException, IOException {
-
+		LoggerLoad.info("Request Sending: " +userBody);
 		userpayload = userReqbody.returnUserPayload("UserModule");
-		userBody=userReqbody.convertJsonToString(userpayload);		
-		//System.out.println(userreqBodyAll);		
-		//		List<Map<String, String>> hm=read.getData(path,"UserModule");
-		//		userReqbody = userReqbody.createUserRequest(hm);
+		userBody=userReqbody.convertJsonToString(userpayload);	
+		System.out.println(userBody);
+		LoggerLoad.info("Converted UserRequestBody to JSON Format for creating User/Admin role  " +userBody);
 	}
 
 	@When("Admin sends HTTPS Request with endpoint")
 	public void admin_sends_https_request_with_endpoint() {
-		//System.out.println(userreqBodyAll);
-		resBody= reqspec.body(userBody).when().post(baseURL+"/users/roleStatus");				
+		LoggerLoad.info("sending post request" );
+		resBody= reqspec.body(userBody).when().post(baseURL+"/users/roleStatus");		
 	}
 
 	@Then("Admin receives {int} Created Status with response body and Save userId for {string}.")
 	public void admin_receives_created_status_with_response_body_and_save_user_id_for(int created, String Scenario) {
+		LoggerLoad.info("check userId gets generated for Admin role");
 		System.out.println(resBody.statusCode());
 		Assert.assertEquals(resBody.statusCode(), created);
 
@@ -90,7 +91,9 @@ public class UserModule1StepDefinition extends ReusableVariables {
 	//GET Request by AdminID
 	@Given("User creates getAllUsersWithRoles request for the LMS API endpoint with {string}")
 	public void user_creates_get_all_users_with_roles_request_for_the_lms_api_endpoint_with(String string) {
+		LoggerLoad.info("Sending GET request to fetch user with admin role" );
 		resBody= given().when().get(baseURL+"/users/roles");
+		System.out.println(resBody);
 	}
 
 	@When("User  sends HTTPS Request with {string}")
@@ -99,14 +102,15 @@ public class UserModule1StepDefinition extends ReusableVariables {
 			resBody= given().header("Content-Type","application/json")
 					.header("Authorization","Bearer " + prop.getProperty("bearer"))
 					.when().get(baseURL+"/users/roles");
-			//System.out.println(userGetResponse.asPrettyString());
+			System.out.println(resBody.asPrettyString());
+			System.out.println(resBody);
 		}
 
 		if(endpoint.equalsIgnoreCase("invalid endpoint")){
 			resBody = given().header("Content-Type","application/json")
 					.header("Authorization","Bearer " + prop.getProperty("bearer"))
 					.when().get(baseURL+"/users/rolers");
-			//System.out.println(userGetResponse.asPrettyString());
+			System.out.println(resBody.asPrettyString());
 		}
 	}
 
@@ -167,17 +171,17 @@ public class UserModule1StepDefinition extends ReusableVariables {
 	//PUT Request - (Update Admin Role ID) NEGATIVE SCENARIOS
 	//400 bad request - already existing role id
 
-@Given("Admin creates Update Admin Role ID Request with valid userRoleList in request body with existing id")
-public void admin_creates_update_admin_role_id_request_with_valid_user_role_list_in_request_body_with_existing_id() throws InvalidFormatException, IOException {
-	userroleidpayload = userReqbody.returnupdateExistingUserRoleId("UserModulePUT_RoleId");
-	userBody=userReqbody.convertJsonToString(userroleidpayload);
-	System.out.println(userBody);
-}
+	@Given("Admin creates Update Admin Role ID Request with valid userRoleList in request body with existing id")
+	public void admin_creates_update_admin_role_id_request_with_valid_user_role_list_in_request_body_with_existing_id() throws InvalidFormatException, IOException {
+		userroleidpayload = userReqbody.returnupdateExistingUserRoleId("UserModulePUT_RoleId");
+		userBody=userReqbody.convertJsonToString(userroleidpayload);
+		System.out.println(userBody);
+	}
 	@Then("Admin receives {int} Bad Request Status with message and boolean success details for Update Admin Role ID")
 	public void admin_receives_bad_request_status_with_message_and_boolean_success_details_for_update_admin_role_id(int statuscode) {
 		Assert.assertEquals(resBody.statusCode(), statuscode);
 	}
-	
+
 	//update role id invalid  -- needed
 	@Given("Admin creates Update Admin Role ID PUT Request with invalid request body")
 	public void admin_creates_update_admin_role_id_put_request_with_invalid_request_body() throws InvalidFormatException, IOException {
@@ -190,7 +194,7 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 	public void admin_receives_bad_request_status_with_message_and_boolean_success_details_for_update_user(int statuscode) {
 		Assert.assertEquals(resBody.statusCode(), statuscode);
 	}
-	
+
 	//PUT invalid Admin Role Id 
 	@Given("Admin creates Update Admin Role ID PUT Request with invalid Update Admin Role ID request body")
 	public void admin_creates_update_admin_role_id_put_request_with_invalid_update_admin_role_id_request_body() throws InvalidFormatException, IOException {
@@ -198,7 +202,7 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 		userBody=userReqbody.convertJsonToString(userroleidpayload);
 		System.out.println(userBody);
 	}
-	
+
 	//PUT Request - User/Admin ID 
 
 	@Given("Admin creates PUT Request with valid data in request body")
@@ -210,14 +214,11 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 	//update user
 	@When("Admin sends HTTPS request with put endpoint")
 	public void admin_sends_https_request_with_put_endpoint(){
-		String userId = configreader.getUserIdWithAAllField();
-		System.out.println(userId);		
-		resBody= reqspec.pathParam("userId", userId).body(userBody).when().put(baseURL+"/users/{userId}");
+		resBody= reqspec.pathParam("userId", userIds).body(userBody).when().put(baseURL+"/users/{userId}");
 	}
 
 	@Then("Admin receives {int} Ok status with message")
 	public void admin_receives_ok_status_with_message(int statuscode) {
-		//System.out.println(resBody.statusCode());
 		Assert.assertEquals(resBody.statusCode(), statuscode);
 		cv.headervalidations(userResponse);
 		cv.statusValidations(userResponse, statuscode);		
@@ -227,7 +228,6 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 
 	@Given("Admin creates Update User Role Status PUT Request with valid data in request body")
 	public void admin_creates_update_user_role_status_put_request_with_valid_data_in_request_body() throws InvalidFormatException, IOException {
-
 		userrolestatuspayload = userReqbody.returnUpdateUserRoleStatusPayload("UserModulePUT_UserRoleStatus");
 		userBody=userReqbody.convertJsonToString(userrolestatuspayload);		
 		System.out.println(userBody);
@@ -265,14 +265,14 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 	public void admin_receives_ok_status_with_response_body_for_update_admin_role_program_batch_status_put_request(int statuscode) {
 		Assert.assertEquals(userResponse.statusCode(), statuscode);
 	}
-	
+
 	//PUT Role Status Invalid role status
-	
+
 	@Given("Admin creates Update User Role Status PUT Request with in valid role status in request body")
 	public void admin_creates_update_user_role_status_put_request_with_in_valid_role_status_in_request_body() {
 
 		//userrolestatuspayload = userReqbody.updateInvalidRoleStatus("UserModulePUT_UserRoleStatus");
-				//.convertJsonToStringupdateInvalidRoleStatus("UserModulePUT_UserRoleStatus");
+		//.convertJsonToStringupdateInvalidRoleStatus("UserModulePUT_UserRoleStatus");
 		userBody=userReqbody.convertJsonToString(userrolestatuspayload);		
 		System.out.println(userBody);
 	}
@@ -392,9 +392,7 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 	@Then("Admin receives status {int} with Unauthorized Message")
 	public void admin_receives_status_with_unauthorized_message(int unautherrmsg) {
 		Assert.assertEquals(resBody.statusCode(), unautherrmsg);
-		//String headervalidation = resBody.header();
-		cv.headervalidations(resBody);
-		//need to do message validation
+		cv.headervalidations(resBody);		
 	}
 
 	//PUT Request --NEGATIVE SCENARIOS
@@ -417,7 +415,7 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 	//PUT Request - invalid end point
 	@When("Admin sends HTTPS Request with invalid {string} endpoint")
 	public void admin_sends_https_request_with_invalid_endpoint(String method) {
-		//resBody=reqspec.when().get(invalid_endpoint);    //invalid endpoint from reusable variables
+		//invalid endpoint from reusable variables
 
 		if(method.equalsIgnoreCase("GET - Admin with roles"))
 			resBody = reqspec.when().get(baseURL+"/users/roleStatus");
@@ -437,8 +435,6 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 			resBody = reqspec.pathParam("userId", userIds).body(userBody).when().put(baseURL+invalid_endpoint);
 	}
 
-
-
 	//Delete User/AdminID with valid User/Admin ID
 
 	@When("Admin sends HTTPS request with delete endpoiint")
@@ -451,21 +447,8 @@ public void admin_creates_update_admin_role_id_request_with_valid_user_role_list
 
 	@Then("Admin receives {int} OK Status with {string} for delete user request")
 	public void admin_receives_ok_status_with_for_delete_user_request(int statuscode, String message) {
-
-		//		// Assert status code
-		//		resBody.then().statusCode(200);
-		//
-		//        // Assert response body contains expected message
-		String responseBody = resBody.asString();
-		//		resBody.then().assertThat().body(ReceivedMsg, equalTo("Deleted User ID:  " +userId));
-		//
-		//        // Additional assertions on the response body
-		//		//resBody.then().assertThat().body("fieldName", equalTo("expectedValue"));
-		//        // Add more assertions as needed
-
-		//cv.statusValidations(userResponse, statuscode);
 		Assert.assertEquals(resBody.statusCode(), statuscode);
-		//Assert.assertTrue(responseBody.contains("Deleted User ID: "+userId));
+
 	}
 
 }
