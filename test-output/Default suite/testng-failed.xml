@@ -7,7 +7,7 @@
         <methods>
           <include name="setUpClass"/>
           <include name="tearDownClass"/>
-          <include name="runScenario" invocation-numbers="97 98 71 72 138 47 49 56 57 89 90 59 63"/>
+          <include name="runScenario" invocation-numbers="67 74 75 76 77 14 78 15 79 53 22 54 23 58 62"/>
         </methods>
       </class> <!-- test_runner_team08.TestRunner -->
     </classes>

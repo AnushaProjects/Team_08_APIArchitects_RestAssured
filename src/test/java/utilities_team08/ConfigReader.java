@@ -63,4 +63,14 @@ try {
     // I/O error
 
 }}	
+public String getUserIdWithAAllField() {
+	String userIdWithAAllField = prop.getProperty("user_id_with_All_field");
+	return userIdWithAAllField;
+}
+
+public String getEmaildId() {
+	String emailIdUsedForCreatingUserId = prop.getProperty("email_id_used_for_creating_userId");
+	return emailIdUsedForCreatingUserId;
+}
+
 }
