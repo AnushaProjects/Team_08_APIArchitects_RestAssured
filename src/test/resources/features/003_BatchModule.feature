@@ -1,37 +1,25 @@
-Feature: Batch Module
-#Scenario: Check if Admin able to generate token with valid credential
-    #Given Admin creates request with "valid" credentials
-    #When Admin Admin calls Post Https method  with "valid endpoint"
-    #Then Admin Admin receives 200 created with auto generated token
-#
-#@Post-PROGRAM
-#Scenario: Creating a program
-#Given Admin creates POST program Request  with valid data in request body 
-#When Admin sends HTTPS Request with program endpoint 
- #Then Admin receives 201 Created Status with response body in program. 
- #
- @CreateProgramId
-Scenario Outline: Creating a program
+Feature: Create batch program
+@USERL_LOGIN
+ Scenario: Check if Admin able to generate token with valid credential
+    Given Admin creates request with "valid" credentials
+    When Admin Admin calls Post Https method  with "valid endpoint"
+    Then Admin Admin receives 200 created with auto generated token
+@Post-PROGRAM
+Scenario: Creating a program
 Given Admin creates POST program Request  with valid data in request body 
-When Admin sends HTTPS Request and  request Body with "valid" endpoint
-Then Admin receives 201 Created Status with response body in program "<Scenario>"
+When Admin sends HTTPS Request with program endpoint 
+ Then Admin receives 201 Created Status with response body in program.                                                          
 
- Examples:
-    |Scenario|
-    |Positive|  
-    |Negative| 
-    |Positive2|                                                         
-#
-#@Post-BATCH-1
-#Scenario: Check if admin able to create a Batch with valid endpoint and request body without authorization.
- #Given Admin creates POST batch Request  with valid data in request body 
- #When Admin sends HTTPS batch Request with endpoint without authorization batch
- #Then Admin receives 401 Unauthorized batch
-  #@Post-BATCH-2
- #Scenario: Check if admin able to create a Batch with valid endpoint and request body (non existing values)
- #Given Admin creates POST batch Request  with valid data in request body 
- #When Admin sends HTTPS batch Request with endpoint batch
- #Then Admin receives 201 Created Status with response body batch.                                                          
+@Post-BATCH-1
+Scenario: Check if admin able to create a Batch with valid endpoint and request body without authorization.
+ Given Admin creates POST batch Request  with valid data in request body 
+ When Admin sends HTTPS batch Request with endpoint without authorization batch
+ Then Admin receives 401 Unauthorized batch
+  @Post-BATCH-2
+ Scenario: Check if admin able to create a Batch with valid endpoint and request body (non existing values)
+ Given Admin creates POST batch Request  with valid data in request body 
+ When Admin sends HTTPS batch Request with endpoint batch
+ Then Admin receives 201 Created Status with response body batch.                                                          
   #@Post-BATCH-3
  #Scenario: Check if admin able to create a Batch with valid endpoint and request body (existing value in Batch Name)
  #Given Admin creates POST batch Request  with existing value in request body 
@@ -62,8 +50,8 @@ Then Admin receives 201 Created Status with response body in program "<Scenario>
  #Given Admin creates POST batch Request with inactive program id
  #When Admin sends HTTPS batch Request with endpoint and invalid data batch
  #Then Admin receives 400 Bad Request Status with message and boolean success details batch
- #
- #
+ 
+ 
  #@GetAll_Batch
 #Scenario: Check if admin able to retrieve all batches with valid LMS API
 #Given Admin creates batch GET Request
@@ -84,7 +72,7 @@ Then Admin receives 201 Created Status with response body in program "<Scenario>
 #
 #@Batch_With_Invalid_SearchField_ID
 #Scenario: Check if admin able to retrieve all batches with invalid search string
-#Given Admin creates GET Request
+#Given Admin creates batch GET Request
 #When Admin sends HTTPS Request with invalid searchfieldID and valid endpoint batch
 #Then Admin receives 404 status with error message Not Found batch.
 #
@@ -129,7 +117,7 @@ Then Admin receives 201 Created Status with response body in program "<Scenario>
 #Given Admin creates batch GET Request
 #When Admin sends HTTPS Request with Invalid endpoint for Valid BatchName batch
 #Then Admin receives 404 Not Found Status with the message and boolean success details batch
-#
+
 #@Get_Deleted_BatchName
 #Scenario: Check if admin able to retrive a deleted batch  using batch name
 #Given Admin creates batch GET Request
@@ -200,7 +188,7 @@ Then Admin receives 201 Created Status with response body in program "<Scenario>
  #Given Admin creates PUT batch Request with invalid BatchId and valid Data
   #When Admin sends HTTPS batch Request with update endpoint and update batchid batch
   #Then Admin receives 404 Not Found Status with message and boolean success details batch
- #
+  #
  #@PUT-BATCH-4
  #Scenario: Check if admin able to update a Batch with valid batchID and missing mandatory fields request body
  #Given Admin creates PUT batch Request with valid batch Id and missing mandatory fields
@@ -226,7 +214,6 @@ Then Admin receives 201 Created Status with response body in program "<Scenario>
  #Given Admin creates PUT batch Request with deleted batch Id
   #When Admin sends HTTPS batch Request with update endpoint and update batchid batch
  #Then Admin receives 200 Ok status with message batch
- #
  #
  #@Delete_Valid_BatchID
 #Scenario: Check if admin able to delete a Batch with valid Batch ID

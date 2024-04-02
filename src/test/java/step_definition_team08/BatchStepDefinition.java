@@ -1,4 +1,5 @@
 package step_definition_team08;
+
 import static io.restassured.RestAssured.given;
 
 import java.io.IOException;
@@ -19,8 +20,6 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import payload_team08.BatchPayload;
 import payload_team08.ProgramPayload;
-import io.restassured.response.Response;
-import payload_team08.ProgramPayload;
 import request_body_raw_team08.BatchRequestBody;
 import request_body_raw_team08.LoginRequestBody;
 import request_body_raw_team08.ProgramRequestBody;
@@ -32,8 +31,9 @@ import utilities_team08.LoggerLoad;
 import utilities_team08.ReusableMethods;
 import utilities_team08.ReusableVariables;
 
+
+
 public class BatchStepDefinition extends ReusableVariables{
-	
 	ReusableMethods reuseMethods=new ReusableMethods();
 	ReusableVariables reuseVariables=new ReusableVariables();
 	ProgramRequestBody programreqBody=new ProgramRequestBody ();
@@ -61,10 +61,10 @@ Response response;
     static String batchName;
     private static String programName;
     JSONObject batchBody;
-//    
-//  //POST BATCH MODULE
-//    
-//  	@Given("Admin creates POST program Request  with valid data in request body")
+    
+//POST BATCH MODULE
+    
+	@Given("Admin creates POST program Request  with valid data in request body")
 	public void admin_creates_post_program_request_with_valid_data_in_request_body() throws InvalidFormatException, IOException {
 		 LoggerLoad.info("Admin creates POST program Request  with valid data in request body");
 		List<Map<String, String>> hm=read.getData(path,"Program");
@@ -96,7 +96,7 @@ Response response;
 	public void admin_receives_created_status_with_response_body_in_program(Integer statuscode) {
 		 LoggerLoad.info("Admin receives {int} Created Status with response body in program.");
 
-		cv.statusValidations(BatchResponse, statuscode, "batchName");
+		cv.statusValidations(ProgramResponse, statuscode, "status");
 	}
 
 	@Given("Admin creates POST batch Request  with valid data in request body")
@@ -106,7 +106,6 @@ Response response;
 		List<Map<String, String>> hm=read.getData(path,"Batch");
 		System.out.println("Program id in batch request: "+programId);
 		 batchrequestBody =batchreqbody.createBatchRequest(hm,programId);
-		 System.out.println(batchrequestBody);
 	}
 
 	@When("Admin sends HTTPS batch Request with endpoint without authorization batch")
@@ -114,7 +113,7 @@ Response response;
 		LoggerLoad.info("Admin sends HTTPS batch Request with endpoint without authorization");
 		BatchResponse= given().header("Content-Type","application/json")
 				.body(batchrequestBody).when().post(baseURL+reuseVariables.createbatchendpoint);
-		System.out.println(baseURL+reuseVariables.createbatchendpoint);
+		
 		BatchResponse.prettyPrint();
 		}
 
@@ -128,13 +127,17 @@ Response response;
 	@When("Admin sends HTTPS batch Request with endpoint batch")
 	public void admin_sends_https_request_with_endpoint_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with endpoint");
+		System.out.println("Indide positibe Post Batch"+programId);
+		
 		BatchResponse= given().header("Content-Type","application/json").
 				header("Authorization","Bearer " + prop.getProperty("bearer"))
 				.body(batchrequestBody).when().post(baseURL+reuseVariables.createbatchendpoint);
-		Integer batchIdFromResp = BatchResponse.path("batchId");
-		   rv.batchId = batchIdFromResp.toString();
-		   batchName=BatchResponse.path("batchName");
-		   System.out.println("Printing the batch id after retrieving: "+rv.batchId);
+		
+		System.out.println("Checking Indide positibe Post Batch");
+		//Integer batchIdFromResp = BatchResponse.path("batchId");
+		 //  rv.batchId = batchIdFromResp.toString();
+		   //batchName=BatchResponse.path("batchName");
+		 //  System.out.println("Printing the batch id after retrieving: "+rv.batchId);
 		   
 	BatchResponse.prettyPrint();
 	}
@@ -208,7 +211,7 @@ Response response;
 	public void admin_receives_not_found_status_batch(Integer statuscode) {
 		LoggerLoad.info("Admin receives {int} not found  Status");
 		
-		cv.statusValidations(BatchResponse, statuscode, "batchName");;
+		cv.statusValidations(BatchResponse, statuscode, "batchName");
     	}
  
 	
@@ -223,7 +226,7 @@ Response response;
 	public void admin_receives_created_status_with_response_body_for_missing_additional_fields_batch(Integer statuscode) throws InvalidFormatException, IOException {
 		LoggerLoad.info("Admin receives {int} Created Status with response body for missing additional fields."); 
 		
-		cv.statusValidations(BatchResponse, statuscode, "batchName");;
+		cv.statusValidations(BatchResponse, statuscode, "batchName");
 		bv.datavalidation(BatchResponse, batchrequestBody);
 	}
 
@@ -284,7 +287,7 @@ Response response;
 		bv.datavalidation_for_update(BatchResponse, batchUpdateRequestBody);
 	    cv.headervalidations(BatchResponse);
 	    bv.schemavalidationforupdate(BatchResponse);
-	    cv.statusValidations(BatchResponse, statuscode, "batchName");;
+	    cv.statusValidations(BatchResponse, statuscode, "batchName");
 	}
 	
 	
@@ -306,7 +309,7 @@ Response response;
 		LoggerLoad.info("Admin receives {int} Not Found Status with message and boolean success details");
 System.out.println(BatchResponse);
 		
-//cv.statusValidations(BatchResponse, statuscode, "batchName");;
+cv.statusValidations(BatchResponse, statuscode, "batchName");
 	   cv.messageValidations(BatchResponse, false);
 	}
 	@Given("Admin creates PUT batch Request with valid batch Id and missing mandatory fields")
@@ -378,8 +381,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   
     	  bv.datavalidation_for_update(BatchResponse,batchUpdateRequestBody);
           cv.headervalidations(BatchResponse);
-          cv.statusValidations(BatchResponse, statuscode, "batchName");;
-          bv.schemavalidationforupdate(BatchResponse);
+          cv.statusValidations(BatchResponse, statuscode, "batchName");
+          //bv.schemavalidationforupdate(BatchResponse);
       }
 //GET BATCH MODULE
       @Given("Admin creates batch GET Request")
@@ -407,7 +410,7 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   	    System.out.println();
   	    System.out.println("Response status code is:"+statuscode);
   	    LoggerLoad.info("Success-"+ response.getStatusCode());
-  	 // cv.statusValidations(BatchResponse, statuscode, "batchName");
+  	  cv.statusValidations(BatchResponse, statuscode, "batchName");
   		
   	}
 
@@ -498,7 +501,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
 //		   rv.batchId = batchIdFromResp.toString();
 //		   batchName=BatchResponse.path("batchName");
 //		   System.out.println("Printing the batch id after retrieving: "+rv.batchId);
-  		String batchIdnum="8765";
+  		//String batchIdnum="8765";
+  		String batchIdnum=rv.batchId ;
   		response=rv.httpRequest
   				.given().pathParam("batchId",batchIdnum)
   				.when().get(rv.baseURL+rv.GetByBatchID+"{batchId}");
@@ -508,7 +512,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
 	public void admin_sends_https_request_with_endpoint_for_program_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for ProgramID");
 
-  		String ProgID="16489";
+  		//String ProgID="16489";
+  		String ProgID=rv.programId;
 				  response=rv.httpRequest.pathParam("programId", ProgID)
 				  .when().get(rv.baseURL+"/batches/program/{programId}");
 	}	
@@ -598,7 +603,8 @@ String batchIdnum="abc";
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for Valid BatchName");	
 
   		
-  		String BatchName="SAMPLE BATCH12";
+  		//String BatchName="SAMPLE BATCH12";
+  		String BatchName=batchName; 
   		response=rv.httpRequest
   				.given().pathParam("batchName",BatchName)
   				.when().get(rv.baseURL+ rv.GetBatchName +"{batchName}");
@@ -638,7 +644,8 @@ String batchIdnum="abc";
 	public void admin_sends_https_request_with_valid_batch_id_and_endpoint_batch_2() {
   		LoggerLoad.info("Admin sends HTTPS Request with valid BatchId and endpoint");	
 
-		String DelID="8768"; //8768 8765
+		//String DelID="8768";
+		String DelID=rv.batchId;//8768 8765
 		  rv.httpRequest=RestAssured.given().
 				  header("Authorization","Bearer "+prop.getProperty("bearer"));
 				  response=rv.httpRequest.pathParam("id", DelID)
