@@ -1,4 +1,4 @@
-Feature: Create batch program
+Feature: Batch Module
 
  
  @CreateProgramId
