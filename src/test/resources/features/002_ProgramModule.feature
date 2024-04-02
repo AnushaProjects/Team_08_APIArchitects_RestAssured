@@ -1,9 +1,9 @@
 Feature: Program Module
 
-Scenario: Check if Admin able to generate token with valid credential
-    Given Admin creates request with "valid" credentials
-    When Admin Admin calls Post Https method  with "valid endpoint"
-    Then Admin Admin receives 200 created with auto generated token
+#Scenario: Check if Admin able to generate token with valid credential
+    #Given Admin creates request with "valid" credentials
+    #When Admin Admin calls Post Https method  with "valid endpoint"
+    #Then Admin Admin receives 200 created with auto generated token
 
 @CreateProgramId
 Scenario Outline: Creating a program

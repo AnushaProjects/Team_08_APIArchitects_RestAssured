@@ -29,6 +29,8 @@ public class ReusableVariables {
 	public String userrole="/users/roles/";
 	public String update_user="/users/"+prop.getProperty("user_id_with_All_field");
 	public String update_user_invalid="/users/"+prop.getProperty("negative_scenerio_user_Id");
+	public String assign_pb="/users/roleProgramBatchStatus/"+prop.getProperty("user_id_with_All_field");
+	public String delete_userid="/userRoleProgramBatchMap/deleteAll/U1808";
 	
 	
 	//ProgramEndpoints
@@ -62,7 +64,7 @@ public class ReusableVariables {
 	//UserProgramBatchMAp endpoints
 	
 	public String userPBM="/userRoleProgramBatchMap";
-	public String userBPM_by_id="/userRoleProgramBatchMap/U01"; // needs to change UserId
+	public String userBPM_by_id="/userRoleProgramBatchMap/U1864"; // needs to change UserId
 	
 	
 	

@@ -61,6 +61,7 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	String get_Admin_by_invalid_batch;
 	String get_admin_by_invalidprogramId;
 	String get_admin_by_invalidroleId;
+	String delete_userId;
 	public static String exist_phone;
 	public static String exist_email;
 	String given_field;
@@ -527,8 +528,8 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	public void admin_creates_get_request_with_programbatch_id(String ids) {
 		if(ids.equalsIgnoreCase("valid")) {
 		LoggerLoad.info("User creates get request to pass the batch and program iD");
-		get_admin_by_batchId=reuseVariables.baseURL+"/users/programBatch/8729";  //batchId to be passed
-		get_admin_by_programId=reuseVariables.baseURL+userprogram+"16454";  //ProgramId is getting passed from config.properties prop.getProperty("program_Id_chaining")
+		get_admin_by_batchId=reuseVariables.baseURL+"/users/programBatch/10015";  //batchId to be passed
+		get_admin_by_programId=reuseVariables.baseURL+userprogram+"17874";  //ProgramId is getting passed from config.properties prop.getProperty("program_Id_chaining")
 		}
 		else if(ids.equalsIgnoreCase("invalid")) {
 			LoggerLoad.info("User creates get request to pass the Invalic ProgramId");
@@ -679,16 +680,22 @@ LoggerLoad.info("Request Sending: "+userBody);
 		LoggerLoad.info("The Request :" +baseURL+"/users/roleId/"+prop.getProperty("user_id_with_All_field"));
 		resBody.prettyPrint();
 	}
-	
-	@Given("Admin creates Update Admin Role ID Request for assign Program batch")
-	public void admin_creates_update_admin_role_id_request_for_assign_program_batch() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@Given("Admin creates Delete Request for userId")
+	public void admin_creates_delete_request_for_user_id() {
+		LoggerLoad.info("Deleting the UserId");
+		delete_userId=baseURL+delete_userid;
+		LoggerLoad.info("The given request" +delete_userId);
 	}
 
-	@When("Admin sends HTTPS Request with Update Admin Role ID endpoint assign Program batch")
-	public void admin_sends_https_request_with_update_admin_role_id_endpoint_assign_program_batch() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+	@When("Admin sends HTTPS Request for Delete with Valid Program Id and Valid End Point userId")
+	public void admin_sends_https_request_for_delete_with_valid_program_id_and_valid_end_point_user_id() {
+		System.out.println(prop.getProperty("program_name"));
+		resBody=auth_req_post.when().delete(delete_userId);
+		resBody.prettyPrint();
+	}
+
+	@Then("Admin receives {int} Ok status with message for Delete userId")
+	public void admin_receives_ok_status_with_message_for_delete_user_id(Integer status) {
+	    cv.statusValidations(resBody, status, "delete_userId");
 	}
 }

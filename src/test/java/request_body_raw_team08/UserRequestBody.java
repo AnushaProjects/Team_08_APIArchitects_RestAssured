@@ -153,6 +153,29 @@ public UserPayload updateUserRequest(List<Map<String, String>> hm) {
 			return userBody.toString();
 		}
 			
+		
+		
+		public UpdateUserIdPayload updateUserassignpb(List<Map<String, String>> hm) {
+			System.out.println("Inside PUT");
+			List<String> roleIds = new ArrayList<String>(); 
+			roleIds.add(hm.get(0).get("UpdateRoleIds")); 
+
+			updaterole.setUserRoleList(roleIds);
+			return updaterole;
+		    }
+		
+		public UpdateUserIdPayload returnUpdateassignpb(String sheet) throws InvalidFormatException, IOException  {
+			
+			List<Map<String, String>> hm=read.getData(path,sheet);
+			return updateUserRoleId(hm);
+			
+		}
+
+	
+	public String convertJsonToassign(UpdateUserIdPayload updaterole) {
+		JSONObject userBody=new JSONObject(updaterole);
+		return userBody.toString();
+	}
 			
 			public String negativeUserScenario(String negativedata ,String InvalidValue ) throws InvalidFormatException, IOException {
 				returnUserPayload("UserModuleMandatory");

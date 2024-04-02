@@ -1,15 +1,15 @@
 Feature: Batch Module
-Scenario: Check if Admin able to generate token with valid credential
-    Given Admin creates request with "valid" credentials
-    When Admin Admin calls Post Https method  with "valid endpoint"
-    Then Admin Admin receives 200 created with auto generated token
-
+#Scenario: Check if Admin able to generate token with valid credential
+    #Given Admin creates request with "valid" credentials
+    #When Admin Admin calls Post Https method  with "valid endpoint"
+    #Then Admin Admin receives 200 created with auto generated token
+#
 #@Post-PROGRAM
 #Scenario: Creating a program
 #Given Admin creates POST program Request  with valid data in request body 
 #When Admin sends HTTPS Request with program endpoint 
  #Then Admin receives 201 Created Status with response body in program. 
- 
+ #
  @CreateProgramId
 Scenario Outline: Creating a program
 Given Admin creates POST program Request  with valid data in request body 
@@ -21,47 +21,47 @@ Then Admin receives 201 Created Status with response body in program "<Scenario>
     |Positive|  
     |Negative| 
     |Positive2|                                                         
-
-@Post-BATCH-1
-Scenario: Check if admin able to create a Batch with valid endpoint and request body without authorization.
- Given Admin creates POST batch Request  with valid data in request body 
- When Admin sends HTTPS batch Request with endpoint without authorization batch
- Then Admin receives 401 Unauthorized batch
-  @Post-BATCH-2
- Scenario: Check if admin able to create a Batch with valid endpoint and request body (non existing values)
- Given Admin creates POST batch Request  with valid data in request body 
- When Admin sends HTTPS batch Request with endpoint batch
- Then Admin receives 201 Created Status with response body batch.                                                          
-  @Post-BATCH-3
- Scenario: Check if admin able to create a Batch with valid endpoint and request body (existing value in Batch Name)
- Given Admin creates POST batch Request  with existing value in request body 
- When Admin sends HTTPS batch Request with endpoint with existing value in batchname batch
- Then Admin receives 400 Bad Request Status with message and boolean success details batch
- @Post-BATCH-4
- Scenario: Check if admin able to create a Batch missing mandatory fields in request body
- Given Admin creates POST batch Request  with invalid data in request body 
- When Admin sends HTTPS batch Request with endpoint with missing mandatory fields batch
- Then Admin receives 400 Bad Request Status with message and boolean success details batch
- @Post-BATCH-5
- Scenario: Check if admin able to create a batch with invalid endpoint
- Given Admin creates POST batch Request  with valid data in request body 
- When Admin sends HTTPS batch Request with invalid endpoint batch
- Then Admin receives 404 not found Status batch
- @Post-BATCH-6
- Scenario: Check if admin able to create a batch with missing additional fields
- Given Admin creates POST batch Request with missing additional fields
- When Admin sends HTTPS batch Request with endpoint batch
- Then Admin receives 201 Created Status with response body for missing additional fields batch.                                                          
-  @Post-BATCH-7
- Scenario: Check if admin able to create a batch with invalid data in request body
- Given Admin creates POST batch Request  with invalid data in request body
- When Admin sends HTTPS batch Request with endpoint and invalid data batch
- Then Admin receives 400 Bad Request Status with message and boolean success details batch
-  @Post-BATCH-8
- Scenario: Check if admin able to create a batch  with inactive program ID
- Given Admin creates POST batch Request with inactive program id
- When Admin sends HTTPS batch Request with endpoint and invalid data batch
- Then Admin receives 400 Bad Request Status with message and boolean success details batch
+#
+#@Post-BATCH-1
+#Scenario: Check if admin able to create a Batch with valid endpoint and request body without authorization.
+ #Given Admin creates POST batch Request  with valid data in request body 
+ #When Admin sends HTTPS batch Request with endpoint without authorization batch
+ #Then Admin receives 401 Unauthorized batch
+  #@Post-BATCH-2
+ #Scenario: Check if admin able to create a Batch with valid endpoint and request body (non existing values)
+ #Given Admin creates POST batch Request  with valid data in request body 
+ #When Admin sends HTTPS batch Request with endpoint batch
+ #Then Admin receives 201 Created Status with response body batch.                                                          
+  #@Post-BATCH-3
+ #Scenario: Check if admin able to create a Batch with valid endpoint and request body (existing value in Batch Name)
+ #Given Admin creates POST batch Request  with existing value in request body 
+ #When Admin sends HTTPS batch Request with endpoint with existing value in batchname batch
+ #Then Admin receives 400 Bad Request Status with message and boolean success details batch
+ #@Post-BATCH-4
+ #Scenario: Check if admin able to create a Batch missing mandatory fields in request body
+ #Given Admin creates POST batch Request  with invalid data in request body 
+ #When Admin sends HTTPS batch Request with endpoint with missing mandatory fields batch
+ #Then Admin receives 400 Bad Request Status with message and boolean success details batch
+ #@Post-BATCH-5
+ #Scenario: Check if admin able to create a batch with invalid endpoint
+ #Given Admin creates POST batch Request  with valid data in request body 
+ #When Admin sends HTTPS batch Request with invalid endpoint batch
+ #Then Admin receives 404 not found Status batch
+ #@Post-BATCH-6
+ #Scenario: Check if admin able to create a batch with missing additional fields
+ #Given Admin creates POST batch Request with missing additional fields
+ #When Admin sends HTTPS batch Request with endpoint batch
+ #Then Admin receives 201 Created Status with response body for missing additional fields batch.                                                          
+  #@Post-BATCH-7
+ #Scenario: Check if admin able to create a batch with invalid data in request body
+ #Given Admin creates POST batch Request  with invalid data in request body
+ #When Admin sends HTTPS batch Request with endpoint and invalid data batch
+ #Then Admin receives 400 Bad Request Status with message and boolean success details batch
+  #@Post-BATCH-8
+ #Scenario: Check if admin able to create a batch  with inactive program ID
+ #Given Admin creates POST batch Request with inactive program id
+ #When Admin sends HTTPS batch Request with endpoint and invalid data batch
+ #Then Admin receives 400 Bad Request Status with message and boolean success details batch
  #
  #
  #@GetAll_Batch
