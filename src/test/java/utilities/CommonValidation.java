@@ -4,8 +4,11 @@ import java.io.File;
 
 import org.testng.Assert;
 
+
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import io.restassured.specification.ResponseSpecification;
 
 public class CommonValidation {
 	Response response;	
@@ -74,6 +77,24 @@ public class CommonValidation {
 		Assert.assertFalse(responsemessage.isEmpty());
 		LoggerLoad.info("Response Validation Passed");
 	}
+	
+    public static ResponseSpecification checkStatusCodeAndContentType() {
+        return new ResponseSpecBuilder()
+                .expectStatusCode(200)
+                .expectContentType("application/json")
+                .build();
+    }
 
+    /*public static ResponseSpecification checkCustomHeaders() {
+        return new ResponseSpecBuilder()
+                .expectHeader("X-Custom-Header", "value")
+                .build();
+    }*/
 
+    /*public static ResponseSpecification checkResponseBody() {
+        return new ResponseSpecBuilder()
+                .expectBody("fieldName", equalTo("expectedValue"))
+                .build();
+    }*/
+ 
 }

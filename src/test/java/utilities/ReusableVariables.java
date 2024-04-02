@@ -1,17 +1,11 @@
 package utilities;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.PrintStream;
 import java.util.Properties;
 import static io.restassured.RestAssured.*;
 
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
+import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import io.restassured.specification.ResponseSpecification;
 
 public class ReusableVariables {
 	
@@ -24,11 +18,14 @@ public class ReusableVariables {
 	public String invalid_endpoint="/user/roleId/{userId}";
 	public String invalid_Id="Uabc";
 			
-	public static RequestSpecification reqspec= given()
-			.header("Content-Type","application/json")
-			.header("Authorization","Bearer " + prop.getProperty("bearer"));
+	public static RequestSpecification reqspec= given().header("Content-Type","application/json")
+						.header("Authorization","Bearer " + prop.getProperty("bearer"));
 	
 	public RequestSpecification noauth_req_post=given()
 			.header("Content-Type","application/json");
+	
+	public ResponseSpecification res = new ResponseSpecBuilder()
+			//.expectBody(matchesJsonSchemaInClasspath("Put_User_RoleId_JSON.json"))
+			.expectStatusCode(200).expectContentType(ContentType.JSON).build();
 
 }
