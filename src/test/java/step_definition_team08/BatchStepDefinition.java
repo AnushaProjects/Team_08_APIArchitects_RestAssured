@@ -99,7 +99,7 @@ Response response;
 	}
 
 	@Given("Admin creates POST batch Request  with valid data in request body")
-	public void admin_creates_post_request_with_valid_data_in_request_body() throws InvalidFormatException, IOException {
+	public void admin_creates_post_request_with_valid_data_in_request_body_batch() throws InvalidFormatException, IOException {
 		 LoggerLoad.info("Admin creates POST batch Request  with valid data in request body");
 
 		List<Map<String, String>> hm=read.getData(path,"Batch");
@@ -107,8 +107,8 @@ Response response;
 		 batchrequestBody =batchreqbody.createBatchRequest(hm,programId);
 	}
 
-	@When("Admin sends HTTPS batch Request with endpoint without authorization")
-	public void admin_sends_https_request_with_endpoint_without_authorization() {
+	@When("Admin sends HTTPS batch Request with endpoint without authorization batch")
+	public void admin_sends_https_request_with_endpoint_without_authorization_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with endpoint without authorization");
 		BatchResponse= given().header("Content-Type","application/json")
 				.body(batchrequestBody).when().post(baseURL+reuseVariables.createbatchendpoint);
@@ -116,15 +116,15 @@ Response response;
 		BatchResponse.prettyPrint();
 		}
 
-	@Then("Admin receives {int} Unauthorized")
-	public void admin_receives_unauthorized(Integer statuscode) {
+	@Then("Admin receives {int} Unauthorized batch")
+	public void admin_receives_unauthorized_batch(Integer statuscode) {
 		LoggerLoad.info("Admin receives {int} Unauthorized");
   	
 		cv.statusValidations(BatchResponse,statuscode );}
 	
 	
-	@When("Admin sends HTTPS batch Request with endpoint")
-	public void admin_sends_https_request_with_endpoint() {
+	@When("Admin sends HTTPS batch Request with endpoint batch")
+	public void admin_sends_https_request_with_endpoint_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with endpoint");
 		BatchResponse= given().header("Content-Type","application/json").
 				header("Authorization","Bearer " + prop.getProperty("bearer"))
@@ -138,8 +138,8 @@ Response response;
 	}
 	
 	
-	@Then("Admin receives {int} Created Status with response body.")
-	public void admin_receives_created_status_with_response_body(Integer statuscode ) throws InvalidFormatException, IOException {
+	@Then("Admin receives {int} Created Status with response body batch.")
+	public void admin_receives_created_status_with_response_body_batch(Integer statuscode ) throws InvalidFormatException, IOException {
 		LoggerLoad.info("Admin receives {int} Created Status with response body.");
 		
 		cv.statusValidations(BatchResponse,statuscode );
@@ -149,15 +149,15 @@ Response response;
     	
     	}
  @Given("Admin creates POST batch Request  with existing value in request body")
-	public void admin_creates_post_request_with_existing_value_in_request_body() throws InvalidFormatException, IOException {
+	public void admin_creates_post_request_with_existing_value_in_request_body_batch() throws InvalidFormatException, IOException {
 		LoggerLoad.info("Admin creates POST batch Request  with existing value in request body");
 
 		List<Map<String, String>> hm=read.getData(path,"Batch");
 		
 		batchrequestBody = batchreqbody.createBatchRequestwithexistingdata(hm,programId,batchName);
 	}
-	@When("Admin sends HTTPS batch Request with endpoint with existing value in batchname")
-	public void admin_sends_https_batch_request_with_endpoint_with_existing_value_in_batchname() {
+	@When("Admin sends HTTPS batch Request with endpoint with existing value in batchname batch")
+	public void admin_sends_https_batch_request_with_endpoint_with_existing_value_in_batchname_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with endpoint with existing value in batchname");
 	
 		BatchResponse= given().header("Content-Type","application/json").
@@ -166,8 +166,8 @@ Response response;
 		
 		BatchResponse.prettyPrint();
 		}
-		@Then("Admin receives {int} Bad Request Status with message and boolean success details")
-	public void admin_receives_bad_request_status_with_message_and_boolean_success_details(Integer statuscode) {
+		@Then("Admin receives {int} Bad Request Status with message and boolean success details batch")
+	public void admin_receives_bad_request_status_with_message_and_boolean_success_details_batch(Integer statuscode) {
 			
 			LoggerLoad.info("Admin receives {int} Bad Request Status with message and boolean success details");
 			
@@ -181,8 +181,8 @@ Response response;
 		List<Map<String, String>> hm=read.getData(path,"Batch");
 	batchrequestBody = batchreqbody.createBatchRequestwithmissingmandatoryfields(hm,programId);
 	}
-	@When("Admin sends HTTPS batch Request with endpoint with missing mandatory fields")
-	public void admin_sends_https_batch_request_with_endpoint_with_missing_mandatory_fields() {
+	@When("Admin sends HTTPS batch Request with endpoint with missing mandatory fields batch")
+	public void admin_sends_https_batch_request_with_endpoint_with_missing_mandatory_fields_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with endpoint with missing mandatory fields");
 
 		
@@ -193,8 +193,8 @@ Response response;
 	}
 
 	
-	@When("Admin sends HTTPS batch Request with invalid endpoint")
-	public void admin_sends_https_request_with_invalid_endpoint() {
+	@When("Admin sends HTTPS batch Request with invalid endpoint batch")
+	public void admin_sends_https_request_with_invalid_endpoint_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with invalid endpoint");
 		
 		BatchResponse= given().header("Content-Type","application/json").
@@ -202,8 +202,8 @@ Response response;
 				.body(batchrequestBody).when().post(baseURL+reuseVariables.batchinvalidendpoint);
 	}
 
-	@Then("Admin receives {int} not found Status")
-	public void admin_receives_not_found_status(Integer statuscode) {
+	@Then("Admin receives {int} not found Status batch")
+	public void admin_receives_not_found_status_batch(Integer statuscode) {
 		LoggerLoad.info("Admin receives {int} not found  Status");
 		
     	cv.statusValidations(BatchResponse,statuscode );
@@ -217,16 +217,16 @@ Response response;
 		List<Map<String, String>> hm=read.getData(path,"Batch");
 			batchrequestBody = batchreqbody.createBatchRequestwithmissingadditionalfields(hm,programId);
 	}
-	@Then("Admin receives {int} Created Status with response body for missing additional fields.")
-	public void admin_receives_created_status_with_response_body_for_missing_additional_fields(Integer statuscode) throws InvalidFormatException, IOException {
+	@Then("Admin receives {int} Created Status with response body for missing additional fields batch.")
+	public void admin_receives_created_status_with_response_body_for_missing_additional_fields_batch(Integer statuscode) throws InvalidFormatException, IOException {
 		LoggerLoad.info("Admin receives {int} Created Status with response body for missing additional fields."); 
 		
 		cv.statusValidations(BatchResponse,statuscode );
 		bv.datavalidation(BatchResponse, batchrequestBody);
 	}
 
-	@When("Admin sends HTTPS batch Request with endpoint and invalid data")
-	public void admin_sends_https_batch_request_with_endpoint_and_invalid_data() {
+	@When("Admin sends HTTPS batch Request with endpoint and invalid data batch")
+	public void admin_sends_https_batch_request_with_endpoint_and_invalid_data_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with endpoint and invalid data");
 		
 		BatchResponse= given().header("Content-Type","application/json").
@@ -255,8 +255,8 @@ Response response;
 		System.out.println("Program Name before calling update: "+programName);
 		batchUpdateRequestBody = batchreqbody.UpdateBatchputRequest(hm,programId,batchId,programName);   
 	}
-	@When("Admin sends HTTPS batch Request with update endpoint with no authorization")
-	public void admin_sends_https_batch_request_with_update_endpoint_with_no_authorization() {
+	@When("Admin sends HTTPS batch Request with update endpoint with no authorization batch")
+	public void admin_sends_https_batch_request_with_update_endpoint_with_no_authorization_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with update endpoint with no authorization");
 		
 		System.out.println("Batch requrest before response: "+batchUpdateRequestBody);
@@ -264,8 +264,8 @@ Response response;
 				.body(batchUpdateRequestBody).pathParam("batchId",batchId).when().put(baseURL+reuseVariables.updatevalidendpoint);
 		BatchResponse.prettyPrint();
 	}
-	@When("Admin sends HTTPS batch Request with update endpoint")
-	public void admin_sends_https_batch_request_with_update_endpoint() {
+	@When("Admin sends HTTPS batch Request with update endpoint batch")
+	public void admin_sends_https_batch_request_with_update_endpoint_batch() {
 		LoggerLoad.info("Admin sends HTTPS batch Request with update endpoint");
 		
 		System.out.println("Batch requrest before response: "+batchUpdateRequestBody.getBatchId());
@@ -275,8 +275,8 @@ Response response;
 		BatchResponse.prettyPrint();
 	}
 
-	@Then("Admin receives {int} OK Status with updated value in response body.")
-	public void admin_receives_ok_status_with_updated_value_in_response_body(Integer statuscode) throws InvalidFormatException, IOException {
+	@Then("Admin receives {int} OK Status with updated value in response body batch.")
+	public void admin_receives_ok_status_with_updated_value_in_response_body_batch(Integer statuscode) throws InvalidFormatException, IOException {
 		LoggerLoad.info("Admin receives {int} OK Status with updated value in response body.");
 		
 		bv.datavalidation_for_update(BatchResponse, batchUpdateRequestBody);
@@ -299,8 +299,8 @@ Response response;
 	
 	}
 
-	@Then("Admin receives {int} Not Found Status with message and boolean success details")
-	public void admin_receives_not_found_status_with_message_and_boolean_success_details(Integer statuscode) {
+	@Then("Admin receives {int} Not Found Status with message and boolean success details batch")
+	public void admin_receives_not_found_status_with_message_and_boolean_success_details_batch(Integer statuscode) {
 		LoggerLoad.info("Admin receives {int} Not Found Status with message and boolean success details");
 System.out.println(BatchResponse);
 		
@@ -317,8 +317,8 @@ System.out.println(BatchResponse);
 		
 	}
 
-@When("Admin sends HTTPS batch Request with update endpoint and update batchid")
-public void admin_sends_https_batch_request_with_update_endpoint_and_update_batchid() {
+@When("Admin sends HTTPS batch Request with update endpoint and update batchid batch")
+public void admin_sends_https_batch_request_with_update_endpoint_and_update_batchid_batch() {
 	LoggerLoad.info("Admin sends HTTPS batch Request with update endpoint and update batchid");
 
 	
@@ -339,8 +339,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
 		batchUpdateRequestBody = batchreqbody.UpdateBatchputRequestwith_invalid_data(hm,programId,batchId,programName);   
 	}
      
-      @When("Admin sends HTTPS PUT batch Request with invalid endpoint")
-      public void admin_sends_https_put_batch_request_with_invalid_endpoint() {
+      @When("Admin sends HTTPS PUT batch Request with invalid endpoint batch")
+      public void admin_sends_https_put_batch_request_with_invalid_endpoint_batch() {
   		
    LoggerLoad.info("Admin sends HTTPS PUT batch Request with invalid endpoint");
   
@@ -370,7 +370,7 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
     	  batchUpdateRequestBody = batchreqbody.UpdateBatchputRequest_with_deleted_batchid(hm,programId,batchId,programName);   
       }
       
-      @Then("Admin receives {int} Ok status with message")
+      @Then("Admin receives {int} Ok status with message batch")
       public void admin_receives_ok_status_with_message(Integer statuscode) throws InvalidFormatException, IOException {
     	  LoggerLoad.info("Admin receives {int} Ok status with message");
   
@@ -380,21 +380,21 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
           bv.schemavalidationforupdate(BatchResponse);
       }
 //GET BATCH MODULE
-      @Given("Admin creates GET Request")
-  	public void admin_creates_get_request_1() {
+      @Given("Admin creates batch GET Request")
+  	public void admin_creates_batch_get_request_1() {
     	  LoggerLoad.info("Admin creates GET Request");
     	  RestAssured.baseURI= rv.baseURL;
   		rv.httpRequest= RestAssured.given().
   				header("Authorization","Bearer "+prop.getProperty("bearer"));
   	}
-      @When("Admin sends HTTPS Request for GetAll_batch with valid endpoint")
-  	public void admin_sends_https_request_for_get_all_batch_with_valid_endpoint_1() {
+      @When("Admin sends HTTPS Request for GetAll_batch with valid endpoint batch")
+  	public void admin_sends_https_request_for_get_all_batch_with_valid_endpoint_batch_1() {
     	  
     	  LoggerLoad.info("Admin sends HTTPS Request for GetAll_batch with valid endpoint");
     	  response=rv.httpRequest.when().get(rv.baseURL+rv.GetAllBatch);
   	}
-      @Then("Admin receives {int} OK Status with response body.")
-  	public void admin_receives_ok_status_with_response_body_1(Integer StatusCode) {
+      @Then("Admin receives {int} OK Status with response body batch.")
+  	public void admin_receives_ok_status_with_response_body_batch_1(Integer StatusCode) {
   	    
     	  LoggerLoad.info("Admin receives {int} OK Status with response body.");
     	  response.then().statusCode(200);
@@ -410,8 +410,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   	}
 
 
-      @When("Admin sends HTTPS Request with endpoint")
-  	public void admin_sends_https_request_with_endpoint_1() {
+      @When("Admin sends HTTPS Request with endpoint batch")
+  	public void admin_sends_https_request_with_endpoint_batch_1() {
     	  LoggerLoad.info("Admin sends HTTPS Request with endpoint");
 
           String searchfield="SAMPLE BATCH12";
@@ -421,8 +421,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   				.when().get(rv.baseURL+rv.GetAllBatch);
   		
   	}
-      @When("Admin sends HTTPS Request with invalid endpoint")
-  	public void admin_sends_https_request_with_invalid_endpoint_1() {
+      @When("Admin sends HTTPS Request with invalid endpoint batch")
+  	public void admin_sends_https_request_with_invalid_endpoint_batch_1() {
     	  LoggerLoad.info("Admin sends HTTPS Request with invalid endpoint");
 
   		rv.httpRequest= RestAssured.given().
@@ -430,8 +430,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   				response=rv.httpRequest.get("xyz");
   	}
   	
-  	@When("Admin sends HTTPS Request with invalid searchfieldID and valid endpoint")
-  	public void admin_sends_https_request_with_invalid_searchfield_id_and_valid_endpoint_1() {
+  	@When("Admin sends HTTPS Request with invalid searchfieldID and valid endpoint batch")
+  	public void admin_sends_https_request_with_invalid_searchfield_id_and_valid_endpoint_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with invalid searchfieldID and valid endpoint");
   		
   		String searchfield="aaaaaaaaaaaaaaaaaaaaa";
@@ -441,16 +441,16 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   				.when().get(rv.baseURL+rv.GetAllBatch);
   	}
 
-  	@When("Admin sends HTTPS Request for GetAll_batch with invalid endpoint")
-  	public void admin_sends_https_request_for_get_all_batch_with_invalid_endpoint_1() {
+  	@When("Admin sends HTTPS Request for GetAll_batch with invalid endpoint batch")
+  	public void admin_sends_https_request_for_get_all_batch_with_invalid_endpoint_batch_1() {
   	   
   		LoggerLoad.info("Admin sends HTTPS Request for GetAll_batch with invalid endpoint");
   		response=rv.httpRequest.when().get(rv.baseURL+"/Invalid");
   	}
   	
   	
-  	@Then("Admin receives {int} status with error message Not Found.")
-  	public void admin_receives_status_with_error_message_not_found_1(Integer int1) {
+  	@Then("Admin receives {int} status with error message Not Found batch.")
+  	public void admin_receives_status_with_error_message_not_found_batch_1(Integer int1) {
   		LoggerLoad.info("Admin receives {int} status with error message Not Found.");
 
   		response.then().statusCode(404);
@@ -459,8 +459,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   	    LoggerLoad.info("Success-"+ response.getStatusCode());
   	}
 
-  	@Then("Admin receives {int}  Status with error message unauthorized.")
-  	public void admin_receives_status_with_error_message_unauthorized_1(Integer int1) {
+  	@Then("Admin receives {int}  Status with error message unauthorized batch.")
+  	public void admin_receives_status_with_error_message_unauthorized_batch_1(Integer int1) {
   		LoggerLoad.info("Admin receives {int}  Status with error message unauthorized.");
 
   		response.then().statusCode(401);
@@ -468,8 +468,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   	    System.out.println("Unautherized access"+respobody);
   	}
 
-  	@Given("Admin creates GET Request without autherization")
-  	public void admin_creates_get_request_without_autherization_1() {
+  	@Given("Admin creates batch GET Request without autherization")
+  	public void admin_creates_batch_get_request_without_autherization_1() {
   		LoggerLoad.info("Admin creates GET Request without autherization");
 
   		RestAssured.baseURI= rv.baseURL;
@@ -477,8 +477,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   		response=rv.httpRequest.get(rv.GetAllBatch);
   	}
   	
-  	@When("Admin sends HTTPS Request with Invalid endpoint for BatchID")
-  	public void admin_sends_https_request_with_invalid_endpoint_for_batch_id_1() {
+  	@When("Admin sends HTTPS Request with Invalid endpoint for BatchID batch")
+  	public void admin_sends_https_request_with_invalid_endpoint_for_batch_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with Invalid endpoint for BatchID");
 
   		rv.httpRequest= RestAssured.given().
@@ -489,8 +489,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   				.when().get(rv.baseURL+rv.Batch_Invalid_EndPoint+"{batchId}");
   	}
   	
-  	@When("Admin sends HTTPS Request with endpoint for BatchID")
-  	public void admin_sends_https_request_with_endpoint_for_batch_id_1() {
+  	@When("Admin sends HTTPS Request with endpoint for BatchID batch")
+  	public void admin_sends_https_request_with_endpoint_for_batch_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for BatchID");
 //  		Integer batchIdFromResp = BatchResponse.path("batchId");
 //		   rv.batchId = batchIdFromResp.toString();
@@ -502,16 +502,16 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   				.when().get(rv.baseURL+rv.GetByBatchID+"{batchId}");
   		
   	}
-  	@When("Admin sends HTTPS Request with endpoint for ProgramID")
-	public void admin_sends_https_request_with_endpoint_for_program_id_1() {
+  	@When("Admin sends HTTPS Request with endpoint for ProgramID batch")
+	public void admin_sends_https_request_with_endpoint_for_program_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for ProgramID");
 
   		String ProgID="16489";
 				  response=rv.httpRequest.pathParam("programId", ProgID)
 				  .when().get(rv.baseURL+"/batches/program/{programId}");
 	}	
-  	@When("Admin sends HTTPS Request with invalid endpoint for ProgramID")
-  	public void admin_sends_https_request_with_invalid_endpoint_for_program_id_1() {
+  	@When("Admin sends HTTPS Request with invalid endpoint for ProgramID batch")
+  	public void admin_sends_https_request_with_invalid_endpoint_for_program_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with invalid endpoint for ProgramID");
 
   		String ProgID="16765";
@@ -519,8 +519,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   				  .when().get(rv.baseURL+rv.Batch_Invalid_EndPoint+"{programId}");
   	}
 
-  	@When("Admin sends HTTPS Request with endpoint for deleted BatchID")
-  	public void admin_sends_https_request_with_endpoint_for_deleted_batch_id_1() {
+  	@When("Admin sends HTTPS Request with endpoint for deleted BatchID batch")
+  	public void admin_sends_https_request_with_endpoint_for_deleted_batch_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for deleted BatchID");
 
   		String batchIdnum="8768";
@@ -530,8 +530,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   		System.out.println(rv.baseURL+rv.GetByBatchID+"{batchId}");
   	}
   	
-  	@Then("Admin receives {int} OK Status with  batchStatus field {string} in the response body.")
-  	public void admin_receives_ok_status_with_batch_status_field_in_the_response_body_1(Integer int1, String string) {
+  	@Then("Admin receives {int} OK Status with  batchStatus field {string} in the response body batch.")
+  	public void admin_receives_ok_status_with_batch_status_field_in_the_response_body_batch_1(Integer int1, String string) {
   		LoggerLoad.info("Admin receives {int} OK Status with  batchStatus field {string} in the response body.");
 
   		response.then().statusCode(200);
@@ -540,8 +540,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   	}
 
   	
-  	@When("Admin sends HTTPS Request with endpoint for deleted ProgramID")
-  	public void admin_sends_https_request_with_endpoint_for_deleted_program_id_1() {
+  	@When("Admin sends HTTPS Request with endpoint for deleted ProgramID batch")
+  	public void admin_sends_https_request_with_endpoint_for_deleted_program_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for deleted ProgramID");
 	
   		String ProgID="16585";
@@ -551,8 +551,8 @@ public void admin_sends_https_batch_request_with_update_endpoint_and_update_batc
   				  .when().get(rv.baseURL+ rv.GetProgramID+"{programId}");
   	}
 
-  	@When("Admin sends HTTPS Request with endpoint for invalid BatchID")
-  	public void admin_sends_https_request_with_endpoint_for_invalid_batch_id_1() {
+  	@When("Admin sends HTTPS Request with endpoint for invalid BatchID batch")
+  	public void admin_sends_https_request_with_endpoint_for_invalid_batch_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for invalid BatchID");
 String batchIdnum="abc";
   		response=rv.httpRequest
@@ -560,8 +560,8 @@ String batchIdnum="abc";
   				.when().get(rv.baseURL+rv.Batch_Invalid_EndPoint+"{batchId}");
   	}
   	
-  	@When("Admin sends HTTPS Request with endpoint for Invalid ProgramID")
-  	public void admin_sends_https_request_with_endpoint_for_invalid_program_id_1() {
+  	@When("Admin sends HTTPS Request with endpoint for Invalid ProgramID batch")
+  	public void admin_sends_https_request_with_endpoint_for_invalid_program_id_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for Invalid ProgramID");
 	
   		String ProgID="xyz";
@@ -571,8 +571,8 @@ String batchIdnum="abc";
   				  .when().get(rv.baseURL+ rv.GetProgramID+"{programId}");
   		   			  }
   	
-  	@Then("Admin receives {int} Not Found Status with the message and boolean success details")
-  	public void admin_receives_not_found_status_with_message_and_boolean_success_details_1(Integer int1) {
+  	@Then("Admin receives {int} Not Found Status with the message and boolean success details batch")
+  	public void admin_receives_not_found_status_with_message_and_boolean_success_details_batch_1(Integer int1) {
   		LoggerLoad.info("Admin receives {int} Not Found Status with the message and boolean success details");
   
   		response.then().statusCode(404);
@@ -580,8 +580,8 @@ String batchIdnum="abc";
   	    System.out.println("Response Body is:"+ respo);
   	}
   	
-  	@When("Admin sends HTTPS Request with Invalid endpoint for Valid BatchName")
-  	public void admin_sends_https_request_with_invalid_endpoint_for_valid_batch_name_1() {
+  	@When("Admin sends HTTPS Request with Invalid endpoint for Valid BatchName batch")
+  	public void admin_sends_https_request_with_invalid_endpoint_for_valid_batch_name_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with Invalid endpoint for Valid BatchNam");	
   		rv.httpRequest= RestAssured.given().
   				header("Authorization","Bearer "+prop.getProperty("bearer"));
@@ -591,8 +591,8 @@ String batchIdnum="abc";
   				.when().get(rv.baseURL+rv.Batch_Invalid_EndPoint+"{batchName}");
   	}
   	
-  	@When("Admin sends HTTPS Request with endpoint for Valid BatchName")
-  	public void admin_sends_https_request_with_endpoint_for_valid_batch_name_1() {
+  	@When("Admin sends HTTPS Request with endpoint for Valid BatchName batch")
+  	public void admin_sends_https_request_with_endpoint_for_valid_batch_name_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for Valid BatchName");	
 
   		
@@ -603,8 +603,8 @@ String batchIdnum="abc";
   	}
   	
   	
-  	@When("Admin sends HTTPS Request with endpoint for InValid BatchName")
-  	public void admin_sends_https_request_with_endpoint_for_in_valid_batch_name_1() {
+  	@When("Admin sends HTTPS Request with endpoint for InValid BatchName batch")
+  	public void admin_sends_https_request_with_endpoint_for_in_valid_batch_name_batch_1() {
   		LoggerLoad.info("Admin sends HTTPS Request with endpoint for InValid BatchName");
   		
   		rv.httpRequest= RestAssured.given().
@@ -615,8 +615,8 @@ String batchIdnum="abc";
   				.when().get(rv.baseURL+rv.GetBatchName+"{batchName}");
   	}
   	
-  	@When("Admin send request with valid program endpoint")
-  	public void admin_send_request_with_valid_program_endpoint_1() {
+  	@When("Admin send request with valid program endpoint batch")
+  	public void admin_send_request_with_valid_program_endpoint_batch_1() {
   		LoggerLoad.info("Admin send request with valid program endpoint");
 
   		response=rv.httpRequest.when().get(rv.baseURL+"/allPrograms");
@@ -624,16 +624,16 @@ String batchIdnum="abc";
   	}
 
 //DELETE BATCH MODULE
-  	@Given("Admin creates DELETE Request")
-	public void admin_creates_delete_request_2() {
+  	@Given("Admin creates batch DELETE Request")
+	public void admin_creates_batch_delete_request_2() {
   		LoggerLoad.info("Admin send request with valid program endpoint");	
   		RestAssured.baseURI= rv.baseURL;
 		rv.httpRequest= RestAssured.given().
 				header("Authorization","Bearer "+prop.getProperty("bearer"));
 	}
 
-	@When("Admin sends HTTPS Request with valid BatchId and endpoint")
-	public void admin_sends_https_request_with_valid_batch_id_and_endpoint_2() {
+	@When("Admin sends HTTPS Request with valid BatchId and endpoint batch")
+	public void admin_sends_https_request_with_valid_batch_id_and_endpoint_batch_2() {
   		LoggerLoad.info("Admin sends HTTPS Request with valid BatchId and endpoint");	
 
 		String DelID="8768"; //8768 8765
@@ -643,8 +643,8 @@ String batchIdnum="abc";
 				  .when().delete(rv.baseURL+rv.GetAllBatch+"/{id}");
 	}
 
-	@Then("Admin receives {int} Ok status with the message")
-	public void admin_receives_ok_status_with_message_2(Integer Statuscode) {
+	@Then("Admin receives {int} Ok status with the message batch")
+	public void admin_receives_ok_status_with_message_batch_2(Integer Statuscode) {
   		LoggerLoad.info("Admin receives {int} Ok status with the message");	
 
 		response.then().statusCode(200);
@@ -660,8 +660,8 @@ String batchIdnum="abc";
 	    
 	}
 
-	@When("Admin sends HTTPS Request  with valid BatchId and invalid endpoint")
-	public void admin_sends_https_request_with_valid_batch_id_and_invalid_endpoint_2() {
+	@When("Admin sends HTTPS Request  with valid BatchId and invalid endpoint batch")
+	public void admin_sends_https_request_with_valid_batch_id_and_invalid_endpoint_batch_2() {
   		LoggerLoad.info("Admin sends HTTPS Request  with valid BatchId and invalid endpoint");	
 	
 		String DelID="8765"; //8768
@@ -671,8 +671,8 @@ String batchIdnum="abc";
 				  .when().delete(rv.baseURL+rv.Batch_Invalid_EndPoint+"{id}");
 	}
 
-	@Then("Admin receives {int} not found")
-	public void admin_receives_not_found_2(Integer int1) {
+	@Then("Admin receives {int} not found batch")
+	public void admin_receives_not_found_batch_2(Integer int1) {
   		LoggerLoad.info("Admin receives {int} not found");	
 	
 		response.then().statusCode(404);
@@ -685,8 +685,8 @@ String batchIdnum="abc";
 	    LoggerLoad.info("Success-"+ response.getStatusCode());
 	}
 
-	@When("Admin sends HTTPS Request with invalid BatchId valid endpoint")
-	public void admin_sends_https_request_with_invalid_batch_id_valid_endpoint_2() {
+	@When("Admin sends HTTPS Request with invalid BatchId valid endpoint batch")
+	public void admin_sends_https_request_with_invalid_batch_id_valid_endpoint_batch_2() {
   		LoggerLoad.info("Admin sends HTTPS Request with invalid BatchId valid endpoint");	
 
 		String DelID="12"; //8768
@@ -696,16 +696,16 @@ String batchIdnum="abc";
 				  .when().delete(rv.baseURL+rv.GetAllBatch+"/{id}");
 	}
 
-	@Given("Admin creates DELETE Request with unauthorized access")
-	public void admin_creates_delete_request_with_unauthorized_access_2() {
+	@Given("Admin creates batch DELETE Request with unauthorized access")
+	public void admin_creates_batch_delete_request_with_unauthorized_access_2() {
   		LoggerLoad.info("Admin creates DELETE Request with unauthorized access");	
 
 		rv.httpRequest=RestAssured.given();
 		
 	}
 	
-	@When("Admin sends HTTPS Request with valid BatchId and endpoint for unautherized")
-	public void admin_sends_https_request_with_valid_batch_id_and_endpoint_for_unautherized_2() {
+	@When("Admin sends HTTPS Request with valid BatchId and endpoint for unautherized batch")
+	public void admin_sends_https_request_with_valid_batch_id_and_endpoint_for_unautherized_batch_2() {
   		LoggerLoad.info("Admin sends HTTPS Request with valid BatchId and endpoint for unautherized");	
 
 		String DelID="8768"; //8768 8765
@@ -713,8 +713,8 @@ String batchIdnum="abc";
 				  .when().delete(rv.baseURL+rv.GetAllBatch+"/{id}");
 	}
 
-	@Then("Admin receives {int} Unauthorized access")
-	public void admin_receives_unauthorized_status_2(Integer int1) {
+	@Then("Admin receives {int} Unauthorized access batch")
+	public void admin_receives_unauthorized_status_batch_2(Integer int1) {
   		LoggerLoad.info("Admin receives {int} Unauthorized access");	
 	
 		response.then().statusCode(401);
