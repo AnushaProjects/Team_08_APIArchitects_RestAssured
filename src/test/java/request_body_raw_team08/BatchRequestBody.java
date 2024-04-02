@@ -1,35 +1,43 @@
 package request_body_raw_team08;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.formula.functions.PPMT;
 import org.json.JSONObject;
 
 import payload_team08.BatchPayload;
 import payload_team08.ProgramPayload;
+import utilities_team08.ConfigReader;
+import utilities_team08.ExcelReaderData;
 import utilities_team08.ReusableMethods;
 
 public class BatchRequestBody extends ReusableMethods{
 	
 	BatchPayload bp=new BatchPayload();
 	ProgramPayload pp=new ProgramPayload();
+	ExcelReaderData read = new ExcelReaderData();
+	ConfigReader configreader=new ConfigReader();
+	Properties prop =configreader.readingdata();
 	
 	
-	public BatchPayload createBatchRequest(List<Map<String, String>> hm, String programId ) {
+	public BatchPayload createBatchRequest(List<Map<String, String>> hm) {
 		  String BatchName="SDET"+getRandomNumber();
-		//System.out.println(hm.get(0).get("BatchDescription"));
-		//System.out.println(hm.get(0).get("BatchNoOfClasses"));
-		//System.out.println(hm.get(0).get("BatchStatus"));
 
-
+		 
 		bp.setBatchDescription(hm.get(0).get("BatchDescription"));
+		System.out.println(hm.get(0).get("BatchDescription"));
 		bp.setBatchName(BatchName);
-		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));
+		System.out.println(hm.get(0).get("BatchNoOfClasses"));
+		bp.setBatchNoOfClasses(hm.get(0).get("BatchNoOfClasses"));  
 		bp.setBatchStatus(hm.get(0).get("BatchStatus"));
-		bp.setProgramId(programId);
+		bp.setProgramId(prop.getProperty("program_Id_chaining"));
 		return bp;
 	}
+	
 	public BatchPayload createBatchRequestwithexistingdata(List<Map<String, String>> hm, String programId,String BatchName ) {
 		 
 		System.out.println(BatchName);
@@ -43,6 +51,7 @@ public class BatchRequestBody extends ReusableMethods{
 		return bp;
 		
 	}
+	
 
 	public BatchPayload createBatchRequestwithmissingmandatoryfields(List<Map<String, String>> hm, String programId ) {
 		 String BatchName="SDET"+getRandomNumber();

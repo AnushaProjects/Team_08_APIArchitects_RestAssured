@@ -528,8 +528,8 @@ public class UserModuleStepDefinition extends ReusableVariables  {
 	public void admin_creates_get_request_with_programbatch_id(String ids) {
 		if(ids.equalsIgnoreCase("valid")) {
 		LoggerLoad.info("User creates get request to pass the batch and program iD");
-		get_admin_by_batchId=reuseVariables.baseURL+"/users/programBatch/10015";  //batchId to be passed
-		get_admin_by_programId=reuseVariables.baseURL+userprogram+"17874";  //ProgramId is getting passed from config.properties prop.getProperty("program_Id_chaining")
+		get_admin_by_batchId=reuseVariables.baseURL+"/users/programBatch/8607";  //batchId to be passed
+		get_admin_by_programId=reuseVariables.baseURL+userprogram+"16609";  //ProgramId is getting passed from config.properties prop.getProperty("program_Id_chaining")
 		}
 		else if(ids.equalsIgnoreCase("invalid")) {
 			LoggerLoad.info("User creates get request to pass the Invalic ProgramId");

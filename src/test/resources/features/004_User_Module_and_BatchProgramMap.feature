@@ -1,12 +1,5 @@
 Feature: User Module
-
-
-#Scenario: Check if Admin able to generate token with valid credential
-    #Given Admin creates request with "valid" credentials
-    #When Admin Admin calls Post Https method  with "valid endpoint"
-    #Then Admin Admin receives 200 created with auto generated token
     
-
    @CreatingUserIdWithMandatoryFields
 	Scenario: Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields
     Given Admin creates POST request with all mandatory fields 

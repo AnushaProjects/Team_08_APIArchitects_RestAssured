@@ -14,10 +14,10 @@ public class ReusableVariables {
 	Properties prop =configreader.readingdata();
 	
 	public String baseURL="https://lms-marchapi-hackathon-a258d2bbd43b.herokuapp.com/lms";
-	
+	public String path="src/test/resources/TestData/Team_08_API Architects_LMSTestData.xlsx";
 	
 	//User Endpoints
-	public String path="src/test/resources/TestData/Team_08_API Architects_LMSTestData.xlsx";
+	
 	public String user_post_endpoint="/users/roleStatus";
 	public String getroles="/users/roles";
 	public String allusers="/users/";
@@ -30,7 +30,7 @@ public class ReusableVariables {
 	public String update_user="/users/"+prop.getProperty("user_id_with_All_field");
 	public String update_user_invalid="/users/"+prop.getProperty("negative_scenerio_user_Id");
 	public String assign_pb="/users/roleProgramBatchStatus/"+prop.getProperty("user_id_with_All_field");
-	public String delete_userid="/userRoleProgramBatchMap/deleteAll/U1808";
+	public String delete_userid="/userRoleProgramBatchMap/deleteAll/U361";
 	
 	
 	//ProgramEndpoints

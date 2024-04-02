@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>89/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>132/13/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Apr 02 02:22:49 EDT 2024</td>
+<td>Started on:</td><td>Tue Apr 02 13:15:09 EDT 2024</td>
 </tr>
-<tr><td>Total time:</td><td>19 seconds (19490 ms)</td>
+<tr><td>Total time:</td><td>29 seconds (29657 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,465 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch without authorization", "Create batch program"</td>
+<td><div><pre>java.lang.IllegalArgumentException: parameterValue cannot be null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.pathParam(RequestSpecificationImpl.groovy:515)
+	at step_definition_team08.BatchStepDefinition.admin_sends_https_request_with_endpoint_for_program_id_batch_1(BatchStepDefinition.java:522)
+	at ✽.Admin sends HTTPS Request with endpoint for ProgramID batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:181)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2114223493", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2114223493'><pre>java.lang.IllegalArgumentException: parameterValue cannot be null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.pathParam(RequestSpecificationImpl.groovy:515)
+	at step_definition_team08.BatchStepDefinition.admin_sends_https_request_with_endpoint_for_program_id_batch_1(BatchStepDefinition.java:522)
+	at ✽.Admin sends HTTPS Request with endpoint for ProgramID batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:181)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "User Module"</td>
+<td><div><pre>java.lang.AssertionError: Status validation expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:286)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:50)
+</pre></div><a href='#' onClick='toggleBox("stack-trace8425377", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace8425377'><pre>java.lang.AssertionError: Status validation expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:286)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:50)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrive a batch after the programID is deleted", "Create batch program"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;200&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at step_definition_team08.BatchStepDefinition.admin_receives_not_found_status_with_message_and_boolean_success_details_batch_1(BatchStepDefinition.java:590)
+	at ✽.Admin receives 404 Not Found Status with the message and boolean success details batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:158)
+</pre></div><a href='#' onClick='toggleBox("stack-trace772070337", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace772070337'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;200&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at step_definition_team08.BatchStepDefinition.admin_receives_not_found_status_with_message_and_boolean_success_details_batch_1(BatchStepDefinition.java:590)
+	at ✽.Admin receives 404 Not Found Status with the message and boolean success details batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:158)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all batches with invalid search string", "Create batch program"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;200&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at step_definition_team08.BatchStepDefinition.admin_receives_status_with_error_message_not_found_batch_1(BatchStepDefinition.java:466)
+	at ✽.Admin receives 404 status with error message Not Found batch.(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:86)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1381674482", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1381674482'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;200&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at step_definition_team08.BatchStepDefinition.admin_receives_status_with_error_message_not_found_batch_1(BatchStepDefinition.java:466)
+	at ✽.Admin receives 404 status with error message Not Found batch.(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:86)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with valid Program ID", "Create batch program"</td>
+<td><div><pre>java.lang.IllegalArgumentException: parameterValue cannot be null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.pathParam(RequestSpecificationImpl.groovy:515)
+	at step_definition_team08.BatchStepDefinition.admin_sends_https_request_with_endpoint_for_program_id_batch_1(BatchStepDefinition.java:522)
+	at ✽.Admin sends HTTPS Request with endpoint for ProgramID batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:139)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1100261247", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1100261247'><pre>java.lang.IllegalArgumentException: parameterValue cannot be null
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.reflection.CachedConstructor.doConstructorInvoke(CachedConstructor.java:60)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrap.callConstructor(ConstructorSite.java:86)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.common.assertion.AssertParameter.notNull(AssertParameter.groovy:26)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallStatic(CallSiteArray.java:53)
+	at io.restassured.internal.common.assertion.AssertParameter$notNull.callStatic(Unknown Source)
+	at io.restassured.internal.RequestSpecificationImpl.pathParam(RequestSpecificationImpl.groovy:515)
+	at step_definition_team08.BatchStepDefinition.admin_sends_https_request_with_endpoint_for_program_id_batch_1(BatchStepDefinition.java:522)
+	at ✽.Admin sends HTTPS Request with endpoint for ProgramID batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:139)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to update a Batch with a deleted batchID in the endpoint", "Create batch program"</td>
+<td><div><pre>java.lang.AssertionError: batchName expected:&lt;200&gt; but was:&lt;404&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.BatchStepDefinition.admin_receives_ok_status_with_message(BatchStepDefinition.java:389)
+	at ✽.Admin receives 200 Ok status with message batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:227)
+</pre></div><a href='#' onClick='toggleBox("stack-trace8290162", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace8290162'><pre>java.lang.AssertionError: batchName expected:&lt;200&gt; but was:&lt;404&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.BatchStepDefinition.admin_receives_ok_status_with_message(BatchStepDefinition.java:389)
+	at ✽.Admin receives 200 Ok status with message batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:227)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "User Module"</td>
+<td><div><pre>java.lang.AssertionError: Status validation expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:286)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:67)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1619490345", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1619490345'><pre>java.lang.AssertionError: Status validation expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:286)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:67)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "User Module"</td>
+<td><div><pre>java.lang.AssertionError: Status validation expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:286)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:50)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1267828702", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1267828702'><pre>java.lang.AssertionError: Status validation expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:286)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:50)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to delete a Batch with valid Batch ID", "Create batch program"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.statusCode()&quot; because &quot;response&quot; is null
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+	at step_definition_team08.BatchStepDefinition.admin_receives_ok_status_with_message_batch_2(BatchStepDefinition.java:672)
+	at ✽.Admin receives 200 Ok status with the message batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:233)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1165254118", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1165254118'><pre>java.lang.NullPointerException: Cannot invoke &quot;io.restassured.response.Response.statusCode()&quot; because &quot;response&quot; is null
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:68)
+	at step_definition_team08.BatchStepDefinition.admin_receives_ok_status_with_message_batch_2(BatchStepDefinition.java:672)
+	at ✽.Admin receives 200 Ok status with the message batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:233)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with invalid Program Id", "Create batch program"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;400&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at step_definition_team08.BatchStepDefinition.admin_receives_not_found_status_with_message_and_boolean_success_details_batch_1(BatchStepDefinition.java:590)
+	at ✽.Admin receives 404 Not Found Status with the message and boolean success details batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:146)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1096569961", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1096569961'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;404&gt; but was &lt;400&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at step_definition_team08.BatchStepDefinition.admin_receives_not_found_status_with_message_and_boolean_success_details_batch_1(BatchStepDefinition.java:590)
+	at ✽.Admin receives 404 Not Found Status with the message and boolean success details batch(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:146)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive assigned program batches for invalid AdminId", "User Module"</td>
+<td><div><pre>java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;404&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserProgramBatchMapStepDefinition.admin_receives_ok(UserProgramBatchMapStepDefinition.java:48)
+	at ✽.Admin  receives 200 OK(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:323)
+</pre></div><a href='#' onClick='toggleBox("stack-trace282829539", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace282829539'><pre>java.lang.AssertionError: Status expected:&lt;200&gt; but was:&lt;404&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserProgramBatchMapStepDefinition.admin_receives_ok(UserProgramBatchMapStepDefinition.java:48)
+	at ✽.Admin  receives 200 OK(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:323)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrive a batch after deleting the batch", "Create batch program"</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at step_definition_team08.BatchStepDefinition.admin_receives_ok_status_with_batch_status_field_in_the_response_body_batch_1(BatchStepDefinition.java:549)
+	at ✽.Admin receives 200 OK Status with  batchStatus field &quot;Inactive&quot; in the response body batch.(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:98)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2009339960", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2009339960'><pre>java.lang.AssertionError: 1 expectation failed.
+Expected status code &lt;200&gt; but was &lt;404&gt;.
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+	at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+	at step_definition_team08.BatchStepDefinition.admin_receives_ok_status_with_batch_status_field_in_the_response_body_batch_1(BatchStepDefinition.java:549)
+	at ✽.Admin receives 200 OK Status with  batchStatus field &quot;Inactive&quot; in the response body batch.(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/003_BatchModule.feature:98)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "User Module"</td>
+<td><div><pre>java.lang.AssertionError: Status validation expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:286)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:67)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1060228335", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1060228335'><pre>java.lang.AssertionError: Status validation expected:&lt;400&gt; but was:&lt;201&gt;
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at utilities_team08.CommonValidation.statusValidations(CommonValidation.java:71)
+	at step_definition_team08.UserModuleStepDefinition.admin_receives_bad_request_status_with_message_and_boolean_success_details(UserModuleStepDefinition.java:286)
+	at ✽.Admin receives 400 Bad Request Status with message and boolean success details(file:///Users/anushakarthick/NumpyNinja/Team_08_APIArchitects_RestAssured/src/test/resources/features/004_User_Module_and_BatchProgramMap.feature:67)
+</pre></div></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,47 +535,7 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to update role id of a Admin by valid Admin id", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program without Autorisation", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve a program with valid program ID", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Batch Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive Admins by Invalid role ID", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to update role status", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get log out- Check if Admin able to logout  with invalid endpoint", "Logout"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to Update a program with invalid endpoint", "Program Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
@@ -126,22 +545,27 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Program Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a new Admin without request body", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to Update a program with no bodyrequest", "Program Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Create batch program"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all the available roles with Authorization", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to update a batch with invalid data", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to delete a Batch with invalid Batch ID", "Create batch program"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
@@ -151,117 +575,27 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all active Admins with invalid endpoint", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to update a Batch with invalid enpoint", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive Admins by Invalid role ID", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all batches with invalid Endpoint", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a program with valid userId", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
 <td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to generate token with valid credential", "User Login"</td>
-<td></td>
-<td>1</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins by program for valid program ID without Authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all Admins with assigned program batches with No Authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a program with valid programId", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins without Authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to create a program with invalid method", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive Admins by valid role ID", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a new Admin with request body without authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get log out- Check if Admin able to logout", "Logout"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Updating a program", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with invalid Endpoint", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins by program batches for invalid batch ID", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a Program Name without Authorization", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a program with valid LMS API,invalid programName", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins by program batches for valid batch ID without Authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a Program Name without Authorization", "Program Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
@@ -271,47 +605,32 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with No Authorization", "Program Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all the available roles with invalid End point", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with valid Endpoint", "Program Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Program Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Batch Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to get the Admins by role with invalid endpoint", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to get count of active and inactive Admins with invalid endpoint", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to update a Batch with valid batchID and mandatory fields in request body without authorization", "Create batch program"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a Admin with valid Admin ID and invalid endpoint", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a program with valid programId", "Program Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all active Admins without Authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to Update a program with invalid method", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "heck if admin is able to retreive Admins by valid role ID without Authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all Admins with assigned program batches with No Authorization", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all the available roles without Authorization", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
@@ -321,7 +640,202 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with valid BATCH NAME", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a Batch with valid endpoint and request body without authorization.", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins for valid program Id", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with invalid endpoint for ProgramID", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins by program for valid program ID without Authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to update role status", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to update role id of a Admin by valid Admin id", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins without Authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a new Admin with request body without authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrive a deleted batch  using batch name", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all Admins with assigned program batches with No Authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program without Autorisation", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint with Existing EmailId and PhoneNumber", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch without authorization", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive Admins by valid role ID", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with No Authorization", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to update a Batch with valid batchID and missing mandatory fields request body", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Updating a program", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a Admin with valid Admin ID and invalid endpoint", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all the available roles with Authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all Admins with assigned program batches with No Authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to generate token with valid credential", "User Login"</td>
+<td></td>
+<td>1</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to update a Batch with a valid batchID and deleted programID field  in the request body with other mandatory fields", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
 <td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins by program batches for invalid batch ID", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a program with valid LMS API,invalid programName", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a Batch missing mandatory fields in request body", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a Batch with valid endpoint and request body (existing value in Batch Name)", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to Update a program with invalid method", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with invalid endpoint", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all batches without Authorization", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
@@ -336,152 +850,32 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive assigned program batches for invalid AdminId", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
 <td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a Admin with Invalid Admin ID", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "heck if admin is able to retreive Admins by valid role ID without Authorization", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all Admin with valid endpoint", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a Program Name without Authorization", "Program Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint with Existing EmailId and PhoneNumber", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Batch Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with invalid endpoint", "Create batch program"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to get the Admins by program batches with invalid endpoint", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with invalid Endpoint", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint with Existing EmailId and PhoneNumber", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive Admin with valid Admin ID without Authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins by invalid role ID", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all the available roles with invalid End point", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive assigned program batches for invalid AdminId", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all the available roles without Authorization", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to get the Admins by role with invalid endpoint", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to create a program with invalid endpoint", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get log out- Check if Admin able to logout with No Auth", "Logout"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to update role Id", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with No Authorization", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins for valid program Id", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a new Admin without request body", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a program with valid userId", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a program with valid LMS API,invalid programName", "Program Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all active Admins", "User Module"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to update role id of a Admin by valid Admin id", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with invalid BATCH NAME", "Create batch program"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
@@ -491,22 +885,17 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all Admins with assigned program batches", "User Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to update a Batch with invalid batchID and mandatory fields in request body", "Create batch program"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Updating a program", "Program Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to create a program with invalid method", "Program Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to generate token with invalid credentials", "User Login"</td>
-<td></td>
-<td>0</td>
-<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
-<tr>
-<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to create a program with no bodyrequest", "Program Module"</td>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to update role Id", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
@@ -516,7 +905,292 @@ function toggleAllBoxes() {
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
 <tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to Update a program with invalid endpoint", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all active Admins with invalid endpoint", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all active Admins without Authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with invalid BATCH ID", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a batch  with inactive program ID", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to delete a Batch without authorization", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Creating a program", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a Program Name without Authorization", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to Update a program with no bodyrequest", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to generate token with invalid credentials", "User Login"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive assigned program batches for invalid AdminId", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a batch with missing additional fields", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get log out- Check if Admin able to logout", "Logout"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive Admin with valid Admin ID without Authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a Batch with valid endpoint and request body (non existing values)", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a batch with invalid data in request body", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with batch ID without authorization", "Create batch program"</td>
+<td></td>
+<td>1</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all Admin with valid endpoint", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to get the Admins by program batches with invalid endpoint", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to create a program with no bodyrequest", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and invalid values in request body", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins by program batches for valid batch ID without Authorization", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with invalid Endpoint", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to create a program with invalid endpoint", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to get count of active and inactive Admins with invalid endpoint", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to create a batch with invalid endpoint", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Updating a program", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a new Admin with valid endpoint and request body with mandatory fields and Additional fields", "User Module"</td>
+<td></td>
+<td>1</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve a program with valid program ID", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with valid Endpoint", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to update a Batch with valid batchID and mandatory fields in request body", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get log out- Check if Admin able to logout  with invalid endpoint", "Logout"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all batches with valid LMS API", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all batches with search string", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins by program batches for invalid batch ID", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve all active Admins", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to retreive all Admins with assigned program batches", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get log out- Check if Admin able to logout with No Auth", "Logout"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to retrieve a batch with valid BATCH ID", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
 <td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get the Admins by program batches for valid batch ID", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to update a program with valid programID endpoint  and valid request body", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with No Authorization", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to retrieve all programs with invalid Endpoint", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin able to delete a Batch with invalid endpoint", "Create batch program"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to update role id of a Admin by valid Admin id", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if Admin able to delete a program with valid LMS API,invalid programName", "Program Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint with Existing EmailId and PhoneNumber", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to create a Admin with valid endpoint and missing fields in request body", "User Module"</td>
+<td></td>
+<td>0</td>
+<td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
+<tr>
+<td title='test_runner_team08.TestRunner.runScenario()'><b>runScenario</b><br>Test class: test_runner_team08.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if admin is able to get count of active and inactive Admins by invalid role ID", "User Module"</td>
 <td></td>
 <td>0</td>
 <td>test_runner_team08.TestRunner@2ab4bc72</td></tr>
